@@ -97,7 +97,7 @@ describe('WelcomeScreen - Unit Tests', () => {
       render(<WelcomeScreen {...defaultProps} />);
 
       expect(
-        screen.getByRole('button', { name: /get started/i })
+        screen.getByRole('button', { name: /begin setup/i })
       ).toBeInTheDocument();
     });
 
@@ -115,7 +115,7 @@ describe('WelcomeScreen - Unit Tests', () => {
       const onGetStarted = vi.fn();
       render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-      const button = screen.getByRole('button', { name: /get started/i });
+      const button = screen.getByRole('button', { name: /begin setup/i });
       fireEvent.click(button);
 
       expect(onGetStarted).toHaveBeenCalledTimes(1);
@@ -124,7 +124,7 @@ describe('WelcomeScreen - Unit Tests', () => {
     it('disables button when isLoading is true', () => {
       render(<WelcomeScreen {...defaultProps} isLoading={true} />);
 
-      const button = screen.getByRole('button', { name: /get started/i });
+      const button = screen.getByRole('button', { name: /begin setup/i });
       expect(button).toBeDisabled();
     });
 
@@ -177,7 +177,7 @@ describe('WelcomeScreen - Accessibility Tests', () => {
   it('button is focusable', () => {
     render(<WelcomeScreen {...defaultProps} />);
 
-    const button = screen.getByRole('button', { name: /get started/i });
+    const button = screen.getByRole('button', { name: /begin setup/i });
     button.focus();
     expect(document.activeElement).toBe(button);
   });
@@ -193,7 +193,7 @@ describe('WelcomeScreen - Accessibility Tests', () => {
     const onGetStarted = vi.fn();
     render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-    const button = screen.getByRole('button', { name: /get started/i });
+    const button = screen.getByRole('button', { name: /begin setup/i });
     button.focus();
     fireEvent.keyDown(button, { key: 'Enter' });
 
@@ -213,7 +213,7 @@ describe('WelcomeScreen - Integration Tests', () => {
 
     render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-    const button = screen.getByRole('button', { name: /get started/i });
+    const button = screen.getByRole('button', { name: /begin setup/i });
     fireEvent.click(button);
 
     await waitFor(() => {
@@ -230,7 +230,7 @@ describe('WelcomeScreen - Integration Tests', () => {
       <WelcomeScreen {...defaultProps} onGetStarted={asyncOnGetStarted} />
     );
 
-    const button = screen.getByRole('button', { name: /get started/i });
+    const button = screen.getByRole('button', { name: /begin setup/i });
     fireEvent.click(button);
 
     await waitFor(() => {

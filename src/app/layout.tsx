@@ -1,14 +1,29 @@
 /**
  * Root Layout
  * @governance COMPONENT-001
+ * @design-system ORION Command Center (Outfit + JetBrains Mono)
  */
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Outfit, JetBrains_Mono } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// Display font for headings and UI text
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800'],
+});
+
+// Monospace font for data, code, and technical values
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+});
 
 export const metadata: Metadata = {
   title: 'ORION - P6 & SAP Integration Platform',
@@ -24,7 +39,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>{children}</body>
+        <body
+          className={`${outfit.variable} ${jetbrainsMono.variable} font-display antialiased`}
+        >
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

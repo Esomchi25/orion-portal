@@ -652,3 +652,229 @@ body::after {
   border-radius: 50%;
   animation: orbit 0.8s linear infinite;
 }
+
+/* ============================================
+   Responsive Utilities (RESP-001 Compliant)
+   ============================================ */
+
+/* Responsive container */
+.orion-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10;
+}
+
+/* Responsive headings */
+.orion-h1 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display leading-tight;
+}
+
+.orion-h2 {
+  @apply text-xl sm:text-2xl md:text-3xl font-semibold font-display leading-snug;
+}
+
+.orion-h3 {
+  @apply text-lg sm:text-xl md:text-2xl font-semibold font-display;
+}
+
+/* Responsive body text */
+.orion-body {
+  @apply text-base sm:text-lg leading-relaxed;
+}
+
+.orion-body-sm {
+  @apply text-sm sm:text-base leading-relaxed;
+}
+
+/* Responsive grid */
+.orion-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6;
+}
+
+.orion-grid-3 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+}
+
+.orion-grid-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Touch-friendly targets (WCAG 2.5.5) */
+.orion-touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Responsive spacing */
+.orion-section {
+  @apply py-8 sm:py-12 md:py-16 lg:py-20;
+}
+
+.orion-section-sm {
+  @apply py-4 sm:py-6 md:py-8;
+}
+
+/* Responsive flex utilities */
+.orion-flex-center {
+  @apply flex items-center justify-center;
+}
+
+.orion-flex-between {
+  @apply flex items-center justify-between;
+}
+
+.orion-flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+/* Hide on specific breakpoints */
+.hide-mobile {
+  @apply hidden sm:block;
+}
+
+.hide-desktop {
+  @apply block sm:hidden;
+}
+
+/* ============================================
+   Form Layout Utilities
+   ============================================ */
+
+/* Form grid (responsive 2-column) */
+.orion-form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6;
+}
+
+/* Form group */
+.orion-form-group {
+  @apply space-y-1.5;
+}
+
+/* Form label */
+.orion-label {
+  @apply block text-sm font-medium text-[var(--orion-text-secondary)];
+}
+
+/* Form required indicator */
+.orion-required {
+  @apply text-red-400 ml-0.5;
+}
+
+/* Form hint text */
+.orion-hint {
+  @apply text-xs text-[var(--orion-text-muted)] mt-1;
+}
+
+/* Form error text */
+.orion-error {
+  @apply text-sm text-red-400 mt-1;
+}
+
+/* ============================================
+   Status Indicators
+   ============================================ */
+
+/* Status dot */
+.status-dot {
+  @apply w-2 h-2 rounded-full flex-shrink-0;
+}
+
+.status-dot-success {
+  @apply bg-[var(--orion-emerald)];
+}
+
+.status-dot-warning {
+  @apply bg-[var(--orion-amber)];
+}
+
+.status-dot-error {
+  @apply bg-red-500;
+}
+
+.status-dot-info {
+  @apply bg-[var(--orion-cyan)];
+}
+
+/* Live indicator pulse */
+.live-indicator {
+  @apply relative inline-flex;
+}
+
+.live-indicator::after {
+  content: '';
+  @apply absolute inset-0 rounded-full animate-ping;
+  background: inherit;
+  opacity: 0.75;
+}
+
+/* ============================================
+   Card Variants
+   ============================================ */
+
+/* KPI Card */
+.orion-kpi-card {
+  @apply glass-card p-4 sm:p-6 flex flex-col gap-2;
+}
+
+.orion-kpi-value {
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold font-mono;
+}
+
+.orion-kpi-label {
+  @apply text-sm text-[var(--orion-text-secondary)];
+}
+
+/* Info Card */
+.orion-info-card {
+  @apply glass-card p-4 sm:p-6 space-y-3;
+}
+
+/* ============================================
+   Data Display Utilities
+   ============================================ */
+
+/* Monospace value (for numbers, codes) */
+.orion-mono {
+  @apply font-mono text-[var(--orion-text-primary)];
+}
+
+/* Currency display */
+.orion-currency {
+  @apply font-mono tabular-nums;
+}
+
+/* Percentage display */
+.orion-percentage {
+  @apply font-mono tabular-nums;
+}
+
+/* Truncate with ellipsis */
+.orion-truncate {
+  @apply truncate max-w-full;
+}
+
+/* ============================================
+   Navigation Utilities
+   ============================================ */
+
+/* Nav link */
+.orion-nav-link {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--orion-text-secondary)]
+         transition-all duration-200 ease-orion-out
+         hover:bg-[var(--orion-bg-elevated)] hover:text-[var(--orion-text-primary)];
+}
+
+.orion-nav-link.active {
+  @apply bg-[var(--orion-bg-elevated)] text-[var(--orion-cyan)]
+         border-l-2 border-[var(--orion-cyan)];
+}
+
+/* Breadcrumb */
+.orion-breadcrumb {
+  @apply flex items-center gap-2 text-sm text-[var(--orion-text-muted)];
+}
+
+.orion-breadcrumb-item {
+  @apply hover:text-[var(--orion-cyan)] transition-colors;
+}
+
+.orion-breadcrumb-separator {
+  @apply text-[var(--orion-border)];
+}

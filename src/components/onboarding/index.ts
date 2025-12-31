@@ -29,17 +29,23 @@ export type {
   // Step 2
   P6ConnectionState,
   P6TestResult,
+  P6ConnectionConfig,
   P6ConnectionFormProps,
   // Step 3
   SAPConnectionState,
   SAPTestResult,
+  SAPConnectionConfig,
   SAPConnectionFormProps,
   // Step 4
   P6Project,
   ProjectSelectionState,
+  SelectedProjectsData,
   ProjectSelectionProps,
   // Step 5
   SyncProgress,
+  SelectedProject,
+  P6ConfigSummary,
+  SAPConfigSummary,
   OnboardingCompleteProps,
   // Shared
   OnboardingStep,
