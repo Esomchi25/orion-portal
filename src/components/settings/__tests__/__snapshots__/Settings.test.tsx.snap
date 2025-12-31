@@ -1,0 +1,352 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot Tests > matches SettingsPage snapshot 1`] = `
+<div>
+  <div
+    class="max-w-4xl mx-auto p-6"
+  >
+    <h1
+      class="text-2xl font-bold text-gray-900 dark:text-white mb-6"
+    >
+      Settings
+    </h1>
+    <div
+      aria-label="Settings sections"
+      class="flex border-b border-gray-200 dark:border-gray-700 mb-6"
+      role="tablist"
+    >
+      <button
+        aria-controls="panel-connections"
+        aria-selected="true"
+        class="px-4 py-3 text-sm font-medium border-b-2 transition-colors border-blue-500 text-blue-600 dark:text-blue-400"
+        role="tab"
+        tabindex="0"
+      >
+        Connections
+      </button>
+      <button
+        aria-controls="panel-sync"
+        aria-selected="false"
+        class="px-4 py-3 text-sm font-medium border-b-2 transition-colors border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+        role="tab"
+        tabindex="-1"
+      >
+        Sync
+      </button>
+      <button
+        aria-controls="panel-preferences"
+        aria-selected="false"
+        class="px-4 py-3 text-sm font-medium border-b-2 transition-colors border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+        role="tab"
+        tabindex="-1"
+      >
+        Preferences
+      </button>
+      <button
+        aria-controls="panel-tenant"
+        aria-selected="false"
+        class="px-4 py-3 text-sm font-medium border-b-2 transition-colors border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+        role="tab"
+        tabindex="-1"
+      >
+        Tenant
+      </button>
+    </div>
+    <div
+      aria-labelledby="tab-connections"
+      class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-6"
+      id="panel-connections"
+      role="tabpanel"
+    >
+      <div
+        class="space-y-8"
+      >
+        <div
+          class="space-y-6"
+        >
+          <div
+            class="flex items-center justify-between"
+          >
+            <h2
+              class="text-lg font-medium text-gray-900 dark:text-white"
+            >
+              P6 Connection
+            </h2>
+            <div
+              class="flex items-center gap-2"
+            >
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+              >
+                Connected
+              </span>
+              <label
+                class="flex items-center gap-2"
+              >
+                <input
+                  aria-label="Enable P6 connection"
+                  checked=""
+                  class="sr-only peer"
+                  role="switch"
+                  type="checkbox"
+                />
+                <div
+                  class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+                />
+              </label>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="p6-wsdl"
+              >
+                WSDL URL
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="p6-wsdl"
+                placeholder="https://p6.example.com/p6ws/services"
+                type="url"
+                value="https://p6.example.com/p6ws/services"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="p6-database"
+              >
+                Database Instance
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="p6-database"
+                placeholder="PRIMAVERA"
+                type="text"
+                value="PRIMAVERA"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="p6-username"
+              >
+                Username
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="p6-username"
+                type="text"
+                value="p6admin"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="p6-password"
+              >
+                Password
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="p6-password"
+                placeholder="••••••••"
+                type="password"
+                value="********"
+              />
+            </div>
+          </div>
+          <p
+            class="text-sm text-gray-500 dark:text-gray-400"
+          >
+            Last tested: 
+            15/03/2024, 10:00:00
+          </p>
+          <div
+            class="flex gap-3"
+          >
+            <button
+              class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50"
+              type="button"
+            >
+              Test Connection
+            </button>
+            <button
+              class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+        <hr
+          class="border-gray-200 dark:border-gray-700"
+        />
+        <div
+          class="space-y-6"
+        >
+          <div
+            class="flex items-center justify-between"
+          >
+            <h2
+              class="text-lg font-medium text-gray-900 dark:text-white"
+            >
+              SAP Connection
+            </h2>
+            <div
+              class="flex items-center gap-2"
+            >
+              <span
+                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+              >
+                Connected
+              </span>
+              <label
+                class="flex items-center gap-2"
+              >
+                <input
+                  aria-label="Enable SAP connection"
+                  checked=""
+                  class="sr-only peer"
+                  role="switch"
+                  type="checkbox"
+                />
+                <div
+                  class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+                />
+              </label>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-host"
+              >
+                Host URL
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-host"
+                placeholder="https://sap.example.com:8443"
+                type="url"
+                value="https://sap.example.com:8443"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-connection-type"
+              >
+                Connection Type
+              </label>
+              <select
+                aria-label="Connection Type"
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-connection-type"
+              >
+                <option
+                  value="hana"
+                >
+                  HANA Direct
+                </option>
+                <option
+                  value="rfc"
+                >
+                  RFC (SAP PyRFC)
+                </option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-client"
+              >
+                Client
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-client"
+                placeholder="100"
+                type="text"
+                value="100"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-system"
+              >
+                System Number
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-system"
+                placeholder="00"
+                type="text"
+                value="00"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-username"
+              >
+                Username
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-username"
+                type="text"
+                value="sapadmin"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                for="sap-password"
+              >
+                Password
+              </label>
+              <input
+                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                id="sap-password"
+                placeholder="••••••••"
+                type="password"
+                value="********"
+              />
+            </div>
+          </div>
+          <p
+            class="text-sm text-gray-500 dark:text-gray-400"
+          >
+            Last tested: 
+            15/03/2024, 10:00:00
+          </p>
+          <div
+            class="flex gap-3"
+          >
+            <button
+              class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-600 disabled:opacity-50"
+              type="button"
+            >
+              Test Connection
+            </button>
+            <button
+              class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,1104 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProjectsDataTable - Snapshot Tests > matches empty state snapshot 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+  >
+    <div
+      class="max-w-7xl mx-auto"
+    >
+      <div
+        class="mb-6"
+      >
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-1 text-slate-600 dark:text-slate-400"
+        >
+          View and manage all P6 projects
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap items-center gap-4 mb-6"
+      >
+        <div
+          class="flex-1 min-w-[200px] max-w-md"
+        >
+          <div
+            class="relative"
+          >
+            <input
+              aria-label="Search projects"
+              class="w-full px-4 py-2 pl-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search projects..."
+              role="searchbox"
+              type="search"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+        <select
+          aria-label="Filter by status"
+          class="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option
+            value=""
+          >
+            All Statuses
+          </option>
+        </select>
+      </div>
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+      >
+        <div
+          class="flex flex-col items-center justify-center py-12 text-center"
+        >
+          <svg
+            class="w-16 h-16 text-slate-300 dark:text-slate-600 mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            />
+          </svg>
+          <p
+            class="text-lg font-medium text-slate-900 dark:text-white mb-1"
+          >
+            No projects found
+          </p>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 mb-4"
+          >
+            Projects will appear here once synced from P6
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProjectsDataTable - Snapshot Tests > matches error state snapshot 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+  >
+    <div
+      class="max-w-7xl mx-auto"
+    >
+      <div
+        class="mb-6"
+      >
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-1 text-slate-600 dark:text-slate-400"
+        >
+          View and manage all P6 projects
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap items-center gap-4 mb-6"
+      >
+        <div
+          class="flex-1 min-w-[200px] max-w-md"
+        >
+          <div
+            class="relative"
+          >
+            <input
+              aria-label="Search projects"
+              class="w-full px-4 py-2 pl-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search projects..."
+              role="searchbox"
+              type="search"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+        <select
+          aria-label="Filter by status"
+          class="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option
+            value=""
+          >
+            All Statuses
+          </option>
+        </select>
+      </div>
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+      >
+        <div
+          class="flex flex-col items-center justify-center py-12 text-center"
+        >
+          <svg
+            class="w-16 h-16 text-red-400 mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1"
+            />
+          </svg>
+          <p
+            class="text-lg font-medium text-slate-900 dark:text-white mb-1"
+          >
+            Failed to load projects
+          </p>
+          <p
+            class="text-sm text-slate-600 dark:text-slate-400 mb-4"
+          >
+            There was an error loading the project data. Please try again.
+          </p>
+          <button
+            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProjectsDataTable - Snapshot Tests > matches loaded state snapshot 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+  >
+    <div
+      class="max-w-7xl mx-auto"
+    >
+      <div
+        class="mb-6"
+      >
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-1 text-slate-600 dark:text-slate-400"
+        >
+          View and manage all P6 projects
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap items-center gap-4 mb-6"
+      >
+        <div
+          class="flex-1 min-w-[200px] max-w-md"
+        >
+          <div
+            class="relative"
+          >
+            <input
+              aria-label="Search projects"
+              class="w-full px-4 py-2 pl-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search projects..."
+              role="searchbox"
+              type="search"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+        <select
+          aria-label="Filter by status"
+          class="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option
+            value=""
+          >
+            All Statuses
+          </option>
+          <option
+            value="Active"
+          >
+            Active
+             (
+            4
+            )
+          </option>
+          <option
+            value="Inactive"
+          >
+            Inactive
+             (
+            1
+            )
+          </option>
+        </select>
+      </div>
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+      >
+        <div
+          class="overflow-x-auto"
+        >
+          <table
+            aria-label="Projects data table"
+            class="w-full"
+            role="table"
+          >
+            <thead
+              class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700"
+            >
+              <tr>
+                <th
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  Project ID
+                </th>
+                <th
+                  aria-sort="ascending"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    Name
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-100 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  aria-sort="none"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    Status
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-40 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  aria-sort="none"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    Progress
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-40 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  aria-sort="none"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    SPI
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-40 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  aria-sort="none"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    CPI
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-40 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  aria-sort="none"
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  <button
+                    class="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                    tabindex="0"
+                  >
+                    Planned Finish
+                    <svg
+                      class="w-4 h-4 transition-transform opacity-40 "
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M5 15l7-7 7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </button>
+                </th>
+                <th
+                  class="px-4 py-3 text-left text-sm font-semibold text-slate-900 dark:text-white"
+                  role="columnheader"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer"
+              >
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  PROJ-001
+                </td>
+                <td
+                  class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  ACME Refinery Expansion
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                  >
+                    Active
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <div
+                      class="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-amber-500"
+                        style="width: 35%;"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-slate-600 dark:text-slate-400 min-w-[3ch]"
+                    >
+                      35
+                      %
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-amber-600 dark:text-amber-400"
+                  >
+                    0.92
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-amber-600 dark:text-amber-400"
+                  >
+                    0.88
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  30/06/2026
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <button
+                      aria-label="View WBS"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      WBS
+                    </button>
+                    <button
+                      aria-label="View Gantt"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      Gantt
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer"
+              >
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  PROJ-002
+                </td>
+                <td
+                  class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  Offshore Platform Alpha
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                  >
+                    Active
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <div
+                      class="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-blue-500"
+                        style="width: 68%;"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-slate-600 dark:text-slate-400 min-w-[3ch]"
+                    >
+                      68
+                      %
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-green-600 dark:text-green-400"
+                  >
+                    1.05
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-green-600 dark:text-green-400"
+                  >
+                    0.98
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  31/12/2025
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <button
+                      aria-label="View WBS"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      WBS
+                    </button>
+                    <button
+                      aria-label="View Gantt"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      Gantt
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer"
+              >
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  PROJ-003
+                </td>
+                <td
+                  class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  Pipeline Network Beta
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded-full bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-400"
+                  >
+                    Inactive
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <div
+                      class="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-amber-500"
+                        style="width: 12%;"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-slate-600 dark:text-slate-400 min-w-[3ch]"
+                    >
+                      12
+                      %
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-red-600 dark:text-red-400"
+                  >
+                    0.72
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-red-600 dark:text-red-400"
+                  >
+                    0.75
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  15/03/2027
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <button
+                      aria-label="View WBS"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      WBS
+                    </button>
+                    <button
+                      aria-label="View Gantt"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      Gantt
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer"
+              >
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  PROJ-004
+                </td>
+                <td
+                  class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  Gas Processing Facility
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                  >
+                    Active
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <div
+                      class="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-green-500"
+                        style="width: 89%;"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-slate-600 dark:text-slate-400 min-w-[3ch]"
+                    >
+                      89
+                      %
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-green-600 dark:text-green-400"
+                  >
+                    1.12
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-green-600 dark:text-green-400"
+                  >
+                    1.05
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  31/03/2025
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <button
+                      aria-label="View WBS"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      WBS
+                    </button>
+                    <button
+                      aria-label="View Gantt"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      Gantt
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer"
+              >
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  PROJ-005
+                </td>
+                <td
+                  class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  Terminal Upgrade Project
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <span
+                    class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                  >
+                    Active
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <div
+                      class="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                    >
+                      <div
+                        class="h-full rounded-full bg-blue-500"
+                        style="width: 50%;"
+                      />
+                    </div>
+                    <span
+                      class="text-sm text-slate-600 dark:text-slate-400 min-w-[3ch]"
+                    >
+                      50
+                      %
+                    </span>
+                  </div>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-green-600 dark:text-green-400"
+                  >
+                    0.95
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm"
+                >
+                  <span
+                    class="font-medium text-amber-600 dark:text-amber-400"
+                  >
+                    0.92
+                  </span>
+                </td>
+                <td
+                  class="px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  30/09/2025
+                </td>
+                <td
+                  class="px-4 py-3"
+                >
+                  <div
+                    class="flex items-center gap-2"
+                  >
+                    <button
+                      aria-label="View WBS"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      WBS
+                    </button>
+                    <button
+                      aria-label="View Gantt"
+                      class="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                    >
+                      Gantt
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          class="flex items-center justify-between px-4 py-3 border-t border-slate-200 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-4"
+          >
+            <label
+              class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"
+            >
+              <span>
+                Rows per page:
+              </span>
+              <select
+                aria-label="Rows per page"
+                class="px-2 py-1 border border-slate-300 dark:border-slate-600 rounded bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option
+                  value="10"
+                >
+                  10
+                </option>
+                <option
+                  value="20"
+                >
+                  20
+                </option>
+                <option
+                  value="50"
+                >
+                  50
+                </option>
+                <option
+                  value="100"
+                >
+                  100
+                </option>
+              </select>
+            </label>
+            <span
+              class="text-sm text-slate-600 dark:text-slate-400"
+            >
+              Showing 
+              1
+               - 
+              5
+               of 
+              5
+            </span>
+          </div>
+          <div
+            aria-label="Pagination"
+            class="flex items-center gap-2"
+          >
+            <button
+              aria-label="Previous page"
+              class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled=""
+              tabindex="0"
+            >
+              Previous
+            </button>
+            <span
+              class="text-sm text-slate-600 dark:text-slate-400"
+            >
+              Page 
+              1
+               of 
+              1
+            </span>
+            <button
+              aria-label="Next page"
+              class="px-3 py-1 border border-slate-300 dark:border-slate-600 rounded text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled=""
+              tabindex="0"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ProjectsDataTable - Snapshot Tests > matches loading state snapshot 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+  >
+    <div
+      class="max-w-7xl mx-auto"
+    >
+      <div
+        class="mb-6"
+      >
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white"
+        >
+          Projects
+        </h1>
+        <p
+          class="mt-1 text-slate-600 dark:text-slate-400"
+        >
+          View and manage all P6 projects
+        </p>
+      </div>
+      <div
+        class="sr-only"
+        role="status"
+      >
+        Loading projects...
+      </div>
+      <div
+        class="flex flex-wrap items-center gap-4 mb-6"
+      >
+        <div
+          class="flex-1 min-w-[200px] max-w-md"
+        >
+          <div
+            class="relative"
+          >
+            <input
+              aria-label="Search projects"
+              class="w-full px-4 py-2 pl-10 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search projects..."
+              role="searchbox"
+              type="search"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+        <select
+          aria-label="Filter by status"
+          class="px-3 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option
+            value=""
+          >
+            All Statuses
+          </option>
+        </select>
+      </div>
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+      >
+        <div
+          class="p-6"
+        >
+          <div
+            class="animate-pulse"
+            data-testid="table-skeleton"
+          >
+            <div
+              class="h-10 bg-slate-200 dark:bg-slate-700 rounded mb-4"
+            />
+            <div
+              class="h-16 bg-slate-100 dark:bg-slate-800 rounded mb-2"
+            />
+            <div
+              class="h-16 bg-slate-100 dark:bg-slate-800 rounded mb-2"
+            />
+            <div
+              class="h-16 bg-slate-100 dark:bg-slate-800 rounded mb-2"
+            />
+            <div
+              class="h-16 bg-slate-100 dark:bg-slate-800 rounded mb-2"
+            />
+            <div
+              class="h-16 bg-slate-100 dark:bg-slate-800 rounded mb-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

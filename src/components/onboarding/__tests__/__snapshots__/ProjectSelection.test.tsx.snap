@@ -1,0 +1,1007 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProjectSelection - Snapshot Tests > matches snapshot for loading state 1`] = `
+<div>
+  <main
+    aria-label="Project Selection"
+    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-8"
+    role="main"
+  >
+    <div
+      aria-hidden="true"
+      class="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full"
+      data-testid="loading-spinner"
+    />
+    <p
+      class="mt-4 text-slate-600 dark:text-slate-400"
+    >
+      Loading projects from P6...
+    </p>
+  </main>
+</div>
+`;
+
+exports[`ProjectSelection - Snapshot Tests > matches snapshot with projects loaded 1`] = `
+<div>
+  <main
+    aria-label="Project Selection"
+    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col p-8"
+    role="main"
+  >
+    <div
+      class="max-w-4xl w-full mx-auto"
+    >
+      <div
+        class="mb-8 text-center"
+      >
+        <p
+          class="text-sm text-slate-500 dark:text-slate-400"
+        >
+          <span>
+            Step 4
+          </span>
+           
+          <span>
+            of 5
+          </span>
+        </p>
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white mt-2"
+        >
+          Select Projects to Sync
+        </h1>
+        <p
+          class="mt-2 text-slate-600 dark:text-slate-400"
+        >
+          Choose which P6 projects to integrate with SAP
+        </p>
+      </div>
+      <div
+        class="mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between"
+      >
+        <div
+          class="relative flex-1 max-w-md"
+        >
+          <label
+            class="sr-only"
+            for="project-search"
+          >
+            Search projects
+          </label>
+          <input
+            class="
+                w-full pl-10 pr-10 py-2 rounded-lg border
+                border-slate-300 dark:border-slate-600
+                bg-white dark:bg-slate-800
+                text-slate-900 dark:text-white
+                focus:outline-none focus:ring-2 focus:ring-blue-200
+              "
+            id="project-search"
+            placeholder="Search by name or code..."
+            type="text"
+            value=""
+          />
+          <svg
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex gap-2"
+        >
+          <button
+            class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          >
+            Select All
+          </button>
+          <button
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-700 dark:text-slate-400"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+      <div
+        class="mb-4 flex justify-between text-sm text-slate-500 dark:text-slate-400"
+      >
+        <span>
+          4
+           projects
+        </span>
+        <span>
+          0
+           selected
+        </span>
+      </div>
+      <div
+        aria-label="Available projects"
+        aria-multiselectable="true"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
+        role="listbox"
+      >
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-001"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                ACME Refinery Expansion
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                ACME-REF-001
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+            >
+              Active
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                35
+                %
+              </span>
+            </div>
+            <div
+              aria-label="35% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="35"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-amber-500"
+                style="width: 35%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jan 15, 2024
+            </span>
+            <span>
+              End: 
+              Jun 30, 2026
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-002"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Offshore Platform Alpha
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                OFF-PLT-A
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+            >
+              Active
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                68
+                %
+              </span>
+            </div>
+            <div
+              aria-label="68% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="68"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-blue-500"
+                style="width: 68%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jun 1, 2023
+            </span>
+            <span>
+              End: 
+              Dec 31, 2025
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-003"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Pipeline Network Phase 2
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                PIPE-NET-2
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+            >
+              Planned
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+            <div
+              aria-label="0% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="0"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-amber-500"
+                style="width: 0%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Mar 1, 2024
+            </span>
+            <span>
+              End: 
+              Sep 30, 2025
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-004"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Legacy Terminal Upgrade
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                LEG-TERM
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400"
+            >
+              Complete
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                100
+                %
+              </span>
+            </div>
+            <div
+              aria-label="100% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="100"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-green-500"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jan 1, 2022
+            </span>
+            <span>
+              End: 
+              Jan 31, 2024
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex gap-4"
+      >
+        <button
+          class="
+              flex-1 px-6 py-3 rounded-lg font-medium
+              bg-white dark:bg-slate-800
+              text-slate-700 dark:text-slate-300
+              border border-slate-300 dark:border-slate-600
+              hover:bg-slate-50 dark:hover:bg-slate-700
+              focus:outline-none focus:ring-2 focus:ring-blue-200
+              transition-all duration-200
+            "
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="
+              flex-1 px-6 py-3 rounded-lg font-medium
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-blue-200
+              bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed
+            "
+          disabled=""
+          type="button"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`ProjectSelection - Snapshot Tests > matches snapshot with projects selected 1`] = `
+<div>
+  <main
+    aria-label="Project Selection"
+    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col p-8"
+    role="main"
+  >
+    <div
+      class="max-w-4xl w-full mx-auto"
+    >
+      <div
+        class="mb-8 text-center"
+      >
+        <p
+          class="text-sm text-slate-500 dark:text-slate-400"
+        >
+          <span>
+            Step 4
+          </span>
+           
+          <span>
+            of 5
+          </span>
+        </p>
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white mt-2"
+        >
+          Select Projects to Sync
+        </h1>
+        <p
+          class="mt-2 text-slate-600 dark:text-slate-400"
+        >
+          Choose which P6 projects to integrate with SAP
+        </p>
+      </div>
+      <div
+        class="mb-6 flex flex-col sm:flex-row gap-4 items-center justify-between"
+      >
+        <div
+          class="relative flex-1 max-w-md"
+        >
+          <label
+            class="sr-only"
+            for="project-search"
+          >
+            Search projects
+          </label>
+          <input
+            class="
+                w-full pl-10 pr-10 py-2 rounded-lg border
+                border-slate-300 dark:border-slate-600
+                bg-white dark:bg-slate-800
+                text-slate-900 dark:text-white
+                focus:outline-none focus:ring-2 focus:ring-blue-200
+              "
+            id="project-search"
+            placeholder="Search by name or code..."
+            type="text"
+            value=""
+          />
+          <svg
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex gap-2"
+        >
+          <button
+            class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          >
+            Select All
+          </button>
+          <button
+            class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-700 dark:text-slate-400"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+      <div
+        class="mb-4 flex justify-between text-sm text-slate-500 dark:text-slate-400"
+      >
+        <span>
+          4
+           projects
+        </span>
+        <span>
+          1
+           selected
+        </span>
+      </div>
+      <div
+        aria-label="Available projects"
+        aria-multiselectable="true"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
+        role="listbox"
+      >
+        <div
+          aria-selected="true"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-blue-500 bg-blue-50 dark:bg-blue-900/20
+      "
+          data-selected="true"
+          data-testid="project-proj-001"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                ACME Refinery Expansion
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                ACME-REF-001
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+            >
+              Active
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                35
+                %
+              </span>
+            </div>
+            <div
+              aria-label="35% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="35"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-amber-500"
+                style="width: 35%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jan 15, 2024
+            </span>
+            <span>
+              End: 
+              Jun 30, 2026
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-blue-500 bg-blue-500
+          "
+            >
+              <svg
+                class="w-3 h-3 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-002"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Offshore Platform Alpha
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                OFF-PLT-A
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+            >
+              Active
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                68
+                %
+              </span>
+            </div>
+            <div
+              aria-label="68% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="68"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-blue-500"
+                style="width: 68%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jun 1, 2023
+            </span>
+            <span>
+              End: 
+              Dec 31, 2025
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-003"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Pipeline Network Phase 2
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                PIPE-NET-2
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+            >
+              Planned
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+            <div
+              aria-label="0% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="0"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-amber-500"
+                style="width: 0%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Mar 1, 2024
+            </span>
+            <span>
+              End: 
+              Sep 30, 2025
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        p-4 rounded-lg border-2 cursor-pointer
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-blue-400
+        border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600
+      "
+          data-selected="false"
+          data-testid="project-proj-004"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="flex items-start justify-between mb-2"
+          >
+            <div
+              class="flex-1"
+            >
+              <p
+                class="font-semibold text-slate-900 dark:text-white"
+              >
+                Legacy Terminal Upgrade
+              </p>
+              <p
+                class="text-sm text-slate-500 dark:text-slate-400"
+              >
+                LEG-TERM
+              </p>
+            </div>
+            <span
+              class="px-2 py-1 text-xs font-medium rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400"
+            >
+              Complete
+            </span>
+          </div>
+          <div
+            class="mt-3"
+          >
+            <div
+              class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mb-1"
+            >
+              <span>
+                Progress
+              </span>
+              <span>
+                100
+                %
+              </span>
+            </div>
+            <div
+              aria-label="100% complete"
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow="100"
+              class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
+              role="progressbar"
+            >
+              <div
+                class="h-2 rounded-full transition-all duration-300 bg-green-500"
+                style="width: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="mt-3 flex justify-between text-xs text-slate-500 dark:text-slate-400"
+          >
+            <span>
+              Start: 
+              Jan 1, 2022
+            </span>
+            <span>
+              End: 
+              Jan 31, 2024
+            </span>
+          </div>
+          <div
+            class="absolute top-3 right-3"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center
+            border-slate-300 dark:border-slate-600
+          "
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex gap-4"
+      >
+        <button
+          class="
+              flex-1 px-6 py-3 rounded-lg font-medium
+              bg-white dark:bg-slate-800
+              text-slate-700 dark:text-slate-300
+              border border-slate-300 dark:border-slate-600
+              hover:bg-slate-50 dark:hover:bg-slate-700
+              focus:outline-none focus:ring-2 focus:ring-blue-200
+              transition-all duration-200
+            "
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="
+              flex-1 px-6 py-3 rounded-lg font-medium
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-blue-200
+              bg-blue-600 hover:bg-blue-700 text-white
+            "
+          type="button"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;

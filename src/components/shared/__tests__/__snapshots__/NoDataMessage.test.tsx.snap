@@ -1,0 +1,111 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NoDataMessage > Snapshot Tests > matches snapshot for ProjectService 1`] = `
+<div>
+  <div
+    aria-label="No data: No projects found. Please configure P6 connection and ensure projects are accessible."
+    class="flex flex-col items-center justify-center py-12 text-center"
+    data-testid="no-data-ProjectService"
+    role="status"
+  >
+    <svg
+      class="w-12 h-12 text-slate-300 dark:text-slate-600"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+    <p
+      class="mt-4 text-lg font-medium text-slate-900 dark:text-white"
+    >
+      No Data Available
+    </p>
+    <p
+      class="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md"
+    >
+      No projects found. Please configure P6 connection and ensure projects are accessible.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`NoDataMessage > Snapshot Tests > matches snapshot in compact mode 1`] = `
+<div>
+  <div
+    aria-label="No data: No activities found. This project may not have activities defined in P6."
+    class="flex flex-col items-center justify-center py-6 text-center"
+    data-testid="no-data-ActivityService"
+    role="status"
+  >
+    <svg
+      class="w-12 h-12 text-slate-300 dark:text-slate-600"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+    <p
+      class="mt-4 text-lg font-medium text-slate-900 dark:text-white"
+    >
+      No Data Available
+    </p>
+    <p
+      class="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md"
+    >
+      No activities found. This project may not have activities defined in P6.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`NoDataMessage > Snapshot Tests > matches snapshot with action button 1`] = `
+<div>
+  <div
+    aria-label="No data: No WBS elements found. This project may not have a work breakdown structure defined."
+    class="flex flex-col items-center justify-center py-12 text-center"
+    data-testid="no-data-WBSService"
+    role="status"
+  >
+    <svg
+      class="w-12 h-12 text-slate-300 dark:text-slate-600"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      />
+    </svg>
+    <p
+      class="mt-4 text-lg font-medium text-slate-900 dark:text-white"
+    >
+      No Data Available
+    </p>
+    <p
+      class="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md"
+    >
+      No WBS elements found. This project may not have a work breakdown structure defined.
+    </p>
+    <button
+      class="mt-4 px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+    >
+      Retry
+    </button>
+  </div>
+</div>
+`;

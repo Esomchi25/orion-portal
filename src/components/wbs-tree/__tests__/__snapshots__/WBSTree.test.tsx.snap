@@ -1,0 +1,603 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot Tests > matches WBSBreadcrumb snapshot 1`] = `
+<div>
+  <nav
+    aria-label="WBS Breadcrumb"
+    class="flex"
+  >
+    <ol
+      class="flex items-center gap-2"
+      role="list"
+    >
+      <li
+        class="flex items-center gap-2"
+      >
+        <button
+          class="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+          role="button"
+          type="button"
+        >
+          Root
+        </button>
+      </li>
+      <li
+        aria-current="location"
+        class="flex items-center gap-2"
+      >
+        <svg
+          class="w-4 h-4 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 5l7 7-7 7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="text-sm font-medium text-gray-900 dark:text-gray-100"
+        >
+          Child
+        </span>
+      </li>
+    </ol>
+  </nav>
+</div>
+`;
+
+exports[`Snapshot Tests > matches WBSDetailPanel snapshot 1`] = `
+<div>
+  <div
+    aria-labelledby="wbs-detail-title-1002"
+    aria-modal="true"
+    class="fixed inset-y-0 right-0 w-96 bg-white dark:bg-gray-900 shadow-xl border-l border-gray-200 dark:border-gray-700 z-50 overflow-y-auto"
+    role="dialog"
+  >
+    <div
+      class="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-4"
+    >
+      <div
+        class="flex items-center justify-between"
+      >
+        <h2
+          class="text-lg font-semibold text-gray-900 dark:text-gray-100"
+          id="wbs-detail-title-1002"
+        >
+          WBS Details
+        </h2>
+        <button
+          aria-label="Close"
+          class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+          type="button"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 18L18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="p-4"
+    >
+      <div
+        class="space-y-6"
+      >
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100"
+          >
+            Engineering
+          </h3>
+          <p
+            class="text-sm text-gray-500 dark:text-gray-400"
+          >
+            1.1
+          </p>
+          <div
+            class="mt-2 flex items-center gap-2"
+          >
+            <span
+              class="text-2xl font-bold text-blue-600"
+            >
+              60%
+            </span>
+            <span
+              class="text-sm text-gray-500"
+            >
+              complete
+            </span>
+          </div>
+        </div>
+        <div>
+          <h4
+            class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            Schedule
+          </h4>
+          <div
+            class="grid grid-cols-2 gap-3"
+          >
+            <div>
+              <p
+                class="text-xs text-gray-500 dark:text-gray-400"
+              >
+                Planned Start
+              </p>
+              <p
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                Jan 15, 2024
+              </p>
+            </div>
+            <div>
+              <p
+                class="text-xs text-gray-500 dark:text-gray-400"
+              >
+                Planned Finish
+              </p>
+              <p
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                Dec 31, 2024
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4
+            class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            P6 Costs
+          </h4>
+          <div
+            class="space-y-2"
+          >
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                Budget at Completion
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $500,000
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                Actual Total Cost
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $300,000
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                Remaining Total Cost
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $180,000
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4
+            class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            SAP Mapping
+          </h4>
+          <div
+            class="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 space-y-2"
+          >
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400"
+              >
+                POSID
+              </span>
+              <span
+                class="text-sm font-mono font-medium text-gray-900 dark:text-gray-100"
+              >
+                P-ENG-001
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400"
+              >
+                Description
+              </span>
+              <span
+                class="text-sm text-gray-900 dark:text-gray-100"
+              >
+                Engineering Phase
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-600 dark:text-gray-400"
+              >
+                Confidence
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                95%
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4
+            class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
+            SAP Financials
+          </h4>
+          <div
+            class="space-y-2"
+          >
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                SAP Budget
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $520,000
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                SAP Actuals
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $295,000
+              </span>
+            </div>
+            <div
+              class="flex justify-between"
+            >
+              <span
+                class="text-sm text-gray-500 dark:text-gray-400"
+              >
+                SAP Commitments
+              </span>
+              <span
+                class="text-sm font-medium text-gray-900 dark:text-gray-100"
+              >
+                $85,000
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex gap-4"
+        >
+          <div
+            class="flex-1 bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center"
+          >
+            <p
+              class="text-2xl font-bold text-gray-900 dark:text-gray-100"
+            >
+              25
+            </p>
+            <p
+              class="text-xs text-gray-500 dark:text-gray-400"
+            >
+              Activities
+            </p>
+          </div>
+          <div
+            class="flex-1 bg-gray-50 dark:bg-gray-800 rounded-lg p-3 text-center"
+          >
+            <p
+              class="text-2xl font-bold text-gray-900 dark:text-gray-100"
+            >
+              12
+            </p>
+            <p
+              class="text-xs text-gray-500 dark:text-gray-400"
+            >
+              Resources
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex gap-2"
+        >
+          <button
+            aria-label="View Activities"
+            class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium"
+            type="button"
+          >
+            View Activities
+          </button>
+          <button
+            aria-label="View in SAP"
+            class="flex-1 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 text-sm font-medium"
+            type="button"
+          >
+            View in SAP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Snapshot Tests > matches WBSTree snapshot 1`] = `
+<div>
+  <ul
+    aria-label="WBS Tree"
+    class="list-none"
+    role="tree"
+  >
+    <li
+      aria-expanded="true"
+      aria-level="1"
+      aria-selected="false"
+      class="
+        relative flex flex-col
+        
+      "
+      role="treeitem"
+      tabindex="-1"
+    >
+      <div
+        class="
+          flex items-center gap-2 py-2 px-3 cursor-pointer
+          hover:bg-gray-50 dark:hover:bg-gray-800
+          
+        "
+        style="padding-left: 12px;"
+      >
+        <button
+          aria-label="Collapse"
+          class="w-5 h-5 flex items-center justify-center text-gray-500 hover:text-gray-700"
+          type="button"
+        >
+          <svg
+            class="w-4 h-4 transition-transform rotate-90"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 5l7 7-7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <span
+          class="text-xs font-mono text-gray-500 dark:text-gray-400 min-w-[60px]"
+        >
+          1
+        </span>
+        <span
+          class="flex-1 text-sm font-medium text-gray-900 dark:text-gray-100 truncate"
+        >
+          Project Root
+        </span>
+        <span
+          class="text-xs font-medium text-gray-600 dark:text-gray-300 min-w-[40px] text-right"
+        >
+          45%
+        </span>
+        <span
+          class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded"
+        >
+          50
+           activities
+        </span>
+        <span
+          class="w-4 h-4 flex items-center justify-center"
+          title="Mapped to SAP"
+        >
+          <svg
+            class="w-4 h-4 text-green-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+      <ul
+        class="list-none"
+        role="group"
+      >
+        <li
+          aria-expanded="false"
+          aria-level="2"
+          aria-selected="false"
+          class="
+        relative flex flex-col
+        
+      "
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="
+          flex items-center gap-2 py-2 px-3 cursor-pointer
+          hover:bg-gray-50 dark:hover:bg-gray-800
+          
+        "
+            style="padding-left: 36px;"
+          >
+            <button
+              aria-label="Expand"
+              class="w-5 h-5 flex items-center justify-center text-gray-500 hover:text-gray-700"
+              type="button"
+            >
+              <svg
+                class="w-4 h-4 transition-transform "
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 5l7 7-7 7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <span
+              class="text-xs font-mono text-gray-500 dark:text-gray-400 min-w-[60px]"
+            >
+              1.1
+            </span>
+            <span
+              class="flex-1 text-sm font-medium text-gray-900 dark:text-gray-100 truncate"
+            >
+              Engineering
+            </span>
+            <span
+              class="text-xs font-medium text-gray-600 dark:text-gray-300 min-w-[40px] text-right"
+            >
+              60%
+            </span>
+            <span
+              class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded"
+            >
+              25
+               activities
+            </span>
+            <span
+              class="w-4 h-4 flex items-center justify-center"
+              title="Mapped to SAP"
+            >
+              <svg
+                class="w-4 h-4 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+        </li>
+        <li
+          aria-level="2"
+          aria-selected="false"
+          class="
+        relative flex flex-col
+        
+      "
+          role="treeitem"
+          tabindex="-1"
+        >
+          <div
+            class="
+          flex items-center gap-2 py-2 px-3 cursor-pointer
+          hover:bg-gray-50 dark:hover:bg-gray-800
+          
+        "
+            style="padding-left: 36px;"
+          >
+            <span
+              class="w-5"
+            />
+            <span
+              class="text-xs font-mono text-gray-500 dark:text-gray-400 min-w-[60px]"
+            >
+              1.2
+            </span>
+            <span
+              class="flex-1 text-sm font-medium text-gray-900 dark:text-gray-100 truncate"
+            >
+              Procurement
+            </span>
+            <span
+              class="text-xs font-medium text-gray-600 dark:text-gray-300 min-w-[40px] text-right"
+            >
+              30%
+            </span>
+            <span
+              class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded"
+            >
+              25
+               activities
+            </span>
+            <span
+              class="w-4 h-4 flex items-center justify-center"
+              title="Mapped to SAP"
+            >
+              <svg
+                class="w-4 h-4 text-green-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;

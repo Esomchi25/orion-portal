@@ -1,0 +1,331 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OnboardingComplete - Snapshot Tests > matches snapshot for completion state 1`] = `
+<div>
+  <main
+    aria-label="Onboarding Complete"
+    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-8"
+    role="main"
+  >
+    <div
+      class="max-w-lg w-full text-center"
+    >
+      <div
+        class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4"
+      >
+        <svg
+          class="w-8 h-8 text-green-600 dark:text-green-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5 13l4 4L19 7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div
+        role="alert"
+      >
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
+        >
+          Setup Complete!
+        </h1>
+        <p
+          class="text-slate-600 dark:text-slate-400 mb-8"
+        >
+          Your ORION portal is ready. 
+          2
+           projects are now connected and syncing.
+        </p>
+      </div>
+      <button
+        class="
+              w-full px-8 py-4 rounded-lg font-semibold text-lg
+              bg-blue-600 hover:bg-blue-700 text-white
+              focus:outline-none focus:ring-4 focus:ring-blue-200
+              transition-all duration-200
+            "
+        type="button"
+      >
+        Go to Dashboard
+      </button>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial state 1`] = `
+<div>
+  <main
+    aria-label="Complete Onboarding"
+    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col p-8"
+    role="main"
+  >
+    <div
+      class="max-w-2xl w-full mx-auto"
+    >
+      <div
+        class="mb-8 text-center"
+      >
+        <p
+          class="text-sm text-slate-500 dark:text-slate-400"
+        >
+          <span>
+            Step 5
+          </span>
+           
+          <span>
+            of 5
+          </span>
+        </p>
+        <h1
+          class="text-2xl font-bold text-slate-900 dark:text-white mt-2"
+        >
+          Review & Complete
+        </h1>
+        <p
+          class="mt-2 text-slate-600 dark:text-slate-400"
+        >
+          Review your configuration and complete the setup
+        </p>
+      </div>
+      <div
+        class="space-y-4 mb-8"
+      >
+        <div
+          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+        >
+          <div
+            class="flex items-center gap-3 mb-3"
+          >
+            <div
+              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <p
+              class="font-semibold text-slate-900 dark:text-white"
+            >
+              P6 Connection
+            </p>
+          </div>
+          <div
+            class="text-sm text-slate-600 dark:text-slate-400"
+          >
+            <p
+              class="mb-1"
+            >
+              <span
+                class="text-slate-500"
+              >
+                Server: 
+              </span>
+              <span
+                class="font-medium text-slate-900 dark:text-white"
+              >
+                p6.acme-epc.com
+              </span>
+            </p>
+            <p>
+              <span
+                class="text-slate-500"
+              >
+                Database: 
+              </span>
+              <span
+                class="font-medium text-slate-900 dark:text-white"
+              >
+                PMDB
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+        >
+          <div
+            class="flex items-center gap-3 mb-3"
+          >
+            <div
+              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <p
+              class="font-semibold text-slate-900 dark:text-white"
+            >
+              SAP Connection
+            </p>
+          </div>
+          <div
+            class="text-sm text-slate-600 dark:text-slate-400"
+          >
+            <p
+              class="mb-1"
+            >
+              <span
+                class="text-slate-500"
+              >
+                Server: 
+              </span>
+              <span
+                class="font-medium text-slate-900 dark:text-white"
+              >
+                hana.acme-epc.com:30015
+              </span>
+            </p>
+            <p>
+              <span
+                class="text-slate-500"
+              >
+                System: 
+              </span>
+              <span
+                class="font-medium text-slate-900 dark:text-white"
+              >
+                PRD
+                 / Client 
+                100
+              </span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+        >
+          <div
+            class="flex items-center gap-3 mb-3"
+          >
+            <div
+              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <p
+              class="font-semibold text-slate-900 dark:text-white"
+            >
+              Selected Projects
+            </p>
+          </div>
+          <div
+            class="text-sm text-slate-600 dark:text-slate-400"
+          >
+            <p
+              class="mb-2 font-medium text-slate-900 dark:text-white"
+            >
+              2
+               projects selected
+            </p>
+            <ul
+              class="space-y-1"
+            >
+              <li
+                class="flex items-center gap-2"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-blue-500"
+                />
+                <span>
+                  ACME Refinery Expansion
+                </span>
+                <span
+                  class="text-slate-400"
+                >
+                  (
+                  ACME-REF-001
+                  )
+                </span>
+              </li>
+              <li
+                class="flex items-center gap-2"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-blue-500"
+                />
+                <span>
+                  Offshore Platform Alpha
+                </span>
+                <span
+                  class="text-slate-400"
+                >
+                  (
+                  OFF-PLT-A
+                  )
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex gap-4"
+      >
+        <button
+          class="
+                  flex-1 px-6 py-3 rounded-lg font-medium
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-blue-200
+                  bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700
+                "
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="
+                  flex-1 px-6 py-3 rounded-lg font-medium
+                  inline-flex items-center justify-center gap-2
+                  transition-all duration-200
+                  focus:outline-none focus:ring-2 focus:ring-blue-200
+                  bg-blue-600 hover:bg-blue-700 text-white
+                "
+          type="button"
+        >
+          Complete Setup
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;
