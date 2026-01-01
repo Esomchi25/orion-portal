@@ -9,17 +9,12 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
 // Define public routes that don't require authentication
-// NOTE: Dashboard routes are temporarily public for demo/testing
 const isPublicRoute = createRouteMatcher([
   '/sign-in(.*)',
   '/sign-up(.*)',
   '/onboarding(.*)',
   '/api/health',
   '/api/v1/health',
-  // Dashboard routes - TEMP: Allow public access for Oilserv demo
-  '/',           // Portfolio Overview
-  '/cfo(.*)',    // CFO Insights
-  '/project(.*)', // Project Dashboard & EVM
 ]);
 
 export default clerkMiddleware(async (auth, request) => {
