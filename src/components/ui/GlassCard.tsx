@@ -62,7 +62,7 @@ export function GlassCard({
   return (
     <Component
       onClick={onClick}
-      style={style}
+      style={{ ...style, maxWidth: '100%', overflow: 'hidden' }}
       className={`
         ${variantStyles[variant]}
         ${paddingStyles[padding]}

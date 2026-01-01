@@ -4,19 +4,1687 @@ exports[`ProjectSelection - Snapshot Tests > matches snapshot for loading state 
 <div>
   <main
     aria-label="Project Selection"
-    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      aria-hidden="true"
-      class="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full"
-      data-testid="loading-spinner"
-    />
-    <p
-      class="mt-4 text-slate-600 dark:text-slate-400"
+      class="text-center"
     >
-      Loading projects from P6...
-    </p>
+      <div
+        aria-label="Loading..."
+        class="
+        w-8 h-8 border-2
+        rounded-full
+        border-[var(--orion-border)]
+        border-[var(--orion-cyan)]
+        border-t-transparent
+        animate-spin
+      "
+        data-testid="loading-spinner"
+        role="status"
+        style="border-top-color: transparent;"
+      >
+        <span
+          class="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+      <p
+        class="mt-4 text-[var(--orion-text-secondary)] font-mono"
+      >
+        Loading projects from P6...
+      </p>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`ProjectSelection - Snapshot Tests > matches snapshot with projects loaded 1`] = `
+<div>
+  <main
+    aria-label="Project Selection"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
+    role="main"
+  >
+    <div
+      class="w-full max-w-5xl mx-auto"
+    >
+      <div
+        class="mb-6 sm:mb-8 animate-fade-in"
+      >
+        <nav
+          aria-label="Progress"
+          style="width: 100%;"
+        >
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
+          >
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
+            >
+              <div
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
+              >
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  4
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 75%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    P6
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    SAP
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      4
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
+                  >
+                    Projects
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
+          <p
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+          >
+            Step 
+            4
+             of 
+            5
+            : Projects
+          </p>
+        </nav>
+      </div>
+      <div
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
+      >
+        <div
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
+        >
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        
+    text-[var(--orion-violet)]
+    bg-[rgba(139,92,246,0.1)]
+    border border-[rgba(139,92,246,0.3)]
+  
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            PROJECTS
+          </span>
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            STEP 4 OF 5
+          </span>
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
+        >
+          Select 
+          <span
+            class="text-gradient-cyan"
+          >
+            Projects
+          </span>
+           to Sync
+        </h1>
+        <p
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
+        >
+          Choose which P6 projects to integrate with SAP for unified visibility
+        </p>
+      </div>
+      <div
+        class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-4 mb-6 animate-scale-in delay-200
+      "
+        style="max-width: 100%; overflow: hidden;"
+      >
+        <div
+          class="flex flex-col sm:flex-row gap-4 items-center justify-between"
+        >
+          <div
+            class="relative flex-1 max-w-md w-full"
+          >
+            <label
+              class="sr-only"
+              for="project-search"
+            >
+              Search projects
+            </label>
+            <input
+              class="input-field pl-10 pr-10"
+              id="project-search"
+              placeholder="Search by name or code..."
+              type="text"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--orion-text-muted)]"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div
+            class="flex gap-2"
+          >
+            <button
+              class="px-4 py-2 text-sm font-medium text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 transition-colors font-display"
+            >
+              Select All
+            </button>
+            <button
+              class="px-4 py-2 text-sm font-medium text-[var(--orion-text-muted)] hover:text-[var(--orion-text-secondary)] transition-colors font-display"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mb-4 flex justify-between text-sm font-mono animate-fade-in delay-300"
+      >
+        <span
+          class="text-[var(--orion-text-muted)]"
+        >
+          4
+           projects
+        </span>
+        <span
+          class="text-[var(--orion-cyan)]"
+        >
+          0
+           selected
+        </span>
+      </div>
+      <div
+        aria-label="Available projects"
+        aria-multiselectable="true"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 animate-fade-in delay-400"
+        role="listbox"
+      >
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-1"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  ACME Refinery Expansion
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  ACME-REF-001
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)] border-[var(--orion-emerald)]/30"
+              >
+                Active
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  35
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="35% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="35"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-amber)]"
+                  style="width: 35%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jan 15, 2024
+              </span>
+              <span>
+                End: 
+                Jun 30, 2026
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-2"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Offshore Platform Alpha
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  OFF-PLT-A
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)] border-[var(--orion-emerald)]/30"
+              >
+                Active
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  68
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="68% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="68"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-cyan)]"
+                  style="width: 68%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jun 1, 2023
+              </span>
+              <span>
+                End: 
+                Dec 31, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-3"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Pipeline Network Phase 2
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  PIPE-NET-2
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-cyan)]/10 text-[var(--orion-cyan)] border-[var(--orion-cyan)]/30"
+              >
+                Planned
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  0
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="0% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-amber)]"
+                  style="width: 0%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Mar 1, 2024
+              </span>
+              <span>
+                End: 
+                Sep 30, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-4"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Legacy Terminal Upgrade
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  LEG-TERM
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-violet)]/10 text-[var(--orion-violet)] border-[var(--orion-violet)]/30"
+              >
+                Complete
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  100
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="100% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="100"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-emerald)]"
+                  style="width: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jan 1, 2022
+              </span>
+              <span>
+                End: 
+                Jan 31, 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex gap-4 animate-slide-up delay-500"
+      >
+        <button
+          aria-busy="false"
+          class="
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-secondary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          flex-1
+        "
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="mr-2"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M11 17l-5-5m0 0l5-5m-5 5h12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+            Back
+          </span>
+        </button>
+        <button
+          aria-busy="false"
+          class="
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-primary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          opacity-50 cursor-not-allowed pointer-events-none
+          flex-1
+        "
+          disabled=""
+          type="button"
+        >
+          <span>
+            Continue
+            <svg
+              aria-hidden="true"
+              class="ml-2 transition-transform group-hover:translate-x-1"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`ProjectSelection - Snapshot Tests > matches snapshot with projects selected 1`] = `
+<div>
+  <main
+    aria-label="Project Selection"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
+    role="main"
+  >
+    <div
+      class="w-full max-w-5xl mx-auto"
+    >
+      <div
+        class="mb-6 sm:mb-8 animate-fade-in"
+      >
+        <nav
+          aria-label="Progress"
+          style="width: 100%;"
+        >
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
+          >
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
+            >
+              <div
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
+              >
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  4
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 75%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    P6
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    SAP
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      4
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
+                  >
+                    Projects
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
+          <p
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+          >
+            Step 
+            4
+             of 
+            5
+            : Projects
+          </p>
+        </nav>
+      </div>
+      <div
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
+      >
+        <div
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
+        >
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        
+    text-[var(--orion-violet)]
+    bg-[rgba(139,92,246,0.1)]
+    border border-[rgba(139,92,246,0.3)]
+  
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            PROJECTS
+          </span>
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            STEP 4 OF 5
+          </span>
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
+        >
+          Select 
+          <span
+            class="text-gradient-cyan"
+          >
+            Projects
+          </span>
+           to Sync
+        </h1>
+        <p
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
+        >
+          Choose which P6 projects to integrate with SAP for unified visibility
+        </p>
+      </div>
+      <div
+        class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-4 mb-6 animate-scale-in delay-200
+      "
+        style="max-width: 100%; overflow: hidden;"
+      >
+        <div
+          class="flex flex-col sm:flex-row gap-4 items-center justify-between"
+        >
+          <div
+            class="relative flex-1 max-w-md w-full"
+          >
+            <label
+              class="sr-only"
+              for="project-search"
+            >
+              Search projects
+            </label>
+            <input
+              class="input-field pl-10 pr-10"
+              id="project-search"
+              placeholder="Search by name or code..."
+              type="text"
+              value=""
+            />
+            <svg
+              class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--orion-text-muted)]"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+          <div
+            class="flex gap-2"
+          >
+            <button
+              class="px-4 py-2 text-sm font-medium text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 transition-colors font-display"
+            >
+              Select All
+            </button>
+            <button
+              class="px-4 py-2 text-sm font-medium text-[var(--orion-text-muted)] hover:text-[var(--orion-text-secondary)] transition-colors font-display"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mb-4 flex justify-between text-sm font-mono animate-fade-in delay-300"
+      >
+        <span
+          class="text-[var(--orion-text-muted)]"
+        >
+          4
+           projects
+        </span>
+        <span
+          class="text-[var(--orion-cyan)]"
+        >
+          1
+           selected
+        </span>
+      </div>
+      <div
+        aria-label="Available projects"
+        aria-multiselectable="true"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 animate-fade-in delay-400"
+        role="listbox"
+      >
+        <div
+          aria-selected="true"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-cyan)]/10 border-2 border-[var(--orion-cyan)] shadow-[0_0_20px_-5px_var(--orion-cyan-glow)]
+      "
+          data-selected="true"
+          data-testid="project-1"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-cyan)] bg-[var(--orion-cyan)]
+          "
+            >
+              <svg
+                class="text-[var(--orion-bg-primary)]"
+                fill="currentColor"
+                height="12"
+                viewBox="0 0 20 20"
+                width="12"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  ACME Refinery Expansion
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  ACME-REF-001
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)] border-[var(--orion-emerald)]/30"
+              >
+                Active
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  35
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="35% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="35"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-amber)]"
+                  style="width: 35%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jan 15, 2024
+              </span>
+              <span>
+                End: 
+                Jun 30, 2026
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-2"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Offshore Platform Alpha
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  OFF-PLT-A
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)] border-[var(--orion-emerald)]/30"
+              >
+                Active
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  68
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="68% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="68"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-cyan)]"
+                  style="width: 68%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jun 1, 2023
+              </span>
+              <span>
+                End: 
+                Dec 31, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-3"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Pipeline Network Phase 2
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  PIPE-NET-2
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-cyan)]/10 text-[var(--orion-cyan)] border-[var(--orion-cyan)]/30"
+              >
+                Planned
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  0
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="0% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-amber)]"
+                  style="width: 0%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Mar 1, 2024
+              </span>
+              <span>
+                End: 
+                Sep 30, 2025
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-selected="false"
+          class="
+        relative p-4 sm:p-5 rounded-xl cursor-pointer
+        transition-all duration-300 ease-out
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+        bg-[var(--orion-bg-glass)] border border-[var(--orion-border)] hover:border-[var(--orion-cyan)]/30 hover:bg-[var(--orion-bg-elevated)]/50
+      "
+          data-selected="false"
+          data-testid="project-4"
+          role="option"
+          tabindex="0"
+        >
+          <div
+            class="absolute top-4 right-4"
+          >
+            <div
+              class="w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all
+            border-[var(--orion-border)]
+          "
+            />
+          </div>
+          <div
+            class="pr-8"
+          >
+            <div
+              class="flex items-start justify-between mb-2"
+            >
+              <div
+                class="flex-1"
+              >
+                <p
+                  class="font-semibold text-[var(--orion-text-primary)] font-display text-base"
+                >
+                  Legacy Terminal Upgrade
+                </p>
+                <p
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
+                >
+                  LEG-TERM
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-2 mb-3"
+            >
+              <span
+                class="px-2 py-0.5 text-[10px] font-mono font-medium rounded-full border bg-[var(--orion-violet)]/10 text-[var(--orion-violet)] border-[var(--orion-violet)]/30"
+              >
+                Complete
+              </span>
+            </div>
+            <div
+              class="mt-3"
+            >
+              <div
+                class="flex justify-between text-xs text-[var(--orion-text-secondary)] mb-1.5 font-mono"
+              >
+                <span>
+                  Progress
+                </span>
+                <span
+                  class="text-[var(--orion-text-primary)]"
+                >
+                  100
+                  %
+                </span>
+              </div>
+              <div
+                aria-label="100% complete"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="100"
+                class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-1.5"
+                role="progressbar"
+              >
+                <div
+                  class="h-1.5 rounded-full transition-all duration-300 bg-[var(--orion-emerald)]"
+                  style="width: 100%;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-3 flex justify-between text-xs text-[var(--orion-text-muted)] font-mono"
+            >
+              <span>
+                Start: 
+                Jan 1, 2022
+              </span>
+              <span>
+                End: 
+                Jan 31, 2024
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 flex gap-4 animate-slide-up delay-500"
+      >
+        <button
+          aria-busy="false"
+          class="
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-secondary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          flex-1
+        "
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="mr-2"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M11 17l-5-5m0 0l5-5m-5 5h12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+            Back
+          </span>
+        </button>
+        <button
+          aria-busy="false"
+          class="
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-primary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          flex-1
+        "
+          type="button"
+        >
+          <span>
+            Continue
+            <svg
+              aria-hidden="true"
+              class="ml-2 transition-transform group-hover:translate-x-1"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
   </main>
 </div>
 `;

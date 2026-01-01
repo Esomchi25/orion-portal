@@ -4,386 +4,346 @@ exports[`WelcomeScreen - Snapshot Tests > matches snapshot for standard user 1`]
 <div>
   <main
     aria-label="Onboarding Welcome"
-    class="min-h-screen flex flex-col items-center justify-center p-6 md:p-8"
+    class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
-      class="max-w-3xl w-full"
+      aria-hidden="true"
+      class="fixed inset-0 pointer-events-none overflow-hidden"
     >
       <div
-        class="flex items-center gap-4 mb-8 animate-slide-up"
-      >
-        <img
-          alt="User avatar"
-          class="w-14 h-14 rounded-xl object-cover border-2 border-[var(--orion-cyan)]/30"
-          src="https://example.com/avatar.jpg"
-        />
-        <div>
-          <h1
-            class="text-2xl md:text-3xl font-bold text-[var(--orion-text-primary)] font-display"
-          >
-            Welcome, 
-            <span
-              class="text-gradient-cyan"
-            >
-              John
-            </span>
-          </h1>
-          <p
-            class="text-[var(--orion-text-secondary)] font-mono text-sm"
-          >
-            ACME EPC Contractors
-          </p>
-        </div>
-      </div>
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[var(--orion-cyan)]/10"
+      />
       <div
-        class="animate-scale-in delay-100"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[var(--orion-cyan)]/5 rotate-45"
+      />
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-[var(--orion-violet)]/5 -rotate-12"
+      />
+      <div
+        class="absolute top-1/4 left-1/4 w-64 h-64 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse"
+      />
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--orion-violet)]/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s;"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[var(--orion-cyan)]/5 via-transparent to-transparent"
+      />
+    </div>
+    <div
+      class="relative w-full max-w-5xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 animate-slide-up"
+      style="display: flex; flex-direction: row; gap: 0; max-width: 64rem; margin: 0px auto; width: 100%; position: relative;"
+    >
+      <aside
+        class="lg:w-64 flex-shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left lg:pr-8 lg:border-r lg:border-[var(--orion-border)]/30"
+        style="width: 16rem; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-right: 2rem; border-right: 1px solid rgba(148, 163, 184, 0.1);"
       >
         <div
-          aria-hidden="true"
-          class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-6 md:mb-8"
+          class="relative group"
         >
           <div
-            class="absolute inset-0 rounded-full border border-[var(--orion-border)] animate-orbit-reverse"
+            class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)] to-[var(--orion-violet)] opacity-50 blur-sm group-hover:opacity-70 transition-opacity"
           />
-          <div
-            class="absolute inset-4 rounded-full border border-[var(--orion-cyan)]/20 animate-orbit"
-          />
-          <div
-            class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/10 to-transparent"
-          />
-          <div
-            class="absolute inset-0 flex items-center justify-center"
-          >
-            <div
-              class="w-20 h-20 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-secondary)] border border-[var(--orion-border)] flex items-center justify-center shadow-lg"
-            >
-              <span
-                class="text-2xl font-bold text-gradient-cyan font-display"
-              >
-                O
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-orbit"
-            style="animation-duration: 12s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-amber)]/50 flex items-center justify-center glow-box-amber"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-amber)]"
-              >
-                P6
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 animate-orbit-reverse"
-            style="animation-duration: 15s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-emerald)]/50 flex items-center justify-center glow-box-emerald"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-emerald)]"
-              >
-                SAP
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 rounded-full border-2 border-[var(--orion-cyan)]/30 animate-pulse-glow"
+          <img
+            alt="User avatar"
+            class="relative w-16 h-16 rounded-2xl object-cover border-2 border-[var(--orion-cyan)]/30"
+            src="https://example.com/avatar.jpg"
           />
         </div>
-      </div>
-      <div
-        class="text-center mb-8 animate-slide-up delay-200"
-      >
         <h2
-          class="text-lg md:text-xl font-semibold text-[var(--orion-text-primary)] mb-3 font-display"
+          class="mt-4 text-lg font-semibold text-[var(--orion-text-primary)] font-display"
         >
-          Your P6 + SAP Command Center
+          John
         </h2>
-        <p
-          class="text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
-        >
-          ORION unifies Primavera P6 schedules with SAP financials, giving you real-time visibility across your entire project portfolio.
-        </p>
-      </div>
-      <h2
-        class="sr-only"
-      >
-        What you can do with ORION
-      </h2>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10"
-      >
         <div
-          class="feature-card p6 animate-initial animate-slide-up"
-          style="animation-delay: 300ms;"
+          class="flex items-center gap-2 mt-1"
         >
-          <div
-            class="flex items-start gap-4"
+          <span
+            class="w-2 h-2 rounded-full bg-[var(--orion-emerald)] animate-pulse"
+          />
+          <span
+            class="text-xs text-[var(--orion-text-muted)] font-mono"
           >
-            <div
-              class="text-[var(--orion-amber)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  P6 Schedule Data
-                </h3>
-                <span
-                  class="badge badge-amber"
-                >
-                  SCHEDULE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Projects, WBS, activities, and resources from Primavera P6
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sap animate-initial animate-slide-up"
-          style="animation-delay: 400ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-emerald)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  SAP Financial Data
-                </h3>
-                <span
-                  class="badge badge-emerald"
-                >
-                  FINANCE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Budget, actuals, commitments, and purchase orders
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sync animate-initial animate-slide-up"
-          style="animation-delay: 500ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-cyan)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Real-time Sync
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  LIVE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Automatic synchronization keeps data always current
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card dashboard animate-initial animate-slide-up"
-          style="animation-delay: 600ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-violet)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Unified Dashboard
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  ANALYTICS
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Cross-project visibility with KPIs and health metrics
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center gap-4 animate-slide-up delay-700"
-      >
-        <button
-          aria-busy="false"
-          class="btn-primary group"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            style="width: 20px; height: 20px;"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-          <span>
-            Begin Setup
+            Online
           </span>
+        </div>
+        <div
+          class="mt-6 lg:mt-8 flex items-center gap-2 text-sm text-[var(--orion-text-secondary)]"
+        >
           <svg
             aria-hidden="true"
-            class="transition-transform group-hover:translate-x-1"
+            class="text-[var(--orion-cyan)]"
             fill="none"
+            height="16"
             stroke="currentColor"
-            style="width: 20px; height: 20px;"
             viewBox="0 0 24 24"
+            width="16"
           >
             <path
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
+              d="M9 5l7 7-7 7"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
             />
           </svg>
-        </button>
-        <p
-          class="text-sm text-[var(--orion-text-muted)] font-mono"
-        >
-          Setup takes ~5 minutes
-        </p>
+          <span
+            class="font-mono"
+          >
+            Getting Started
+          </span>
+          <span
+            class="text-[var(--orion-text-muted)]"
+          >
+            •
+          </span>
+          <span
+            class="text-[var(--orion-cyan)] font-mono"
+          >
+            Step 1 of 4
+          </span>
+        </div>
+      </aside>
+      <div
+        class="flex-1 lg:pl-8"
+        style="flex: 1 1 0%; padding-left: 2rem;"
+      >
         <div
-          class="flex items-center gap-2 mt-2"
+          class="relative overflow-hidden rounded-2xl lg:rounded-3xl"
+          style="background: linear-gradient(135deg, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.95) 50%, rgba(30,41,59,0.9) 100%); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);"
         >
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-cyan)] glow-box-cyan"
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.05) 100%);"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--orion-cyan)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--orion-violet)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
-          />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="relative z-10 p-8 sm:p-10 lg:p-12"
+          >
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--orion-text-primary)] font-display text-center leading-tight"
+            >
+              Welcome to 
+              <span
+                class="text-gradient-cyan"
+              >
+                ORION
+              </span>
+            </h1>
+            <p
+              class="mt-3 text-center text-[var(--orion-text-secondary)] text-lg sm:text-xl font-light"
+            >
+              Unified P6 & SAP Integration Platform
+            </p>
+            <div
+              class="mt-8 sm:mt-10"
+              style="animation-delay: 200ms;"
+            >
+              <div
+                aria-hidden="true"
+                class="orbital-container relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto mb-8 md:mb-10"
+                style="position: relative; width: 16rem; height: 16rem; margin: 0px auto 2.5rem auto;"
+              >
+                <div
+                  class="absolute inset-0 rounded-full border-2 border-[var(--orion-border)] opacity-30"
+                  style="position: absolute; inset: 0; border-radius: 9999px; border-width: 2px; border-style: solid; border-color: rgba(148, 163, 184, 0.3); opacity: 0.3;"
+                />
+                <div
+                  class="absolute inset-6 rounded-full border border-[var(--orion-cyan)]/20 animate-pulse-glow"
+                  style="position: absolute; inset: 1.5rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.2);"
+                />
+                <div
+                  class="absolute inset-12 rounded-full border border-[var(--orion-cyan)]/30"
+                  style="position: absolute; inset: 3rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.3);"
+                />
+                <div
+                  class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/5 via-transparent to-[var(--orion-violet)]/5 blur-xl"
+                  style="position: absolute; inset: 2rem; border-radius: 9999px;"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center"
+                  style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"
+                >
+                  <div
+                    class="relative w-24 h-24 sm:w-28 sm:h-28"
+                    style="position: relative; width: 6rem; height: 6rem;"
+                  >
+                    <div
+                      class="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)]/20 to-[var(--orion-violet)]/20 blur-lg animate-pulse-glow"
+                      style="position: absolute; inset: -0.5rem; border-radius: 1rem;"
+                    />
+                    <div
+                      class="relative w-full h-full rounded-2xl bg-gradient-to-br from-[var(--orion-bg-elevated)] via-[var(--orion-bg-secondary)] to-[var(--orion-bg-elevated)] border border-[var(--orion-border)] shadow-2xl flex items-center justify-center overflow-hidden"
+                      style="position: relative; width: 100%; height: 100%; border-radius: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden;"
+                    >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-transparent via-white/[0.02] to-white/[0.05]"
+                        style="position: absolute; inset: 0;"
+                      />
+                      <div
+                        class="relative flex flex-col items-center"
+                        style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                      >
+                        <span
+                          class="text-3xl sm:text-4xl font-black text-gradient-cyan font-display tracking-tight"
+                        >
+                          O
+                        </span>
+                        <span
+                          class="text-[10px] font-mono text-[var(--orion-text-muted)] tracking-widest mt-1"
+                        >
+                          ORION
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%) translateY(-50%); animation: orbit-path 12s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-amber)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-amber)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-sm sm:text-base font-bold font-mono text-[var(--orion-amber)]"
+                      >
+                        P6
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%) translateY(50%); animation: orbit-path-reverse 15s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-emerald)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-emerald)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-xs sm:text-sm font-bold font-mono text-[var(--orion-emerald)]"
+                      >
+                        SAP
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="absolute inset-0 pointer-events-none"
+                  style="position: absolute; inset: 0; pointer-events: none;"
+                >
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3s linear infinite; animation-delay: 0s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3.5s linear infinite; animation-delay: 0.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4s linear infinite; animation-delay: 1s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4.5s linear infinite; animation-delay: 1.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5s linear infinite; animation-delay: 2s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5.5s linear infinite; animation-delay: 2.5s; opacity: 0.6;"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/20 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s;"
+                />
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/10 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s; animation-delay: 1s;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-8 sm:mt-10 flex flex-col items-center gap-4"
+            >
+              <button
+                aria-busy="false"
+                class="
+                    group relative overflow-hidden
+                    w-full sm:w-auto
+                    px-12 py-4 sm:px-16 sm:py-5
+                    font-display font-semibold text-lg
+                    text-[var(--orion-bg-primary)]
+                    bg-gradient-to-r from-[var(--orion-cyan)] via-[#06b6d4] to-[var(--orion-cyan)]
+                    rounded-xl
+                    border border-[var(--orion-cyan)]/50
+                    transition-all duration-300
+                    shadow-[0_0_30px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.2)]
+                    hover:shadow-[0_0_50px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.3)]
+                    hover:-translate-y-1
+                    disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+                  "
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                />
+                <span
+                  class="relative flex items-center justify-center gap-2"
+                >
+                  <span>
+                    Get Started
+                  </span>
+                </span>
+              </button>
+              <div
+                class="flex items-center gap-6 text-sm"
+              >
+                <button
+                  class="text-[var(--orion-text-muted)] hover:text-[var(--orion-text-secondary)] transition-colors font-mono"
+                  type="button"
+                >
+                  Skip Intro
+                </button>
+                <button
+                  class="text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 transition-colors font-mono underline underline-offset-4"
+                  type="button"
+                >
+                  Watch Tutorial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[var(--orion-cyan)]/50 to-transparent"
           />
         </div>
       </div>
@@ -396,383 +356,348 @@ exports[`WelcomeScreen - Snapshot Tests > matches snapshot for user without orga
 <div>
   <main
     aria-label="Onboarding Welcome"
-    class="min-h-screen flex flex-col items-center justify-center p-6 md:p-8"
+    class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
-      class="max-w-3xl w-full"
+      aria-hidden="true"
+      class="fixed inset-0 pointer-events-none overflow-hidden"
     >
       <div
-        class="flex items-center gap-4 mb-8 animate-slide-up"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[var(--orion-cyan)]/10"
+      />
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[var(--orion-cyan)]/5 rotate-45"
+      />
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-[var(--orion-violet)]/5 -rotate-12"
+      />
+      <div
+        class="absolute top-1/4 left-1/4 w-64 h-64 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse"
+      />
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--orion-violet)]/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s;"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[var(--orion-cyan)]/5 via-transparent to-transparent"
+      />
+    </div>
+    <div
+      class="relative w-full max-w-5xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 animate-slide-up"
+      style="display: flex; flex-direction: row; gap: 0; max-width: 64rem; margin: 0px auto; width: 100%; position: relative;"
+    >
+      <aside
+        class="lg:w-64 flex-shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left lg:pr-8 lg:border-r lg:border-[var(--orion-border)]/30"
+        style="width: 16rem; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-right: 2rem; border-right: 1px solid rgba(148, 163, 184, 0.1);"
       >
         <div
-          aria-hidden="true"
-          class="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--orion-cyan)] to-[var(--orion-violet)] flex items-center justify-center text-[var(--orion-bg-primary)] text-lg font-bold font-display"
-          data-testid="avatar-fallback"
-        >
-          J
-        </div>
-        <div>
-          <h1
-            class="text-2xl md:text-3xl font-bold text-[var(--orion-text-primary)] font-display"
-          >
-            Welcome, 
-            <span
-              class="text-gradient-cyan"
-            >
-              Jane
-            </span>
-          </h1>
-        </div>
-      </div>
-      <div
-        class="animate-scale-in delay-100"
-      >
-        <div
-          aria-hidden="true"
-          class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-6 md:mb-8"
+          class="relative group"
         >
           <div
-            class="absolute inset-0 rounded-full border border-[var(--orion-border)] animate-orbit-reverse"
+            class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)] to-[var(--orion-violet)] opacity-60 blur-sm group-hover:opacity-80 transition-opacity"
           />
           <div
-            class="absolute inset-4 rounded-full border border-[var(--orion-cyan)]/20 animate-orbit"
-          />
-          <div
-            class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/10 to-transparent"
-          />
-          <div
-            class="absolute inset-0 flex items-center justify-center"
+            aria-hidden="true"
+            class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)] via-[var(--orion-cyan)]/80 to-[var(--orion-violet)] flex items-center justify-center text-[var(--orion-bg-primary)] text-xl font-bold font-display shadow-lg"
+            data-testid="avatar-fallback"
           >
-            <div
-              class="w-20 h-20 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-secondary)] border border-[var(--orion-border)] flex items-center justify-center shadow-lg"
-            >
-              <span
-                class="text-2xl font-bold text-gradient-cyan font-display"
-              >
-                O
-              </span>
-            </div>
+            J
           </div>
-          <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-orbit"
-            style="animation-duration: 12s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-amber)]/50 flex items-center justify-center glow-box-amber"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-amber)]"
-              >
-                P6
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 animate-orbit-reverse"
-            style="animation-duration: 15s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-emerald)]/50 flex items-center justify-center glow-box-emerald"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-emerald)]"
-              >
-                SAP
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 rounded-full border-2 border-[var(--orion-cyan)]/30 animate-pulse-glow"
-          />
         </div>
-      </div>
-      <div
-        class="text-center mb-8 animate-slide-up delay-200"
-      >
         <h2
-          class="text-lg md:text-xl font-semibold text-[var(--orion-text-primary)] mb-3 font-display"
+          class="mt-4 text-lg font-semibold text-[var(--orion-text-primary)] font-display"
         >
-          Your P6 + SAP Command Center
+          Jane
         </h2>
-        <p
-          class="text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
-        >
-          ORION unifies Primavera P6 schedules with SAP financials, giving you real-time visibility across your entire project portfolio.
-        </p>
-      </div>
-      <h2
-        class="sr-only"
-      >
-        What you can do with ORION
-      </h2>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10"
-      >
         <div
-          class="feature-card p6 animate-initial animate-slide-up"
-          style="animation-delay: 300ms;"
+          class="flex items-center gap-2 mt-1"
         >
-          <div
-            class="flex items-start gap-4"
+          <span
+            class="w-2 h-2 rounded-full bg-[var(--orion-emerald)] animate-pulse"
+          />
+          <span
+            class="text-xs text-[var(--orion-text-muted)] font-mono"
           >
-            <div
-              class="text-[var(--orion-amber)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  P6 Schedule Data
-                </h3>
-                <span
-                  class="badge badge-amber"
-                >
-                  SCHEDULE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Projects, WBS, activities, and resources from Primavera P6
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sap animate-initial animate-slide-up"
-          style="animation-delay: 400ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-emerald)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  SAP Financial Data
-                </h3>
-                <span
-                  class="badge badge-emerald"
-                >
-                  FINANCE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Budget, actuals, commitments, and purchase orders
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sync animate-initial animate-slide-up"
-          style="animation-delay: 500ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-cyan)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Real-time Sync
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  LIVE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Automatic synchronization keeps data always current
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card dashboard animate-initial animate-slide-up"
-          style="animation-delay: 600ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-violet)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Unified Dashboard
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  ANALYTICS
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Cross-project visibility with KPIs and health metrics
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center gap-4 animate-slide-up delay-700"
-      >
-        <button
-          aria-busy="false"
-          class="btn-primary group"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            fill="none"
-            stroke="currentColor"
-            style="width: 20px; height: 20px;"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            />
-          </svg>
-          <span>
-            Begin Setup
+            Online
           </span>
+        </div>
+        <div
+          class="mt-6 lg:mt-8 flex items-center gap-2 text-sm text-[var(--orion-text-secondary)]"
+        >
           <svg
             aria-hidden="true"
-            class="transition-transform group-hover:translate-x-1"
+            class="text-[var(--orion-cyan)]"
             fill="none"
+            height="16"
             stroke="currentColor"
-            style="width: 20px; height: 20px;"
             viewBox="0 0 24 24"
+            width="16"
           >
             <path
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
+              d="M9 5l7 7-7 7"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
             />
           </svg>
-        </button>
-        <p
-          class="text-sm text-[var(--orion-text-muted)] font-mono"
-        >
-          Setup takes ~5 minutes
-        </p>
+          <span
+            class="font-mono"
+          >
+            Getting Started
+          </span>
+          <span
+            class="text-[var(--orion-text-muted)]"
+          >
+            •
+          </span>
+          <span
+            class="text-[var(--orion-cyan)] font-mono"
+          >
+            Step 1 of 4
+          </span>
+        </div>
+      </aside>
+      <div
+        class="flex-1 lg:pl-8"
+        style="flex: 1 1 0%; padding-left: 2rem;"
+      >
         <div
-          class="flex items-center gap-2 mt-2"
+          class="relative overflow-hidden rounded-2xl lg:rounded-3xl"
+          style="background: linear-gradient(135deg, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.95) 50%, rgba(30,41,59,0.9) 100%); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);"
         >
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-cyan)] glow-box-cyan"
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.05) 100%);"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--orion-cyan)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--orion-violet)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
-          />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="relative z-10 p-8 sm:p-10 lg:p-12"
+          >
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--orion-text-primary)] font-display text-center leading-tight"
+            >
+              Welcome to 
+              <span
+                class="text-gradient-cyan"
+              >
+                ORION
+              </span>
+            </h1>
+            <p
+              class="mt-3 text-center text-[var(--orion-text-secondary)] text-lg sm:text-xl font-light"
+            >
+              Unified P6 & SAP Integration Platform
+            </p>
+            <div
+              class="mt-8 sm:mt-10"
+              style="animation-delay: 200ms;"
+            >
+              <div
+                aria-hidden="true"
+                class="orbital-container relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto mb-8 md:mb-10"
+                style="position: relative; width: 16rem; height: 16rem; margin: 0px auto 2.5rem auto;"
+              >
+                <div
+                  class="absolute inset-0 rounded-full border-2 border-[var(--orion-border)] opacity-30"
+                  style="position: absolute; inset: 0; border-radius: 9999px; border-width: 2px; border-style: solid; border-color: rgba(148, 163, 184, 0.3); opacity: 0.3;"
+                />
+                <div
+                  class="absolute inset-6 rounded-full border border-[var(--orion-cyan)]/20 animate-pulse-glow"
+                  style="position: absolute; inset: 1.5rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.2);"
+                />
+                <div
+                  class="absolute inset-12 rounded-full border border-[var(--orion-cyan)]/30"
+                  style="position: absolute; inset: 3rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.3);"
+                />
+                <div
+                  class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/5 via-transparent to-[var(--orion-violet)]/5 blur-xl"
+                  style="position: absolute; inset: 2rem; border-radius: 9999px;"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center"
+                  style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"
+                >
+                  <div
+                    class="relative w-24 h-24 sm:w-28 sm:h-28"
+                    style="position: relative; width: 6rem; height: 6rem;"
+                  >
+                    <div
+                      class="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)]/20 to-[var(--orion-violet)]/20 blur-lg animate-pulse-glow"
+                      style="position: absolute; inset: -0.5rem; border-radius: 1rem;"
+                    />
+                    <div
+                      class="relative w-full h-full rounded-2xl bg-gradient-to-br from-[var(--orion-bg-elevated)] via-[var(--orion-bg-secondary)] to-[var(--orion-bg-elevated)] border border-[var(--orion-border)] shadow-2xl flex items-center justify-center overflow-hidden"
+                      style="position: relative; width: 100%; height: 100%; border-radius: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden;"
+                    >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-transparent via-white/[0.02] to-white/[0.05]"
+                        style="position: absolute; inset: 0;"
+                      />
+                      <div
+                        class="relative flex flex-col items-center"
+                        style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                      >
+                        <span
+                          class="text-3xl sm:text-4xl font-black text-gradient-cyan font-display tracking-tight"
+                        >
+                          O
+                        </span>
+                        <span
+                          class="text-[10px] font-mono text-[var(--orion-text-muted)] tracking-widest mt-1"
+                        >
+                          ORION
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%) translateY(-50%); animation: orbit-path 12s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-amber)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-amber)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-sm sm:text-base font-bold font-mono text-[var(--orion-amber)]"
+                      >
+                        P6
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%) translateY(50%); animation: orbit-path-reverse 15s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-emerald)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-emerald)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-xs sm:text-sm font-bold font-mono text-[var(--orion-emerald)]"
+                      >
+                        SAP
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="absolute inset-0 pointer-events-none"
+                  style="position: absolute; inset: 0; pointer-events: none;"
+                >
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3s linear infinite; animation-delay: 0s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3.5s linear infinite; animation-delay: 0.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4s linear infinite; animation-delay: 1s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4.5s linear infinite; animation-delay: 1.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5s linear infinite; animation-delay: 2s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5.5s linear infinite; animation-delay: 2.5s; opacity: 0.6;"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/20 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s;"
+                />
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/10 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s; animation-delay: 1s;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-8 sm:mt-10 flex flex-col items-center gap-4"
+            >
+              <button
+                aria-busy="false"
+                class="
+                    group relative overflow-hidden
+                    w-full sm:w-auto
+                    px-12 py-4 sm:px-16 sm:py-5
+                    font-display font-semibold text-lg
+                    text-[var(--orion-bg-primary)]
+                    bg-gradient-to-r from-[var(--orion-cyan)] via-[#06b6d4] to-[var(--orion-cyan)]
+                    rounded-xl
+                    border border-[var(--orion-cyan)]/50
+                    transition-all duration-300
+                    shadow-[0_0_30px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.2)]
+                    hover:shadow-[0_0_50px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.3)]
+                    hover:-translate-y-1
+                    disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+                  "
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                />
+                <span
+                  class="relative flex items-center justify-center gap-2"
+                >
+                  <span>
+                    Get Started
+                  </span>
+                </span>
+              </button>
+              <div
+                class="flex items-center gap-6 text-sm"
+              >
+                <button
+                  class="text-[var(--orion-text-muted)] hover:text-[var(--orion-text-secondary)] transition-colors font-mono"
+                  type="button"
+                >
+                  Skip Intro
+                </button>
+                <button
+                  class="text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 transition-colors font-mono underline underline-offset-4"
+                  type="button"
+                >
+                  Watch Tutorial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[var(--orion-cyan)]/50 to-transparent"
           />
         </div>
       </div>
@@ -785,378 +710,349 @@ exports[`WelcomeScreen - Snapshot Tests > matches snapshot in loading state 1`] 
 <div>
   <main
     aria-label="Onboarding Welcome"
-    class="min-h-screen flex flex-col items-center justify-center p-6 md:p-8"
+    class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
-      class="max-w-3xl w-full"
+      aria-hidden="true"
+      class="fixed inset-0 pointer-events-none overflow-hidden"
     >
       <div
-        class="flex items-center gap-4 mb-8 animate-slide-up"
-      >
-        <img
-          alt="User avatar"
-          class="w-14 h-14 rounded-xl object-cover border-2 border-[var(--orion-cyan)]/30"
-          src="https://example.com/avatar.jpg"
-        />
-        <div>
-          <h1
-            class="text-2xl md:text-3xl font-bold text-[var(--orion-text-primary)] font-display"
-          >
-            Welcome, 
-            <span
-              class="text-gradient-cyan"
-            >
-              John
-            </span>
-          </h1>
-          <p
-            class="text-[var(--orion-text-secondary)] font-mono text-sm"
-          >
-            ACME EPC Contractors
-          </p>
-        </div>
-      </div>
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[var(--orion-cyan)]/10"
+      />
       <div
-        class="animate-scale-in delay-100"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] rounded-full border border-[var(--orion-cyan)]/5 rotate-45"
+      />
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-[var(--orion-violet)]/5 -rotate-12"
+      />
+      <div
+        class="absolute top-1/4 left-1/4 w-64 h-64 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse"
+      />
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--orion-violet)]/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s;"
+      />
+      <div
+        class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[var(--orion-cyan)]/5 via-transparent to-transparent"
+      />
+    </div>
+    <div
+      class="relative w-full max-w-5xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-0 animate-slide-up"
+      style="display: flex; flex-direction: row; gap: 0; max-width: 64rem; margin: 0px auto; width: 100%; position: relative;"
+    >
+      <aside
+        class="lg:w-64 flex-shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left lg:pr-8 lg:border-r lg:border-[var(--orion-border)]/30"
+        style="width: 16rem; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-right: 2rem; border-right: 1px solid rgba(148, 163, 184, 0.1);"
       >
         <div
-          aria-hidden="true"
-          class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-6 md:mb-8"
+          class="relative group"
         >
           <div
-            class="absolute inset-0 rounded-full border border-[var(--orion-border)] animate-orbit-reverse"
+            class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)] to-[var(--orion-violet)] opacity-50 blur-sm group-hover:opacity-70 transition-opacity"
           />
-          <div
-            class="absolute inset-4 rounded-full border border-[var(--orion-cyan)]/20 animate-orbit"
-          />
-          <div
-            class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/10 to-transparent"
-          />
-          <div
-            class="absolute inset-0 flex items-center justify-center"
-          >
-            <div
-              class="w-20 h-20 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-secondary)] border border-[var(--orion-border)] flex items-center justify-center shadow-lg"
-            >
-              <span
-                class="text-2xl font-bold text-gradient-cyan font-display"
-              >
-                O
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-orbit"
-            style="animation-duration: 12s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-amber)]/50 flex items-center justify-center glow-box-amber"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-amber)]"
-              >
-                P6
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 animate-orbit-reverse"
-            style="animation-duration: 15s;"
-          >
-            <div
-              class="w-10 h-10 rounded-lg bg-[var(--orion-bg-elevated)] border border-[var(--orion-emerald)]/50 flex items-center justify-center glow-box-emerald"
-            >
-              <span
-                class="text-xs font-mono font-semibold text-[var(--orion-emerald)]"
-              >
-                SAP
-              </span>
-            </div>
-          </div>
-          <div
-            class="absolute inset-0 rounded-full border-2 border-[var(--orion-cyan)]/30 animate-pulse-glow"
+          <img
+            alt="User avatar"
+            class="relative w-16 h-16 rounded-2xl object-cover border-2 border-[var(--orion-cyan)]/30"
+            src="https://example.com/avatar.jpg"
           />
         </div>
-      </div>
-      <div
-        class="text-center mb-8 animate-slide-up delay-200"
-      >
         <h2
-          class="text-lg md:text-xl font-semibold text-[var(--orion-text-primary)] mb-3 font-display"
+          class="mt-4 text-lg font-semibold text-[var(--orion-text-primary)] font-display"
         >
-          Your P6 + SAP Command Center
+          John
         </h2>
-        <p
-          class="text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
-        >
-          ORION unifies Primavera P6 schedules with SAP financials, giving you real-time visibility across your entire project portfolio.
-        </p>
-      </div>
-      <h2
-        class="sr-only"
-      >
-        What you can do with ORION
-      </h2>
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10"
-      >
         <div
-          class="feature-card p6 animate-initial animate-slide-up"
-          style="animation-delay: 300ms;"
+          class="flex items-center gap-2 mt-1"
         >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-amber)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  P6 Schedule Data
-                </h3>
-                <span
-                  class="badge badge-amber"
-                >
-                  SCHEDULE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Projects, WBS, activities, and resources from Primavera P6
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sap animate-initial animate-slide-up"
-          style="animation-delay: 400ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-emerald)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  SAP Financial Data
-                </h3>
-                <span
-                  class="badge badge-emerald"
-                >
-                  FINANCE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Budget, actuals, commitments, and purchase orders
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card sync animate-initial animate-slide-up"
-          style="animation-delay: 500ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-cyan)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Real-time Sync
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  LIVE
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Automatic synchronization keeps data always current
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="feature-card dashboard animate-initial animate-slide-up"
-          style="animation-delay: 600ms;"
-        >
-          <div
-            class="flex items-start gap-4"
-          >
-            <div
-              class="text-[var(--orion-violet)] flex-shrink-0"
-            >
-              <svg
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                style="width: 20px; height: 20px; min-width: 20px; max-width: 20px;"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                />
-              </svg>
-            </div>
-            <div
-              class="flex-1 min-w-0"
-            >
-              <div
-                class="flex items-center gap-2 mb-1"
-              >
-                <h3
-                  class="font-semibold text-[var(--orion-text-primary)] font-display"
-                >
-                  Unified Dashboard
-                </h3>
-                <span
-                  class="badge badge-cyan"
-                >
-                  ANALYTICS
-                </span>
-              </div>
-              <p
-                class="text-sm text-[var(--orion-text-secondary)] leading-relaxed"
-              >
-                Cross-project visibility with KPIs and health metrics
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center gap-4 animate-slide-up delay-700"
-      >
-        <button
-          aria-busy="true"
-          class="btn-primary group"
-          disabled=""
-          type="button"
-        >
-          <div
-            aria-hidden="true"
-            class="spinner"
-            data-testid="loading-spinner"
+          <span
+            class="w-2 h-2 rounded-full bg-[var(--orion-emerald)] animate-pulse"
           />
-          <span>
-            Begin Setup
+          <span
+            class="text-xs text-[var(--orion-text-muted)] font-mono"
+          >
+            Online
           </span>
+        </div>
+        <div
+          class="mt-6 lg:mt-8 flex items-center gap-2 text-sm text-[var(--orion-text-secondary)]"
+        >
           <svg
             aria-hidden="true"
-            class="transition-transform group-hover:translate-x-1"
+            class="text-[var(--orion-cyan)]"
             fill="none"
+            height="16"
             stroke="currentColor"
-            style="width: 20px; height: 20px;"
             viewBox="0 0 24 24"
+            width="16"
           >
             <path
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
+              d="M9 5l7 7-7 7"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
             />
           </svg>
-        </button>
-        <p
-          class="text-sm text-[var(--orion-text-muted)] font-mono"
-        >
-          Setup takes ~5 minutes
-        </p>
+          <span
+            class="font-mono"
+          >
+            Getting Started
+          </span>
+          <span
+            class="text-[var(--orion-text-muted)]"
+          >
+            •
+          </span>
+          <span
+            class="text-[var(--orion-cyan)] font-mono"
+          >
+            Step 1 of 4
+          </span>
+        </div>
+      </aside>
+      <div
+        class="flex-1 lg:pl-8"
+        style="flex: 1 1 0%; padding-left: 2rem;"
+      >
         <div
-          class="flex items-center gap-2 mt-2"
+          class="relative overflow-hidden rounded-2xl lg:rounded-3xl"
+          style="background: linear-gradient(135deg, rgba(30,41,59,0.9) 0%, rgba(15,23,42,0.95) 50%, rgba(30,41,59,0.9) 100%); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);"
         >
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-cyan)] glow-box-cyan"
+          <div
+            class="absolute inset-0 pointer-events-none"
+            style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.05) 100%);"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--orion-cyan)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--orion-violet)]/10 to-transparent"
           />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
-          />
-          <span
-            class="w-2 h-2 rounded-full bg-[var(--orion-border)]"
+          <div
+            class="relative z-10 p-8 sm:p-10 lg:p-12"
+          >
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--orion-text-primary)] font-display text-center leading-tight"
+            >
+              Welcome to 
+              <span
+                class="text-gradient-cyan"
+              >
+                ORION
+              </span>
+            </h1>
+            <p
+              class="mt-3 text-center text-[var(--orion-text-secondary)] text-lg sm:text-xl font-light"
+            >
+              Unified P6 & SAP Integration Platform
+            </p>
+            <div
+              class="mt-8 sm:mt-10"
+              style="animation-delay: 200ms;"
+            >
+              <div
+                aria-hidden="true"
+                class="orbital-container relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto mb-8 md:mb-10"
+                style="position: relative; width: 16rem; height: 16rem; margin: 0px auto 2.5rem auto;"
+              >
+                <div
+                  class="absolute inset-0 rounded-full border-2 border-[var(--orion-border)] opacity-30"
+                  style="position: absolute; inset: 0; border-radius: 9999px; border-width: 2px; border-style: solid; border-color: rgba(148, 163, 184, 0.3); opacity: 0.3;"
+                />
+                <div
+                  class="absolute inset-6 rounded-full border border-[var(--orion-cyan)]/20 animate-pulse-glow"
+                  style="position: absolute; inset: 1.5rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.2);"
+                />
+                <div
+                  class="absolute inset-12 rounded-full border border-[var(--orion-cyan)]/30"
+                  style="position: absolute; inset: 3rem; border-radius: 9999px; border-width: 1px; border-style: solid; border-color: rgba(0, 212, 255, 0.3);"
+                />
+                <div
+                  class="absolute inset-8 rounded-full bg-gradient-to-br from-[var(--orion-cyan)]/5 via-transparent to-[var(--orion-violet)]/5 blur-xl"
+                  style="position: absolute; inset: 2rem; border-radius: 9999px;"
+                />
+                <div
+                  class="absolute inset-0 flex items-center justify-center"
+                  style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;"
+                >
+                  <div
+                    class="relative w-24 h-24 sm:w-28 sm:h-28"
+                    style="position: relative; width: 6rem; height: 6rem;"
+                  >
+                    <div
+                      class="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[var(--orion-cyan)]/20 to-[var(--orion-violet)]/20 blur-lg animate-pulse-glow"
+                      style="position: absolute; inset: -0.5rem; border-radius: 1rem;"
+                    />
+                    <div
+                      class="relative w-full h-full rounded-2xl bg-gradient-to-br from-[var(--orion-bg-elevated)] via-[var(--orion-bg-secondary)] to-[var(--orion-bg-elevated)] border border-[var(--orion-border)] shadow-2xl flex items-center justify-center overflow-hidden"
+                      style="position: relative; width: 100%; height: 100%; border-radius: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden;"
+                    >
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-transparent via-white/[0.02] to-white/[0.05]"
+                        style="position: absolute; inset: 0;"
+                      />
+                      <div
+                        class="relative flex flex-col items-center"
+                        style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                      >
+                        <span
+                          class="text-3xl sm:text-4xl font-black text-gradient-cyan font-display tracking-tight"
+                        >
+                          O
+                        </span>
+                        <span
+                          class="text-[10px] font-mono text-[var(--orion-text-muted)] tracking-widest mt-1"
+                        >
+                          ORION
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%) translateY(-50%); animation: orbit-path 12s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-amber)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-amber)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-sm sm:text-base font-bold font-mono text-[var(--orion-amber)]"
+                      >
+                        P6
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="orbital-element absolute"
+                  style="position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%) translateY(50%); animation: orbit-path-reverse 15s linear infinite;"
+                >
+                  <div
+                    class="relative group"
+                    style="position: relative;"
+                  >
+                    <div
+                      class="absolute -inset-1 rounded-xl bg-[var(--orion-emerald)]/30 blur-md group-hover:blur-lg transition-all"
+                      style="position: absolute; inset: -0.25rem; border-radius: 0.75rem;"
+                    />
+                    <div
+                      class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-[var(--orion-bg-elevated)] to-[var(--orion-bg-primary)] border-2 border-[var(--orion-emerald)]/50 flex items-center justify-center shadow-lg backdrop-blur-sm"
+                      style="position: relative; width: 3rem; height: 3rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;"
+                    >
+                      <span
+                        class="text-xs sm:text-sm font-bold font-mono text-[var(--orion-emerald)]"
+                      >
+                        SAP
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="absolute inset-0 pointer-events-none"
+                  style="position: absolute; inset: 0; pointer-events: none;"
+                >
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3s linear infinite; animation-delay: 0s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 3.5s linear infinite; animation-delay: 0.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4s linear infinite; animation-delay: 1s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 4.5s linear infinite; animation-delay: 1.5s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5s linear infinite; animation-delay: 2s; opacity: 0.6;"
+                  />
+                  <div
+                    class="absolute w-1 h-1 rounded-full bg-[var(--orion-cyan)]"
+                    style="position: absolute; width: 0.25rem; height: 0.25rem; border-radius: 9999px; top: 50%; left: 50%; animation: data-particle 5.5s linear infinite; animation-delay: 2.5s; opacity: 0.6;"
+                  />
+                </div>
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/20 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s;"
+                />
+                <div
+                  class="absolute inset-0 rounded-full border border-[var(--orion-cyan)]/10 animate-ping"
+                  style="position: absolute; inset: 0; border-radius: 9999px; animation-duration: 3s; animation-delay: 1s;"
+                />
+              </div>
+            </div>
+            <div
+              class="mt-8 sm:mt-10 flex flex-col items-center gap-4"
+            >
+              <button
+                aria-busy="true"
+                class="
+                    group relative overflow-hidden
+                    w-full sm:w-auto
+                    px-12 py-4 sm:px-16 sm:py-5
+                    font-display font-semibold text-lg
+                    text-[var(--orion-bg-primary)]
+                    bg-gradient-to-r from-[var(--orion-cyan)] via-[#06b6d4] to-[var(--orion-cyan)]
+                    rounded-xl
+                    border border-[var(--orion-cyan)]/50
+                    transition-all duration-300
+                    shadow-[0_0_30px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.2)]
+                    hover:shadow-[0_0_50px_var(--orion-cyan-glow),inset_0_1px_0_rgba(255,255,255,0.3)]
+                    hover:-translate-y-1
+                    disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+                  "
+                disabled=""
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+                />
+                <span
+                  class="relative flex items-center justify-center gap-2"
+                >
+                  <div
+                    aria-hidden="true"
+                    class="w-5 h-5 border-2 border-[var(--orion-bg-primary)]/30 border-t-[var(--orion-bg-primary)] rounded-full animate-spin"
+                    data-testid="loading-spinner"
+                  />
+                </span>
+              </button>
+              <div
+                class="flex items-center gap-6 text-sm"
+              >
+                <button
+                  class="text-[var(--orion-text-muted)] hover:text-[var(--orion-text-secondary)] transition-colors font-mono"
+                  type="button"
+                >
+                  Skip Intro
+                </button>
+                <button
+                  class="text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 transition-colors font-mono underline underline-offset-4"
+                  type="button"
+                >
+                  Watch Tutorial
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[var(--orion-cyan)]/50 to-transparent"
           />
         </div>
       </div>

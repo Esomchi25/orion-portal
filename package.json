@@ -23,7 +23,9 @@
     "docs:sync": "python ../../../.claude/hooks/sync_component_docs.py --sync",
     "docs:check": "python ../../../.claude/hooks/sync_component_docs.py --check",
     "gate:check": "npm run test:coverage && npm run test:e2e && npm run test:a11y",
-    "brain:log": "echo 'Logging to Corporate Brain...'",
+    "brain:log": "node scripts/brain-log.js",
+    "prepare": "cd ../../.. && husky install projects/orion-sync-engine/frontend/.husky",
+    "chromatic": "chromatic --exit-zero-on-changes",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

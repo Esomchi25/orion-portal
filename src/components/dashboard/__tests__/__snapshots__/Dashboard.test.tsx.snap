@@ -3,30 +3,69 @@
 exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
 <div>
   <main
-    aria-label="Dashboard"
-    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+    aria-labelledby="_r_17_"
+    class="min-h-screen p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
       class="max-w-7xl mx-auto"
     >
-      <div
-        class="mb-8"
+      <header
+        class="mb-8 sm:mb-12 animate-slide-up"
       >
-        <h1
-          class="text-2xl font-bold text-slate-900 dark:text-white"
+        <div
+          class="flex items-center gap-3 mb-2"
         >
-          Dashboard
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            PORTFOLIO
+          </span>
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        
+    text-[var(--orion-violet)]
+    bg-[rgba(139,92,246,0.1)]
+    border border-[rgba(139,92,246,0.3)]
+  
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            LIVE DATA
+          </span>
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--orion-text-primary)] font-display"
+          id="_r_17_"
+        >
+          <span
+            class="text-gradient-cyan"
+          >
+            Dashboard
+          </span>
         </h1>
         <p
-          class="mt-1 text-slate-600 dark:text-slate-400"
+          class="mt-2 text-[var(--orion-text-secondary)] max-w-2xl"
         >
-          Portfolio overview and project health metrics
+          Portfolio overview and project health metrics with real-time P6 and SAP integration.
         </p>
-      </div>
+      </header>
       <section
         aria-labelledby="portfolio-heading"
-        class="mb-8"
+        class="mb-8 sm:mb-12 animate-slide-up delay-100"
       >
         <h2
           class="sr-only"
@@ -35,26 +74,34 @@ exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
           Portfolio Summary
         </h2>
         <div
-          class="p-6 rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20"
+          class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-6 border-red-500/30
+      "
+          style="max-width: 100%; overflow: hidden;"
         >
           <p
-            class="text-red-600 dark:text-red-400 mb-2"
+            class="text-red-400 mb-4 font-display"
           >
             Failed to load portfolio summary
           </p>
           <button
-            class="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700"
+            class="btn-secondary text-red-400 border-red-500/30 hover:border-red-500"
           >
             Retry
           </button>
         </div>
       </section>
       <div
-        class="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8"
       >
         <section
           aria-labelledby="projects-heading"
-          class="lg:col-span-2"
+          class="lg:col-span-2 animate-slide-up delay-200"
         >
           <h2
             class="sr-only"
@@ -63,15 +110,23 @@ exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
             Project Health
           </h2>
           <div
-            class="p-6 rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20"
+            class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-6 border-red-500/30
+      "
+            style="max-width: 100%; overflow: hidden;"
           >
             <p
-              class="text-red-600 dark:text-red-400 mb-2"
+              class="text-red-400 mb-4 font-display"
             >
               Failed to load projects
             </p>
             <button
-              class="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700"
+              class="btn-secondary text-red-400 border-red-500/30 hover:border-red-500"
             >
               Retry
             </button>
@@ -79,6 +134,7 @@ exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
         </section>
         <section
           aria-labelledby="sync-heading"
+          class="animate-slide-up delay-300"
         >
           <h2
             class="sr-only"
@@ -87,15 +143,23 @@ exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
             Sync Status
           </h2>
           <div
-            class="p-6 rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20"
+            class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-6 border-red-500/30
+      "
+            style="max-width: 100%; overflow: hidden;"
           >
             <p
-              class="text-red-600 dark:text-red-400 mb-2"
+              class="text-red-400 mb-4 font-display"
             >
               Failed to load sync status
             </p>
             <button
-              class="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700"
+              class="btn-secondary text-red-400 border-red-500/30 hover:border-red-500"
             >
               Retry
             </button>
@@ -110,30 +174,69 @@ exports[`Dashboard - Snapshot Tests > matches error state snapshot 1`] = `
 exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
 <div>
   <main
-    aria-label="Dashboard"
-    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+    aria-labelledby="_r_16_"
+    class="min-h-screen p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
       class="max-w-7xl mx-auto"
     >
-      <div
-        class="mb-8"
+      <header
+        class="mb-8 sm:mb-12 animate-slide-up"
       >
-        <h1
-          class="text-2xl font-bold text-slate-900 dark:text-white"
+        <div
+          class="flex items-center gap-3 mb-2"
         >
-          Dashboard
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            PORTFOLIO
+          </span>
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        
+    text-[var(--orion-violet)]
+    bg-[rgba(139,92,246,0.1)]
+    border border-[rgba(139,92,246,0.3)]
+  
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            LIVE DATA
+          </span>
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--orion-text-primary)] font-display"
+          id="_r_16_"
+        >
+          <span
+            class="text-gradient-cyan"
+          >
+            Dashboard
+          </span>
         </h1>
         <p
-          class="mt-1 text-slate-600 dark:text-slate-400"
+          class="mt-2 text-[var(--orion-text-secondary)] max-w-2xl"
         >
-          Portfolio overview and project health metrics
+          Portfolio overview and project health metrics with real-time P6 and SAP integration.
         </p>
-      </div>
+      </header>
       <section
         aria-labelledby="portfolio-heading"
-        class="mb-8"
+        class="mb-8 sm:mb-12 animate-slide-up delay-100"
       >
         <h2
           class="sr-only"
@@ -145,21 +248,27 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           <div
-            class="p-6 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400"
+            class="
+        glass-card-elevated p-6 cursor-pointer
+        transition-all duration-300 hover:scale-[1.02]
+        border-[var(--orion-cyan)]/30 hover:border-[var(--orion-cyan)] glow-box-cyan
+      "
             role="button"
             tabindex="0"
           >
             <div
-              class="flex items-center gap-3 mb-2"
+              class="flex items-center gap-3 mb-3"
             >
               <div
-                class="p-2 rounded-lg bg-white/50 dark:bg-slate-800/50"
+                class="p-2 rounded-lg bg-[var(--orion-bg-secondary)] text-[var(--orion-cyan)]"
               >
                 <svg
-                  class="w-5 h-5"
+                  aria-hidden="true"
                   fill="none"
+                  height="20"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  width="20"
                 >
                   <path
                     d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
@@ -170,33 +279,39 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
                 </svg>
               </div>
               <p
-                class="text-sm font-medium text-slate-600 dark:text-slate-400"
+                class="text-sm font-medium text-[var(--orion-text-secondary)] font-display"
               >
                 Total Projects
               </p>
             </div>
             <p
-              class="text-3xl font-bold"
+              class="text-4xl font-bold font-mono text-[var(--orion-cyan)]"
             >
               24
             </p>
           </div>
           <div
-            class="p-6 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-600 dark:text-green-400"
+            class="
+        glass-card-elevated p-6 cursor-pointer
+        transition-all duration-300 hover:scale-[1.02]
+        border-[var(--orion-emerald)]/30 hover:border-[var(--orion-emerald)] glow-box-emerald
+      "
             role="button"
             tabindex="0"
           >
             <div
-              class="flex items-center gap-3 mb-2"
+              class="flex items-center gap-3 mb-3"
             >
               <div
-                class="p-2 rounded-lg bg-white/50 dark:bg-slate-800/50"
+                class="p-2 rounded-lg bg-[var(--orion-bg-secondary)] text-[var(--orion-emerald)]"
               >
                 <svg
-                  class="w-5 h-5"
+                  aria-hidden="true"
                   fill="none"
+                  height="20"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  width="20"
                 >
                   <path
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
@@ -207,33 +322,39 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
                 </svg>
               </div>
               <p
-                class="text-sm font-medium text-slate-600 dark:text-slate-400"
+                class="text-sm font-medium text-[var(--orion-text-secondary)] font-display"
               >
                 On Track
               </p>
             </div>
             <p
-              class="text-3xl font-bold"
+              class="text-4xl font-bold font-mono text-[var(--orion-emerald)]"
             >
               15
             </p>
           </div>
           <div
-            class="p-6 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400"
+            class="
+        glass-card-elevated p-6 cursor-pointer
+        transition-all duration-300 hover:scale-[1.02]
+        border-[var(--orion-amber)]/30 hover:border-[var(--orion-amber)] glow-box-amber
+      "
             role="button"
             tabindex="0"
           >
             <div
-              class="flex items-center gap-3 mb-2"
+              class="flex items-center gap-3 mb-3"
             >
               <div
-                class="p-2 rounded-lg bg-white/50 dark:bg-slate-800/50"
+                class="p-2 rounded-lg bg-[var(--orion-bg-secondary)] text-[var(--orion-amber)]"
               >
                 <svg
-                  class="w-5 h-5"
+                  aria-hidden="true"
                   fill="none"
+                  height="20"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  width="20"
                 >
                   <path
                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
@@ -244,33 +365,39 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
                 </svg>
               </div>
               <p
-                class="text-sm font-medium text-slate-600 dark:text-slate-400"
+                class="text-sm font-medium text-[var(--orion-text-secondary)] font-display"
               >
                 At Risk
               </p>
             </div>
             <p
-              class="text-3xl font-bold"
+              class="text-4xl font-bold font-mono text-[var(--orion-amber)]"
             >
               6
             </p>
           </div>
           <div
-            class="p-6 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-600 dark:text-red-400"
+            class="
+        glass-card-elevated p-6 cursor-pointer
+        transition-all duration-300 hover:scale-[1.02]
+        border-red-500/30 hover:border-red-500
+      "
             role="button"
             tabindex="0"
           >
             <div
-              class="flex items-center gap-3 mb-2"
+              class="flex items-center gap-3 mb-3"
             >
               <div
-                class="p-2 rounded-lg bg-white/50 dark:bg-slate-800/50"
+                class="p-2 rounded-lg bg-[var(--orion-bg-secondary)] text-red-400"
               >
                 <svg
-                  class="w-5 h-5"
+                  aria-hidden="true"
                   fill="none"
+                  height="20"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  width="20"
                 >
                   <path
                     d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
@@ -281,13 +408,13 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
                 </svg>
               </div>
               <p
-                class="text-sm font-medium text-slate-600 dark:text-slate-400"
+                class="text-sm font-medium text-[var(--orion-text-secondary)] font-display"
               >
                 Critical
               </p>
             </div>
             <p
-              class="text-3xl font-bold"
+              class="text-4xl font-bold font-mono text-red-400"
             >
               3
             </p>
@@ -295,11 +422,11 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
         </div>
       </section>
       <div
-        class="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8"
       >
         <section
           aria-labelledby="projects-heading"
-          class="lg:col-span-2"
+          class="lg:col-span-2 animate-slide-up delay-200"
         >
           <h2
             class="sr-only"
@@ -309,253 +436,274 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
           </h2>
           <div>
             <div
-              class="flex items-center justify-between mb-4"
+              class="flex items-center justify-between mb-6"
             >
               <h2
-                class="text-lg font-semibold text-slate-900 dark:text-white"
+                class="text-xl font-semibold text-[var(--orion-text-primary)] font-display"
               >
                 Project Health Overview
               </h2>
               <button
-                class="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400"
+                class="text-sm text-[var(--orion-cyan)] hover:text-[var(--orion-cyan)]/80 font-medium font-mono transition-colors"
               >
-                View All
+                View All →
               </button>
             </div>
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               <div
-                class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-md transition-all duration-200 cursor-pointer"
-                data-status="at_risk"
-                data-testid="project-card-proj-001"
-                role="button"
-                tabindex="0"
+                class="animate-slide-up"
+                style="animation-delay: 0ms;"
               >
                 <div
-                  class="flex items-start justify-between mb-3"
-                >
-                  <p
-                    class="font-semibold text-slate-900 dark:text-white"
-                  >
-                    ACME Refinery Expansion
-                  </p>
-                  <span
-                    class="px-2 py-1 text-xs font-medium rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400"
-                  >
-                    At Risk
-                  </span>
-                </div>
-                <div
-                  class="mb-3"
+                  class="glass-card-elevated p-5 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:border-[var(--orion-cyan)]/50"
+                  data-status="at_risk"
+                  data-testid="project-card-proj-001"
+                  role="button"
+                  tabindex="0"
                 >
                   <div
-                    class="flex justify-between text-sm text-slate-600 dark:text-slate-400 mb-1"
+                    class="flex items-start justify-between mb-4"
                   >
-                    <span>
-                      Progress
-                    </span>
-                    <span>
-                      35
-                      %
+                    <p
+                      class="font-semibold text-[var(--orion-text-primary)] font-display line-clamp-1"
+                    >
+                      ACME Refinery Expansion
+                    </p>
+                    <span
+                      class="px-2 py-1 text-xs font-bold font-mono rounded-md border bg-[var(--orion-amber)]/10 text-[var(--orion-amber)] border-[var(--orion-amber)]/30"
+                    >
+                      At Risk
                     </span>
                   </div>
                   <div
-                    aria-label="35% complete"
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    aria-valuenow="35"
-                    class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
-                    role="progressbar"
+                    class="mb-4"
                   >
                     <div
-                      class="h-2 rounded-full transition-all duration-300 bg-amber-500"
-                      style="width: 35%;"
-                    />
+                      class="flex justify-between text-sm text-[var(--orion-text-secondary)] mb-2 font-mono"
+                    >
+                      <span>
+                        Progress
+                      </span>
+                      <span
+                        class="text-[var(--orion-cyan)]"
+                      >
+                        35
+                        %
+                      </span>
+                    </div>
+                    <div
+                      aria-label="35% complete"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="35"
+                      class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-2 overflow-hidden"
+                      role="progressbar"
+                    >
+                      <div
+                        class="h-2 rounded-full bg-gradient-to-r from-[var(--orion-cyan)] to-[var(--orion-violet)] transition-all duration-500"
+                        style="width: 35%;"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="grid grid-cols-2 gap-4 text-sm"
-                >
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      SPI
-                    </p>
-                    <p
-                      class="font-medium text-amber-600"
-                    >
-                      0.92
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      CPI
-                    </p>
-                    <p
-                      class="font-medium text-amber-600"
-                    >
-                      0.88
-                    </p>
+                  <div
+                    class="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--orion-border)]"
+                  >
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        SPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-[var(--orion-amber)]"
+                      >
+                        0.92
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        CPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-[var(--orion-amber)]"
+                      >
+                        0.88
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-md transition-all duration-200 cursor-pointer"
-                data-status="on_track"
-                data-testid="project-card-proj-002"
-                role="button"
-                tabindex="0"
+                class="animate-slide-up"
+                style="animation-delay: 100ms;"
               >
                 <div
-                  class="flex items-start justify-between mb-3"
-                >
-                  <p
-                    class="font-semibold text-slate-900 dark:text-white"
-                  >
-                    Offshore Platform Alpha
-                  </p>
-                  <span
-                    class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
-                  >
-                    On Track
-                  </span>
-                </div>
-                <div
-                  class="mb-3"
+                  class="glass-card-elevated p-5 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:border-[var(--orion-cyan)]/50"
+                  data-status="on_track"
+                  data-testid="project-card-proj-002"
+                  role="button"
+                  tabindex="0"
                 >
                   <div
-                    class="flex justify-between text-sm text-slate-600 dark:text-slate-400 mb-1"
+                    class="flex items-start justify-between mb-4"
                   >
-                    <span>
-                      Progress
-                    </span>
-                    <span>
-                      68
-                      %
+                    <p
+                      class="font-semibold text-[var(--orion-text-primary)] font-display line-clamp-1"
+                    >
+                      Offshore Platform Alpha
+                    </p>
+                    <span
+                      class="px-2 py-1 text-xs font-bold font-mono rounded-md border bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)] border-[var(--orion-emerald)]/30"
+                    >
+                      On Track
                     </span>
                   </div>
                   <div
-                    aria-label="68% complete"
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    aria-valuenow="68"
-                    class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
-                    role="progressbar"
+                    class="mb-4"
                   >
                     <div
-                      class="h-2 rounded-full transition-all duration-300 bg-blue-500"
-                      style="width: 68%;"
-                    />
+                      class="flex justify-between text-sm text-[var(--orion-text-secondary)] mb-2 font-mono"
+                    >
+                      <span>
+                        Progress
+                      </span>
+                      <span
+                        class="text-[var(--orion-cyan)]"
+                      >
+                        68
+                        %
+                      </span>
+                    </div>
+                    <div
+                      aria-label="68% complete"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="68"
+                      class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-2 overflow-hidden"
+                      role="progressbar"
+                    >
+                      <div
+                        class="h-2 rounded-full bg-gradient-to-r from-[var(--orion-cyan)] to-[var(--orion-violet)] transition-all duration-500"
+                        style="width: 68%;"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="grid grid-cols-2 gap-4 text-sm"
-                >
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      SPI
-                    </p>
-                    <p
-                      class="font-medium text-green-600"
-                    >
-                      1.05
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      CPI
-                    </p>
-                    <p
-                      class="font-medium text-green-600"
-                    >
-                      0.98
-                    </p>
+                  <div
+                    class="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--orion-border)]"
+                  >
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        SPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-[var(--orion-emerald)]"
+                      >
+                        1.05
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        CPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-[var(--orion-emerald)]"
+                      >
+                        0.98
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-md transition-all duration-200 cursor-pointer"
-                data-status="critical"
-                data-testid="project-card-proj-003"
-                role="button"
-                tabindex="0"
+                class="animate-slide-up"
+                style="animation-delay: 200ms;"
               >
                 <div
-                  class="flex items-start justify-between mb-3"
-                >
-                  <p
-                    class="font-semibold text-slate-900 dark:text-white"
-                  >
-                    Pipeline Network Beta
-                  </p>
-                  <span
-                    class="px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400"
-                  >
-                    Critical
-                  </span>
-                </div>
-                <div
-                  class="mb-3"
+                  class="glass-card-elevated p-5 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:border-[var(--orion-cyan)]/50"
+                  data-status="critical"
+                  data-testid="project-card-proj-003"
+                  role="button"
+                  tabindex="0"
                 >
                   <div
-                    class="flex justify-between text-sm text-slate-600 dark:text-slate-400 mb-1"
+                    class="flex items-start justify-between mb-4"
                   >
-                    <span>
-                      Progress
-                    </span>
-                    <span>
-                      12
-                      %
+                    <p
+                      class="font-semibold text-[var(--orion-text-primary)] font-display line-clamp-1"
+                    >
+                      Pipeline Network Beta
+                    </p>
+                    <span
+                      class="px-2 py-1 text-xs font-bold font-mono rounded-md border bg-red-500/10 text-red-400 border-red-500/30"
+                    >
+                      Critical
                     </span>
                   </div>
                   <div
-                    aria-label="12% complete"
-                    aria-valuemax="100"
-                    aria-valuemin="0"
-                    aria-valuenow="12"
-                    class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2"
-                    role="progressbar"
+                    class="mb-4"
                   >
                     <div
-                      class="h-2 rounded-full transition-all duration-300 bg-amber-500"
-                      style="width: 12%;"
-                    />
+                      class="flex justify-between text-sm text-[var(--orion-text-secondary)] mb-2 font-mono"
+                    >
+                      <span>
+                        Progress
+                      </span>
+                      <span
+                        class="text-[var(--orion-cyan)]"
+                      >
+                        12
+                        %
+                      </span>
+                    </div>
+                    <div
+                      aria-label="12% complete"
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="12"
+                      class="w-full bg-[var(--orion-bg-secondary)] rounded-full h-2 overflow-hidden"
+                      role="progressbar"
+                    >
+                      <div
+                        class="h-2 rounded-full bg-gradient-to-r from-[var(--orion-cyan)] to-[var(--orion-violet)] transition-all duration-500"
+                        style="width: 12%;"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="grid grid-cols-2 gap-4 text-sm"
-                >
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      SPI
-                    </p>
-                    <p
-                      class="font-medium text-red-600"
-                    >
-                      0.72
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      class="text-slate-500 dark:text-slate-400"
-                    >
-                      CPI
-                    </p>
-                    <p
-                      class="font-medium text-red-600"
-                    >
-                      0.75
-                    </p>
+                  <div
+                    class="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--orion-border)]"
+                  >
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        SPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-red-400"
+                      >
+                        0.72
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs text-[var(--orion-text-muted)] font-mono mb-1"
+                      >
+                        CPI
+                      </p>
+                      <p
+                        class="text-xl font-bold font-mono text-red-400"
+                      >
+                        0.75
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -564,6 +712,7 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
         </section>
         <section
           aria-labelledby="sync-heading"
+          class="animate-slide-up delay-300"
         >
           <h2
             class="sr-only"
@@ -572,26 +721,35 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
             Sync Status
           </h2>
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
-            data-testid="sync-status-card"
+            class="
+        glass-card-elevated
+        p-4 sm:p-6
+        
+        
+        transition-all duration-200 ease-orion-out
+        p-6
+      "
+            style="max-width: 100%; overflow: hidden;"
           >
             <div
-              class="flex items-center justify-between mb-4"
+              class="flex items-center justify-between mb-6"
             >
               <h2
-                class="text-lg font-semibold text-slate-900 dark:text-white"
+                class="text-xl font-semibold text-[var(--orion-text-primary)] font-display"
               >
                 Sync Status
               </h2>
               <button
                 aria-label="Sync settings"
-                class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400"
+                class="p-2 rounded-lg hover:bg-[var(--orion-bg-secondary)] text-[var(--orion-text-muted)] hover:text-[var(--orion-cyan)] transition-colors"
               >
                 <svg
-                  class="w-5 h-5"
+                  aria-hidden="true"
                   fill="none"
+                  height="20"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  width="20"
                 >
                   <path
                     d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
@@ -612,80 +770,91 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
               class="space-y-4"
             >
               <div
-                class="flex items-center justify-between"
+                class="flex items-center justify-between p-3 rounded-lg bg-[var(--orion-bg-secondary)] border border-[var(--orion-amber)]/20"
               >
                 <div
                   class="flex items-center gap-3"
                 >
                   <div
-                    class="w-3 h-3 rounded-full bg-green-500"
+                    class="w-3 h-3 rounded-full bg-[var(--orion-emerald)] animate-pulse"
                   />
                   <span
-                    class="font-medium text-slate-900 dark:text-white"
+                    class="font-bold text-[var(--orion-amber)] font-mono"
                   >
                     P6
                   </span>
                 </div>
                 <div
-                  class="text-sm text-slate-600 dark:text-slate-400"
+                  class="text-sm font-mono"
                 >
                   <span
-                    class="text-green-600 dark:text-green-400"
+                    class="text-[var(--orion-text-secondary)]"
                   >
-                    Connected
-                  </span>
-                  <span
-                    class="mx-2"
-                  >
-                    •
-                  </span>
-                  <span>
-                    Last sync: 
-                    28/12/2024
+                    <span
+                      class="text-[var(--orion-emerald)]"
+                    >
+                      Connected
+                    </span>
+                    <span
+                      class="mx-2 text-[var(--orion-text-muted)]"
+                    >
+                      •
+                    </span>
+                    <span>
+                      28/12/2024
+                    </span>
                   </span>
                 </div>
               </div>
               <div
-                class="flex items-center justify-between"
+                class="flex items-center justify-between p-3 rounded-lg bg-[var(--orion-bg-secondary)] border border-[var(--orion-emerald)]/20"
               >
                 <div
                   class="flex items-center gap-3"
                 >
                   <div
-                    class="w-3 h-3 rounded-full bg-green-500"
+                    class="w-3 h-3 rounded-full bg-[var(--orion-emerald)] animate-pulse"
                   />
                   <span
-                    class="font-medium text-slate-900 dark:text-white"
+                    class="font-bold text-[var(--orion-emerald)] font-mono"
                   >
                     SAP
                   </span>
                 </div>
                 <div
-                  class="text-sm text-slate-600 dark:text-slate-400"
+                  class="text-sm font-mono"
                 >
                   <span
-                    class="text-green-600 dark:text-green-400"
+                    class="text-[var(--orion-text-secondary)]"
                   >
-                    Connected
-                  </span>
-                  <span
-                    class="mx-2"
-                  >
-                    •
-                  </span>
-                  <span>
-                    Last sync: 
-                    28/12/2024
+                    <span
+                      class="text-[var(--orion-emerald)]"
+                    >
+                      Connected
+                    </span>
+                    <span
+                      class="mx-2 text-[var(--orion-text-muted)]"
+                    >
+                      •
+                    </span>
+                    <span>
+                      28/12/2024
+                    </span>
                   </span>
                 </div>
               </div>
               <div
-                class="pt-3 border-t border-slate-200 dark:border-slate-700"
+                class="pt-4 border-t border-[var(--orion-border)]"
               >
                 <p
-                  class="text-sm text-slate-600 dark:text-slate-400"
+                  class="text-sm text-[var(--orion-text-muted)] font-mono"
                 >
-                  Next sync scheduled: 
+                  <span
+                    class="text-[var(--orion-text-secondary)]"
+                  >
+                    Next sync:
+                  </span>
+                   
                   28/12/2024, 12:00:00
                 </p>
               </div>
@@ -701,27 +870,66 @@ exports[`Dashboard - Snapshot Tests > matches loaded state snapshot 1`] = `
 exports[`Dashboard - Snapshot Tests > matches loading state snapshot 1`] = `
 <div>
   <main
-    aria-label="Dashboard"
-    class="min-h-screen bg-slate-50 dark:bg-slate-900 p-6 lg:p-8"
+    aria-labelledby="_r_15_"
+    class="min-h-screen p-4 sm:p-6 md:p-8"
     role="main"
   >
     <div
       class="max-w-7xl mx-auto"
     >
-      <div
-        class="mb-8"
+      <header
+        class="mb-8 sm:mb-12 animate-slide-up"
       >
-        <h1
-          class="text-2xl font-bold text-slate-900 dark:text-white"
+        <div
+          class="flex items-center gap-3 mb-2"
         >
-          Dashboard
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            PORTFOLIO
+          </span>
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        
+    text-[var(--orion-violet)]
+    bg-[rgba(139,92,246,0.1)]
+    border border-[rgba(139,92,246,0.3)]
+  
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            LIVE DATA
+          </span>
+        </div>
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--orion-text-primary)] font-display"
+          id="_r_15_"
+        >
+          <span
+            class="text-gradient-cyan"
+          >
+            Dashboard
+          </span>
         </h1>
         <p
-          class="mt-1 text-slate-600 dark:text-slate-400"
+          class="mt-2 text-[var(--orion-text-secondary)] max-w-2xl"
         >
-          Portfolio overview and project health metrics
+          Portfolio overview and project health metrics with real-time P6 and SAP integration.
         </p>
-      </div>
+      </header>
       <div
         class="sr-only"
         role="status"
@@ -730,7 +938,7 @@ exports[`Dashboard - Snapshot Tests > matches loading state snapshot 1`] = `
       </div>
       <section
         aria-labelledby="portfolio-heading"
-        class="mb-8"
+        class="mb-8 sm:mb-12 animate-slide-up delay-100"
       >
         <h2
           class="sr-only"
@@ -742,57 +950,57 @@ exports[`Dashboard - Snapshot Tests > matches loading state snapshot 1`] = `
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+            class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
             data-testid="skeleton-card"
           >
             <div
-              class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+              class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
             />
             <div
-              class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+              class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
             />
           </div>
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+            class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
             data-testid="skeleton-card"
           >
             <div
-              class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+              class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
             />
             <div
-              class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+              class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
             />
           </div>
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+            class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
             data-testid="skeleton-card"
           >
             <div
-              class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+              class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
             />
             <div
-              class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+              class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
             />
           </div>
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+            class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
             data-testid="skeleton-card"
           >
             <div
-              class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+              class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
             />
             <div
-              class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+              class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
             />
           </div>
         </div>
       </section>
       <div
-        class="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8"
       >
         <section
           aria-labelledby="projects-heading"
-          class="lg:col-span-2"
+          class="lg:col-span-2 animate-slide-up delay-200"
         >
           <h2
             class="sr-only"
@@ -804,42 +1012,43 @@ exports[`Dashboard - Snapshot Tests > matches loading state snapshot 1`] = `
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
             <div
-              class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+              class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
               data-testid="skeleton-card"
             >
               <div
-                class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+                class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
               />
               <div
-                class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+                class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
               />
             </div>
             <div
-              class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+              class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
               data-testid="skeleton-card"
             >
               <div
-                class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+                class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
               />
               <div
-                class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+                class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
               />
             </div>
             <div
-              class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+              class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
               data-testid="skeleton-card"
             >
               <div
-                class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+                class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
               />
               <div
-                class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+                class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
               />
             </div>
           </div>
         </section>
         <section
           aria-labelledby="sync-heading"
+          class="animate-slide-up delay-300"
         >
           <h2
             class="sr-only"
@@ -848,14 +1057,14 @@ exports[`Dashboard - Snapshot Tests > matches loading state snapshot 1`] = `
             Sync Status
           </h2>
           <div
-            class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 animate-pulse"
+            class="p-6 rounded-xl border border-[var(--orion-border)] bg-[var(--orion-bg-glass)] animate-pulse"
             data-testid="skeleton-card"
           >
             <div
-              class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-4"
+              class="h-4 bg-[var(--orion-bg-elevated)] rounded w-1/3 mb-4"
             />
             <div
-              class="h-8 bg-slate-200 dark:bg-slate-700 rounded w-1/2"
+              class="h-8 bg-[var(--orion-bg-elevated)] rounded w-1/2"
             />
           </div>
         </section>

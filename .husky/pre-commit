@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# COMPONENT-001 Pre-Commit Gate
+# Blocks commits if documentation is stale
+
+echo "╔══════════════════════════════════════════════════════════╗"
+echo "║         COMPONENT-001 PRE-COMMIT GATE                    ║"
+echo "╚══════════════════════════════════════════════════════════╝"
+
+# Change to frontend directory
+cd projects/orion-sync-engine/frontend
+
+# 1. Check if docs are fresh
+echo "🔍 Checking documentation freshness..."
+npm run docs:check
+if [ $? -ne 0 ]; then
+    echo "❌ BLOCKED: Documentation is stale. Run 'npm run docs:sync' first."
+    exit 1
+fi
+
+# 2. Run unit tests
+echo "🧪 Running unit tests..."
+npm run test:unit -- --run
+if [ $? -ne 0 ]; then
+    echo "❌ BLOCKED: Unit tests failed."
+    exit 1
+fi
+
+# 3. Lint check
+echo "📝 Running lint..."
+npm run lint
+if [ $? -ne 0 ]; then
+    echo "❌ BLOCKED: Lint errors found."
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"

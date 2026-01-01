@@ -4,56 +4,185 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for completion s
 <div>
   <main
     aria-label="Onboarding Complete"
-    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      class="max-w-lg w-full text-center"
+      aria-hidden="true"
+      class="fixed inset-0 pointer-events-none overflow-hidden"
     >
       <div
-        class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4"
+        class="absolute top-1/3 left-1/4 w-64 h-64 bg-[var(--orion-emerald)]/10 rounded-full blur-3xl animate-pulse"
+      />
+      <div
+        class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s;"
+      />
+    </div>
+    <div
+      class="relative w-full max-w-xl mx-auto text-center"
+    >
+      <div
+        class="animate-scale-in"
       >
-        <svg
-          class="w-8 h-8 text-green-600 dark:text-green-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        <div
+          class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-6"
         >
-          <path
-            d="M5 13l4 4L19 7"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+          <div
+            class="absolute -inset-4 rounded-full bg-[var(--orion-emerald)]/20 blur-xl animate-pulse"
           />
-        </svg>
+          <div
+            class="absolute inset-0 rounded-full border-2 border-[var(--orion-emerald)]/30 animate-ping"
+            style="animation-duration: 2s;"
+          />
+          <div
+            class="absolute inset-2 rounded-full border border-[var(--orion-emerald)]/20 animate-ping"
+            style="animation-duration: 2s; animation-delay: 0.5s;"
+          />
+          <div
+            class="relative w-full h-full rounded-full bg-gradient-to-br from-[var(--orion-emerald)] to-[#059669] flex items-center justify-center shadow-[0_0_40px_-10px_var(--orion-emerald-glow)] animate-scale-in"
+          >
+            <svg
+              aria-hidden="true"
+              class="text-white"
+              fill="none"
+              height="40"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="40"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
       <div
+        class="animate-slide-up"
         role="alert"
+        style="animation-delay: 200ms;"
       >
         <h1
-          class="text-2xl font-bold text-slate-900 dark:text-white mb-2"
+          class="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
         >
-          Setup Complete!
+          Setup 
+          <span
+            class="text-gradient-emerald"
+          >
+            Complete!
+          </span>
         </h1>
         <p
-          class="text-slate-600 dark:text-slate-400 mb-8"
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] mb-8 sm:mb-10 max-w-md mx-auto leading-relaxed"
         >
           Your ORION portal is ready. 
-          2
-           projects are now connected and syncing.
+          <span
+            class="text-[var(--orion-cyan)] font-semibold"
+          >
+            2
+             projects
+          </span>
+           are now connected and syncing.
         </p>
       </div>
-      <button
-        class="
-              w-full px-8 py-4 rounded-lg font-semibold text-lg
-              bg-blue-600 hover:bg-blue-700 text-white
-              focus:outline-none focus:ring-4 focus:ring-blue-200
-              transition-all duration-200
-            "
-        type="button"
+      <div
+        class="animate-slide-up"
+        style="animation-delay: 400ms;"
       >
-        Go to Dashboard
-      </button>
+        <button
+          aria-busy="false"
+          class="
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-primary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          w-full sm:w-auto min-w-[240px]
+        "
+          type="button"
+        >
+          <span>
+            Go to Dashboard
+            <svg
+              aria-hidden="true"
+              class="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 pointer-events-none overflow-hidden"
+      >
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-cyan)]"
+          style="left: 10%; top: 20%; animation: float 3s ease-in-out infinite; animation-delay: 0s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-emerald)]"
+          style="left: 17%; top: 35%; animation: float 4s ease-in-out infinite; animation-delay: 0.2s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-violet)]"
+          style="left: 24%; top: 50%; animation: float 5s ease-in-out infinite; animation-delay: 0.4s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-cyan)]"
+          style="left: 31%; top: 65%; animation: float 3s ease-in-out infinite; animation-delay: 0.6000000000000001s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-emerald)]"
+          style="left: 38%; top: 20%; animation: float 4s ease-in-out infinite; animation-delay: 0.8s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-violet)]"
+          style="left: 45%; top: 35%; animation: float 5s ease-in-out infinite; animation-delay: 1s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-cyan)]"
+          style="left: 52%; top: 50%; animation: float 3s ease-in-out infinite; animation-delay: 1.2000000000000002s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-emerald)]"
+          style="left: 59%; top: 65%; animation: float 4s ease-in-out infinite; animation-delay: 1.4000000000000001s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-violet)]"
+          style="left: 66%; top: 20%; animation: float 5s ease-in-out infinite; animation-delay: 1.6s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-cyan)]"
+          style="left: 73%; top: 35%; animation: float 3s ease-in-out infinite; animation-delay: 1.8s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-emerald)]"
+          style="left: 80%; top: 50%; animation: float 4s ease-in-out infinite; animation-delay: 2s; opacity: 0.5;"
+        />
+        <div
+          class="absolute w-2 h-2 rounded-full bg-[var(--orion-violet)]"
+          style="left: 87%; top: 65%; animation: float 5s ease-in-out infinite; animation-delay: 2.2s; opacity: 0.5;"
+        />
+      </div>
     </div>
   </main>
 </div>
@@ -63,54 +192,297 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
 <div>
   <main
     aria-label="Complete Onboarding"
-    class="min-h-screen bg-white dark:bg-slate-900 flex flex-col p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      class="max-w-2xl w-full mx-auto"
+      class="w-full max-w-3xl mx-auto"
     >
       <div
-        class="mb-8 text-center"
+        class="mb-6 sm:mb-8 animate-fade-in"
       >
-        <p
-          class="text-sm text-slate-500 dark:text-slate-400"
+        <nav
+          aria-label="Progress"
+          style="width: 100%;"
         >
-          <span>
-            Step 5
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
+          >
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
+            >
+              <div
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
+              >
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  5
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 100%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    P6
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    SAP
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
+                  >
+                    Projects
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
+          <p
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
+          >
+            Step 
+            5
+             of 
+            5
+            : Complete
+          </p>
+        </nav>
+      </div>
+      <div
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
+      >
+        <div
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
+        >
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-emerald
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            FINAL STEP
           </span>
-           
-          <span>
-            of 5
+          <span
+            class="
+        badge
+        inline-flex items-center
+        font-mono font-medium
+        rounded-full
+        badge-cyan
+        px-3 py-1 text-sm gap-1.5
+        
+      "
+          >
+            STEP 5 OF 5
           </span>
-        </p>
+        </div>
         <h1
-          class="text-2xl font-bold text-slate-900 dark:text-white mt-2"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
         >
-          Review & Complete
+          Review & 
+          <span
+            class="text-gradient-cyan"
+          >
+            Complete
+          </span>
         </h1>
         <p
-          class="mt-2 text-slate-600 dark:text-slate-400"
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
         >
-          Review your configuration and complete the setup
+          Verify your configuration and complete the setup
         </p>
       </div>
       <div
-        class="space-y-4 mb-8"
+        class="space-y-4 mb-8 animate-scale-in delay-200"
       >
         <div
-          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+          class="p-4 sm:p-5 rounded-xl border border-[var(--orion-border)] border-l-4 border-l-[var(--orion-amber)] bg-[var(--orion-bg-glass)] backdrop-blur-sm"
         >
           <div
             class="flex items-center gap-3 mb-3"
           >
             <div
-              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+              class="p-2.5 rounded-lg bg-[var(--orion-amber)]/10 text-[var(--orion-amber)]"
             >
               <svg
-                class="w-5 h-5"
                 fill="none"
+                height="20"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                width="20"
               >
                 <path
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
@@ -121,36 +493,38 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
               </svg>
             </div>
             <p
-              class="font-semibold text-slate-900 dark:text-white"
+              class="font-semibold text-[var(--orion-text-primary)] font-display"
             >
               P6 Connection
             </p>
           </div>
           <div
-            class="text-sm text-slate-600 dark:text-slate-400"
+            class="text-sm text-[var(--orion-text-secondary)] space-y-1.5 pl-12"
           >
             <p
-              class="mb-1"
+              class="flex items-center gap-2"
             >
               <span
-                class="text-slate-500"
+                class="text-[var(--orion-text-muted)]"
               >
-                Server: 
+                Server:
               </span>
               <span
-                class="font-medium text-slate-900 dark:text-white"
+                class="font-mono text-[var(--orion-text-primary)]"
               >
                 p6.acme-epc.com
               </span>
             </p>
-            <p>
+            <p
+              class="flex items-center gap-2"
+            >
               <span
-                class="text-slate-500"
+                class="text-[var(--orion-text-muted)]"
               >
-                Database: 
+                Database:
               </span>
               <span
-                class="font-medium text-slate-900 dark:text-white"
+                class="font-mono text-[var(--orion-text-primary)]"
               >
                 PMDB
               </span>
@@ -158,19 +532,20 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
           </div>
         </div>
         <div
-          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+          class="p-4 sm:p-5 rounded-xl border border-[var(--orion-border)] border-l-4 border-l-[var(--orion-emerald)] bg-[var(--orion-bg-glass)] backdrop-blur-sm"
         >
           <div
             class="flex items-center gap-3 mb-3"
           >
             <div
-              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+              class="p-2.5 rounded-lg bg-[var(--orion-emerald)]/10 text-[var(--orion-emerald)]"
             >
               <svg
-                class="w-5 h-5"
                 fill="none"
+                height="20"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                width="20"
               >
                 <path
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
@@ -181,36 +556,38 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
               </svg>
             </div>
             <p
-              class="font-semibold text-slate-900 dark:text-white"
+              class="font-semibold text-[var(--orion-text-primary)] font-display"
             >
               SAP Connection
             </p>
           </div>
           <div
-            class="text-sm text-slate-600 dark:text-slate-400"
+            class="text-sm text-[var(--orion-text-secondary)] space-y-1.5 pl-12"
           >
             <p
-              class="mb-1"
+              class="flex items-center gap-2"
             >
               <span
-                class="text-slate-500"
+                class="text-[var(--orion-text-muted)]"
               >
-                Server: 
+                Server:
               </span>
               <span
-                class="font-medium text-slate-900 dark:text-white"
+                class="font-mono text-[var(--orion-text-primary)]"
               >
                 hana.acme-epc.com:30015
               </span>
             </p>
-            <p>
+            <p
+              class="flex items-center gap-2"
+            >
               <span
-                class="text-slate-500"
+                class="text-[var(--orion-text-muted)]"
               >
-                System: 
+                System:
               </span>
               <span
-                class="font-medium text-slate-900 dark:text-white"
+                class="font-mono text-[var(--orion-text-primary)]"
               >
                 PRD
                  / Client 
@@ -220,19 +597,20 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
           </div>
         </div>
         <div
-          class="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
+          class="p-4 sm:p-5 rounded-xl border border-[var(--orion-border)] border-l-4 border-l-[var(--orion-violet)] bg-[var(--orion-bg-glass)] backdrop-blur-sm"
         >
           <div
             class="flex items-center gap-3 mb-3"
           >
             <div
-              class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+              class="p-2.5 rounded-lg bg-[var(--orion-violet)]/10 text-[var(--orion-violet)]"
             >
               <svg
-                class="w-5 h-5"
                 fill="none"
+                height="20"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                width="20"
               >
                 <path
                   d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
@@ -243,34 +621,36 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
               </svg>
             </div>
             <p
-              class="font-semibold text-slate-900 dark:text-white"
+              class="font-semibold text-[var(--orion-text-primary)] font-display"
             >
               Selected Projects
             </p>
           </div>
           <div
-            class="text-sm text-slate-600 dark:text-slate-400"
+            class="text-sm text-[var(--orion-text-secondary)] space-y-1.5 pl-12"
           >
             <p
-              class="mb-2 font-medium text-slate-900 dark:text-white"
+              class="font-semibold text-[var(--orion-cyan)] mb-2"
             >
               2
                projects selected
             </p>
             <ul
-              class="space-y-1"
+              class="space-y-1.5"
             >
               <li
                 class="flex items-center gap-2"
               >
                 <span
-                  class="w-1.5 h-1.5 rounded-full bg-blue-500"
+                  class="w-1.5 h-1.5 rounded-full bg-[var(--orion-cyan)] flex-shrink-0"
                 />
-                <span>
+                <span
+                  class="text-[var(--orion-text-primary)] truncate"
+                >
                   ACME Refinery Expansion
                 </span>
                 <span
-                  class="text-slate-400"
+                  class="text-[var(--orion-text-muted)] font-mono text-xs"
                 >
                   (
                   ACME-REF-001
@@ -281,13 +661,15 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
                 class="flex items-center gap-2"
               >
                 <span
-                  class="w-1.5 h-1.5 rounded-full bg-blue-500"
+                  class="w-1.5 h-1.5 rounded-full bg-[var(--orion-cyan)] flex-shrink-0"
                 />
-                <span>
+                <span
+                  class="text-[var(--orion-text-primary)] truncate"
+                >
                   Offshore Platform Alpha
                 </span>
                 <span
-                  class="text-slate-400"
+                  class="text-[var(--orion-text-muted)] font-mono text-xs"
                 >
                   (
                   OFF-PLT-A
@@ -299,32 +681,86 @@ exports[`OnboardingComplete - Snapshot Tests > matches snapshot for initial stat
         </div>
       </div>
       <div
-        class="mt-8 flex gap-4"
+        class="mt-8 flex flex-col sm:flex-row gap-4 animate-slide-up delay-400"
       >
         <button
+          aria-busy="false"
           class="
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  transition-all duration-200
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700
-                "
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-secondary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          flex-1
+        "
           type="button"
         >
-          Back
+          <span>
+            <svg
+              aria-hidden="true"
+              class="mr-2"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M11 17l-5-5m0 0l5-5m-5 5h12"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+            Back
+          </span>
         </button>
         <button
+          aria-busy="false"
           class="
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  inline-flex items-center justify-center gap-2
-                  transition-all duration-200
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  bg-blue-600 hover:bg-blue-700 text-white
-                "
+          inline-flex items-center justify-center
+          font-display font-semibold
+          rounded-orion-sm
+          transition-all duration-200 ease-orion-out
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--orion-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--orion-bg-primary)]
+          btn-primary
+          px-6 py-3 text-lg gap-3 min-h-[52px]
+          
+          cursor-pointer
+          flex-1
+        "
           type="button"
         >
-          Complete Setup
+          <span>
+            Complete Setup
+            <svg
+              aria-hidden="true"
+              class="ml-2"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              width="20"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </span>
         </button>
       </div>
+      <p
+        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono animate-fade-in delay-600"
+      >
+        This will create the sync configuration and start initial synchronization
+      </p>
     </div>
   </main>
 </div>

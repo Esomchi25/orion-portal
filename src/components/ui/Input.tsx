@@ -62,6 +62,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         disabled={disabled}
+        style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}
         className={`
           input-field
           ${sizeStyles[size]}

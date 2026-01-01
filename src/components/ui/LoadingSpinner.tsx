@@ -43,6 +43,7 @@ export function LoadingSpinner({
     <div
       role="status"
       aria-label={label}
+      data-testid="loading-spinner"
       className={`
         ${sizeStyles[size]}
         rounded-full

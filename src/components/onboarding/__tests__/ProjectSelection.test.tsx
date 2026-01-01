@@ -25,40 +25,40 @@ expect.extend(toHaveNoViolations);
 
 const mockProjects: P6Project[] = [
   {
-    id: 'proj-001',
-    name: 'ACME Refinery Expansion',
-    code: 'ACME-REF-001',
+    projectId: 1,
+    projectName: 'ACME Refinery Expansion',
+    projectCode: 'ACME-REF-001',
     startDate: '2024-01-15',
     finishDate: '2026-06-30',
     status: 'Active',
-    progress: 35,
+    percentComplete: 35,
   },
   {
-    id: 'proj-002',
-    name: 'Offshore Platform Alpha',
-    code: 'OFF-PLT-A',
+    projectId: 2,
+    projectName: 'Offshore Platform Alpha',
+    projectCode: 'OFF-PLT-A',
     startDate: '2023-06-01',
     finishDate: '2025-12-31',
     status: 'Active',
-    progress: 68,
+    percentComplete: 68,
   },
   {
-    id: 'proj-003',
-    name: 'Pipeline Network Phase 2',
-    code: 'PIPE-NET-2',
+    projectId: 3,
+    projectName: 'Pipeline Network Phase 2',
+    projectCode: 'PIPE-NET-2',
     startDate: '2024-03-01',
     finishDate: '2025-09-30',
     status: 'Planned',
-    progress: 0,
+    percentComplete: 0,
   },
   {
-    id: 'proj-004',
-    name: 'Legacy Terminal Upgrade',
-    code: 'LEG-TERM',
+    projectId: 4,
+    projectName: 'Legacy Terminal Upgrade',
+    projectCode: 'LEG-TERM',
     startDate: '2022-01-01',
     finishDate: '2024-01-31',
     status: 'Complete',
-    progress: 100,
+    percentComplete: 100,
   },
 ];
 
@@ -96,9 +96,12 @@ describe('ProjectSelection - Unit Tests', () => {
     it('displays step indicator showing step 4 of 5', async () => {
       render(<ProjectSelection {...defaultProps} />);
 
+      // The ProgressIndicator renders "STEP X OF Y" in a badge
+      // Use getAllByText since step number appears in multiple places (badge + step circle)
       await waitFor(() => {
-        expect(screen.getByText(/step 4/i)).toBeInTheDocument();
-        expect(screen.getByText(/of 5/i)).toBeInTheDocument();
+        expect(screen.getByText('STEP')).toBeInTheDocument();
+        expect(screen.getAllByText('4').length).toBeGreaterThan(0);
+        expect(screen.getByText('OF 5')).toBeInTheDocument();
       });
     });
 
@@ -375,7 +378,13 @@ describe('ProjectSelection - Unit Tests', () => {
       await user.click(screen.getByRole('button', { name: /continue/i }));
 
       expect(onNext).toHaveBeenCalledTimes(1);
-      expect(onNext).toHaveBeenCalledWith([mockProjects[0]]);
+      expect(onNext).toHaveBeenCalledWith({
+        selectedProjects: [{
+          id: mockProjects[0].projectId,
+          name: mockProjects[0].projectName,
+          code: mockProjects[0].projectCode,
+        }],
+      });
     });
   });
 
@@ -579,14 +588,14 @@ describe('ProjectSelection - Performance Tests', () => {
   });
 
   it('handles large project lists efficiently', async () => {
-    const largeProjectList = Array.from({ length: 100 }, (_, i) => ({
-      id: `proj-${i}`,
-      name: `Project ${i}`,
-      code: `PROJ-${i}`,
+    const largeProjectList: P6Project[] = Array.from({ length: 100 }, (_, i) => ({
+      projectId: i + 1,
+      projectName: `Project ${i}`,
+      projectCode: `PROJ-${i}`,
       startDate: '2024-01-01',
       finishDate: '2025-12-31',
-      status: 'Active' as const,
-      progress: Math.floor(Math.random() * 100),
+      status: 'Active',
+      percentComplete: Math.floor(Math.random() * 100),
     }));
 
     mockFetch.mockReset();

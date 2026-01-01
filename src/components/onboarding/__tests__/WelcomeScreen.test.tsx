@@ -56,26 +56,32 @@ describe('WelcomeScreen - Unit Tests', () => {
   });
 
   describe('Rendering', () => {
-    it('renders the welcome heading with user name', () => {
+    it('renders the welcome heading and user name separately', () => {
       render(<WelcomeScreen {...defaultProps} />);
 
+      // Welcome heading in main content area
       expect(
-        screen.getByRole('heading', { name: /welcome.*john/i })
+        screen.getByRole('heading', { name: /welcome to orion/i })
+      ).toBeInTheDocument();
+
+      // User name in sidebar as a separate h2
+      expect(
+        screen.getByRole('heading', { name: /john/i })
       ).toBeInTheDocument();
     });
 
-    it('renders organization name when available', () => {
+    it('renders the step indicator in sidebar', () => {
       render(<WelcomeScreen {...defaultProps} />);
 
-      expect(screen.getByText(/acme epc contractors/i)).toBeInTheDocument();
+      // The redesigned component shows step indicator instead of organization
+      expect(screen.getByText(/step 1 of 4/i)).toBeInTheDocument();
     });
 
-    it('hides organization when not available', () => {
-      render(<WelcomeScreen {...defaultProps} user={mockUserNoOrg} />);
+    it('shows online status indicator', () => {
+      render(<WelcomeScreen {...defaultProps} />);
 
-      expect(
-        screen.queryByText(/organization/i)
-      ).not.toBeInTheDocument();
+      // Shows online status in sidebar
+      expect(screen.getByText(/online/i)).toBeInTheDocument();
     });
 
     it('renders user avatar when imageUrl is provided', () => {
@@ -97,16 +103,15 @@ describe('WelcomeScreen - Unit Tests', () => {
       render(<WelcomeScreen {...defaultProps} />);
 
       expect(
-        screen.getByRole('button', { name: /begin setup/i })
+        screen.getByRole('button', { name: /get started/i })
       ).toBeInTheDocument();
     });
 
-    it('renders product features list', () => {
+    it('renders unified P6 & SAP description', () => {
       render(<WelcomeScreen {...defaultProps} />);
 
-      expect(screen.getByText(/p6.*schedule.*data/i)).toBeInTheDocument();
-      expect(screen.getByText(/sap.*financial.*data/i)).toBeInTheDocument();
-      expect(screen.getByText(/real-time.*sync/i)).toBeInTheDocument();
+      // The component shows unified P6 & SAP integration text
+      expect(screen.getByText(/unified p6.*sap/i)).toBeInTheDocument();
     });
   });
 
@@ -115,7 +120,7 @@ describe('WelcomeScreen - Unit Tests', () => {
       const onGetStarted = vi.fn();
       render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-      const button = screen.getByRole('button', { name: /begin setup/i });
+      const button = screen.getByRole('button', { name: /get started/i });
       fireEvent.click(button);
 
       expect(onGetStarted).toHaveBeenCalledTimes(1);
@@ -124,8 +129,10 @@ describe('WelcomeScreen - Unit Tests', () => {
     it('disables button when isLoading is true', () => {
       render(<WelcomeScreen {...defaultProps} isLoading={true} />);
 
-      const button = screen.getByRole('button', { name: /begin setup/i });
-      expect(button).toBeDisabled();
+      // When loading, button shows spinner, so find by aria-busy
+      const buttons = screen.getAllByRole('button');
+      const loadingButton = buttons.find(btn => btn.getAttribute('aria-busy') === 'true');
+      expect(loadingButton).toBeDisabled();
     });
 
     it('shows loading spinner when isLoading is true', () => {
@@ -140,8 +147,13 @@ describe('WelcomeScreen - Unit Tests', () => {
       const userNoName = { ...mockUser, firstName: null };
       render(<WelcomeScreen {...defaultProps} user={userNoName} />);
 
+      // Should show "Demo User" as fallback (component uses firstName || 'Demo User')
       expect(
-        screen.getByRole('heading', { name: /welcome/i })
+        screen.getByRole('heading', { name: /demo user/i })
+      ).toBeInTheDocument();
+      // Main welcome heading should still be present
+      expect(
+        screen.getByRole('heading', { name: /welcome to orion/i })
       ).toBeInTheDocument();
     });
 
@@ -177,7 +189,7 @@ describe('WelcomeScreen - Accessibility Tests', () => {
   it('button is focusable', () => {
     render(<WelcomeScreen {...defaultProps} />);
 
-    const button = screen.getByRole('button', { name: /begin setup/i });
+    const button = screen.getByRole('button', { name: /get started/i });
     button.focus();
     expect(document.activeElement).toBe(button);
   });
@@ -193,7 +205,7 @@ describe('WelcomeScreen - Accessibility Tests', () => {
     const onGetStarted = vi.fn();
     render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-    const button = screen.getByRole('button', { name: /begin setup/i });
+    const button = screen.getByRole('button', { name: /get started/i });
     button.focus();
     fireEvent.keyDown(button, { key: 'Enter' });
 
@@ -213,7 +225,7 @@ describe('WelcomeScreen - Integration Tests', () => {
 
     render(<WelcomeScreen {...defaultProps} onGetStarted={onGetStarted} />);
 
-    const button = screen.getByRole('button', { name: /begin setup/i });
+    const button = screen.getByRole('button', { name: /get started/i });
     fireEvent.click(button);
 
     await waitFor(() => {
@@ -230,7 +242,7 @@ describe('WelcomeScreen - Integration Tests', () => {
       <WelcomeScreen {...defaultProps} onGetStarted={asyncOnGetStarted} />
     );
 
-    const button = screen.getByRole('button', { name: /begin setup/i });
+    const button = screen.getByRole('button', { name: /get started/i });
     fireEvent.click(button);
 
     await waitFor(() => {

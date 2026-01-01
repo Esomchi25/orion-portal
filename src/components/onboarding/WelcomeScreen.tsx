@@ -41,19 +41,19 @@ const OrbitalAnimation = memo(function OrbitalAnimation() {
       {/* Outer orbit ring with gradient */}
       <div
         className="absolute inset-0 rounded-full border-2 border-[var(--orion-border)] opacity-30"
-        style={{ position: 'absolute', inset: 0, borderRadius: '9999px' }}
+        style={{ position: 'absolute', inset: 0, borderRadius: '9999px', borderWidth: '2px', borderStyle: 'solid', borderColor: 'rgba(148,163,184,0.3)', opacity: 0.3 }}
       />
 
       {/* Middle orbit ring - pulsing */}
       <div
         className="absolute inset-6 rounded-full border border-[var(--orion-cyan)]/20 animate-pulse-glow"
-        style={{ position: 'absolute', inset: '1.5rem', borderRadius: '9999px' }}
+        style={{ position: 'absolute', inset: '1.5rem', borderRadius: '9999px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'rgba(0,212,255,0.2)' }}
       />
 
       {/* Inner orbit ring */}
       <div
         className="absolute inset-12 rounded-full border border-[var(--orion-cyan)]/30"
-        style={{ position: 'absolute', inset: '3rem', borderRadius: '9999px' }}
+        style={{ position: 'absolute', inset: '3rem', borderRadius: '9999px', borderWidth: '1px', borderStyle: 'solid', borderColor: 'rgba(0,212,255,0.3)' }}
       />
 
       {/* Gradient glow backdrop */}

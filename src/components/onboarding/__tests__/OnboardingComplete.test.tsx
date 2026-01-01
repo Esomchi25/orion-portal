@@ -14,7 +14,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { OnboardingComplete } from '../OnboardingComplete';
-import type { OnboardingCompleteProps, P6Project } from '../types';
+import type { OnboardingCompleteProps, SelectedProject } from '../types';
 
 // Extend expect with accessibility matchers
 expect.extend(toHaveNoViolations);
@@ -23,24 +23,17 @@ expect.extend(toHaveNoViolations);
 // TEST FIXTURES
 // ============================================================================
 
-const mockSelectedProjects: P6Project[] = [
+// OnboardingComplete uses SelectedProject (id, name, code) not P6Project
+const mockSelectedProjects: SelectedProject[] = [
   {
-    id: 'proj-001',
+    id: 1,
     name: 'ACME Refinery Expansion',
     code: 'ACME-REF-001',
-    startDate: '2024-01-15',
-    finishDate: '2026-06-30',
-    status: 'Active',
-    progress: 35,
   },
   {
-    id: 'proj-002',
+    id: 2,
     name: 'Offshore Platform Alpha',
     code: 'OFF-PLT-A',
-    startDate: '2023-06-01',
-    finishDate: '2025-12-31',
-    status: 'Active',
-    progress: 68,
   },
 ];
 
@@ -81,8 +74,11 @@ describe('OnboardingComplete - Unit Tests', () => {
     it('displays step indicator showing step 5 of 5', () => {
       render(<OnboardingComplete {...defaultProps} />);
 
-      expect(screen.getByText(/step 5/i)).toBeInTheDocument();
-      expect(screen.getByText(/of 5/i)).toBeInTheDocument();
+      // The ProgressIndicator renders "STEP X OF Y" in a badge
+      // Use getAllByText since step number appears in multiple places (badge + step circle)
+      expect(screen.getByText('STEP')).toBeInTheDocument();
+      expect(screen.getAllByText('5').length).toBeGreaterThan(0);
+      expect(screen.getByText('OF 5')).toBeInTheDocument();
     });
 
     it('shows configuration summary', () => {
@@ -182,7 +178,8 @@ describe('OnboardingComplete - Unit Tests', () => {
 
       await user.click(screen.getByRole('button', { name: /complete setup/i }));
 
-      expect(screen.getByRole('button', { name: /complete setup/i })).toBeDisabled();
+      // Button text changes to "Completing Setup..." during loading
+      expect(screen.getByRole('button', { name: /completing setup/i })).toBeDisabled();
       expect(screen.getByRole('button', { name: /back/i })).toBeDisabled();
     });
   });
@@ -203,8 +200,15 @@ describe('OnboardingComplete - Unit Tests', () => {
 
       await user.click(screen.getByRole('button', { name: /complete setup/i }));
 
+      // The heading is split: "Setup " + <span>"Complete!"</span>
+      // Use function matcher to find text across elements
       await waitFor(() => {
-        expect(screen.getByText(/setup complete/i)).toBeInTheDocument();
+        expect(
+          screen.getByRole('heading', { name: (_, element) => {
+            return element?.textContent?.toLowerCase().includes('setup') &&
+                   element?.textContent?.toLowerCase().includes('complete');
+          }})
+        ).toBeInTheDocument();
       });
     });
 
@@ -435,8 +439,14 @@ describe('OnboardingComplete - Snapshot Tests', () => {
 
     await user.click(screen.getByRole('button', { name: /complete setup/i }));
 
+    // Text is split: "Setup " + <span>"Complete!"</span> - use heading role with function matcher
     await waitFor(() => {
-      expect(screen.getByText(/setup complete/i)).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', { name: (_, element) => {
+          return element?.textContent?.toLowerCase().includes('setup') &&
+                 element?.textContent?.toLowerCase().includes('complete');
+        }})
+      ).toBeInTheDocument();
     });
 
     expect(container).toMatchSnapshot();

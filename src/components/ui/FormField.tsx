@@ -49,7 +49,9 @@ export function FormField({
   const errorId = `${fieldId}-error`;
   const hintId = `${fieldId}-hint`;
 
-  const describedBy = [error && errorId, hint && hintId]
+  // Only include errorId when there's an error (hint is hidden when error exists)
+  // Only include hintId when there's a hint AND no error
+  const describedBy = [error && errorId, !error && hint && hintId]
     .filter(Boolean)
     .join(' ') || undefined;
 

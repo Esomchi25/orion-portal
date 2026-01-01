@@ -4,307 +4,191 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
 <div>
   <main
     aria-label="SAP Connection Setup"
-    class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      class="w-full max-w-2xl"
+      class="w-full max-w-3xl mx-auto"
     >
       <div
-        class="mb-8 sm:mb-12 animate-fade-in"
+        class="mb-6 sm:mb-8 animate-fade-in"
       >
         <nav
           aria-label="Progress"
-          class="w-full"
+          style="width: 100%;"
         >
-          <ol
-            class="
-          flex items-center
-          justify-between
-        "
-            role="list"
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
           >
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
             >
               <div
-                class="relative flex items-center"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
               >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
                 >
-                  <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  3
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 50%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  Welcome
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  P6
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  aria-current="step"
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    active
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        text-[var(--orion-bg-primary)]
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    3
+                    P6
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      text-[var(--orion-cyan)]
-                      
-                      
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  SAP
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      3
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
                   >
-                    4
+                    SAP
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Projects
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      4
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
                   >
-                    5
+                    Projects
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Complete
-                </span>
-              </div>
-            </li>
-          </ol>
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
           <p
-            class="sr-only"
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
           >
             Step 
             3
@@ -315,10 +199,10 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
         </nav>
       </div>
       <div
-        class="text-center mb-8 animate-slide-up"
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
       >
         <div
-          class="inline-flex items-center gap-2 mb-4"
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
         >
           <span
             class="
@@ -348,7 +232,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
           </span>
         </div>
         <h1
-          class="orion-h1 text-[var(--orion-text-primary)] mb-3"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
         >
           Connect to 
           <span
@@ -358,7 +242,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
           </span>
         </h1>
         <p
-          class="text-[var(--orion-text-secondary)] max-w-lg mx-auto"
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
         >
           Enter your SAP HANA or RFC credentials to sync financial data including budgets, actuals, and commitments.
         </p>
@@ -372,6 +256,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
         transition-all duration-200 ease-orion-out
         p-6 sm:p-8 border-l-4 border-l-[var(--orion-emerald)] animate-scale-in delay-200
       "
+        style="max-width: 100%; overflow: hidden;"
       >
         <div
           class="flex items-center gap-3 mb-6 pb-6 border-b border-[var(--orion-border)]"
@@ -421,15 +306,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
               aria-invalid="false"
               class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
               id="_r_5q_-host-url"
               placeholder="https://hana.company.com:30015"
               required=""
+              style="width: 100%; max-width: 100%; box-sizing: border-box;"
               type="url"
               value=""
             />
@@ -463,15 +350,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_5q_-system-id"
                 placeholder="PRD"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -502,15 +391,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_5q_-client"
                 placeholder="100"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -545,15 +436,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
                 autocomplete="username"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_5q_-username"
                 placeholder="sapuser"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -578,14 +471,16 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
                 autocomplete="current-password"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_5q_-password"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="password"
                 value=""
               />
@@ -618,7 +513,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
         </form>
       </div>
       <div
-        class="mt-8 flex gap-4 animate-slide-up delay-400"
+        class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up delay-400"
       >
         <button
           aria-busy="false"
@@ -632,18 +527,19 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           cursor-pointer
-          flex-1
+          flex-1 order-2 sm:order-1
         "
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="mr-2"
+              class="mr-2 flex-shrink-0"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M11 17l-5-5m0 0l5-5m-5 5h12"
@@ -667,7 +563,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           opacity-50 cursor-not-allowed pointer-events-none
-          flex-1
+          flex-1 order-1 sm:order-2
         "
           disabled=""
           type="button"
@@ -676,11 +572,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
             Continue
             <svg
               aria-hidden="true"
-              class="ml-2 transition-transform group-hover:translate-x-1"
+              class="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
@@ -693,12 +590,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot for initial state
         </button>
       </div>
       <p
-        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono animate-fade-in delay-600"
+        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 sm:mt-8 font-mono animate-fade-in delay-600"
       >
         Need help? Check the
          
         <a
-          class="text-[var(--orion-cyan)] hover:underline"
+          class="text-[var(--orion-cyan)] hover:underline hover:text-[var(--orion-cyan)] transition-colors"
           href="#"
         >
           SAP Integration Guide
@@ -713,307 +610,191 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
 <div>
   <main
     aria-label="SAP Connection Setup"
-    class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      class="w-full max-w-2xl"
+      class="w-full max-w-3xl mx-auto"
     >
       <div
-        class="mb-8 sm:mb-12 animate-fade-in"
+        class="mb-6 sm:mb-8 animate-fade-in"
       >
         <nav
           aria-label="Progress"
-          class="w-full"
+          style="width: 100%;"
         >
-          <ol
-            class="
-          flex items-center
-          justify-between
-        "
-            role="list"
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
           >
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
             >
               <div
-                class="relative flex items-center"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
               >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
                 >
-                  <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  3
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 50%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  Welcome
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  P6
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  aria-current="step"
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    active
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        text-[var(--orion-bg-primary)]
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    3
+                    P6
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      text-[var(--orion-cyan)]
-                      
-                      
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  SAP
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      3
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
                   >
-                    4
+                    SAP
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Projects
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      4
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
                   >
-                    5
+                    Projects
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Complete
-                </span>
-              </div>
-            </li>
-          </ol>
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
           <p
-            class="sr-only"
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
           >
             Step 
             3
@@ -1024,10 +805,10 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
         </nav>
       </div>
       <div
-        class="text-center mb-8 animate-slide-up"
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
       >
         <div
-          class="inline-flex items-center gap-2 mb-4"
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
         >
           <span
             class="
@@ -1057,7 +838,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
           </span>
         </div>
         <h1
-          class="orion-h1 text-[var(--orion-text-primary)] mb-3"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
         >
           Connect to 
           <span
@@ -1067,7 +848,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
           </span>
         </h1>
         <p
-          class="text-[var(--orion-text-secondary)] max-w-lg mx-auto"
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
         >
           Enter your SAP HANA or RFC credentials to sync financial data including budgets, actuals, and commitments.
         </p>
@@ -1081,6 +862,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
         transition-all duration-200 ease-orion-out
         p-6 sm:p-8 border-l-4 border-l-[var(--orion-emerald)] animate-scale-in delay-200
       "
+        style="max-width: 100%; overflow: hidden;"
       >
         <div
           class="flex items-center gap-3 mb-6 pb-6 border-b border-[var(--orion-border)]"
@@ -1130,15 +912,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
               aria-invalid="false"
               class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
               id="_r_66_-host-url"
               placeholder="https://hana.company.com:30015"
               required=""
+              style="width: 100%; max-width: 100%; box-sizing: border-box;"
               type="url"
               value="https://hana.acme-epc.com:30015"
             />
@@ -1172,15 +956,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_66_-system-id"
                 placeholder="PRD"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value="PRD"
               />
@@ -1211,15 +997,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_66_-client"
                 placeholder="100"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value="100"
               />
@@ -1254,15 +1042,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
                 autocomplete="username"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_66_-username"
                 placeholder="sapuser"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value="sapuser"
               />
@@ -1287,14 +1077,16 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
                 autocomplete="current-password"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_66_-password"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="password"
                 value="sapsecret123"
               />
@@ -1387,7 +1179,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
         </div>
       </div>
       <div
-        class="mt-8 flex gap-4 animate-slide-up delay-400"
+        class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up delay-400"
       >
         <button
           aria-busy="false"
@@ -1401,18 +1193,19 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           cursor-pointer
-          flex-1
+          flex-1 order-2 sm:order-1
         "
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="mr-2"
+              class="mr-2 flex-shrink-0"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M11 17l-5-5m0 0l5-5m-5 5h12"
@@ -1436,7 +1229,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           cursor-pointer
-          flex-1
+          flex-1 order-1 sm:order-2
         "
           type="button"
         >
@@ -1444,11 +1237,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
             Continue
             <svg
               aria-hidden="true"
-              class="ml-2 transition-transform group-hover:translate-x-1"
+              class="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
@@ -1461,12 +1255,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with success resu
         </button>
       </div>
       <p
-        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono animate-fade-in delay-600"
+        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 sm:mt-8 font-mono animate-fade-in delay-600"
       >
         Need help? Check the
          
         <a
-          class="text-[var(--orion-cyan)] hover:underline"
+          class="text-[var(--orion-cyan)] hover:underline hover:text-[var(--orion-cyan)] transition-colors"
           href="#"
         >
           SAP Integration Guide
@@ -1481,307 +1275,191 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
 <div>
   <main
     aria-label="SAP Connection Setup"
-    class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+    class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     role="main"
   >
     <div
-      class="w-full max-w-2xl"
+      class="w-full max-w-3xl mx-auto"
     >
       <div
-        class="mb-8 sm:mb-12 animate-fade-in"
+        class="mb-6 sm:mb-8 animate-fade-in"
       >
         <nav
           aria-label="Progress"
-          class="w-full"
+          style="width: 100%;"
         >
-          <ol
-            class="
-          flex items-center
-          justify-between
-        "
-            role="list"
+          <div
+            style="position: relative; margin: 0px auto; max-width: 48rem; background-color: rgba(17, 24, 39, 0.8); border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 1rem; padding: 1.5rem;"
           >
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
+            <div
+              style="display: flex; justify-content: center; margin-bottom: 1.5rem;"
             >
               <div
-                class="relative flex items-center"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; background-color: rgb(17, 24, 39); border: 1px solid rgba(148, 163, 184, 0.15);"
               >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
                 >
-                  <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                  STEP
+                </span>
+                <span
+                  style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255);"
+                >
+                  3
+                </span>
+                <span
+                  style="font-size: 0.75rem; font-family: var(--font-mono), monospace; color: rgb(100, 116, 139); letter-spacing: 0.05em;"
+                >
+                  OF 
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              style="position: relative; height: 48px;"
+            >
+              <div
+                style="position: absolute; top: 50%; left: 0px; right: 0px; transform: translateY(-50%); height: 6px; background-color: rgba(148, 163, 184, 0.15); border-radius: 9999px;"
+              />
+              <div
+                style="position: absolute; top: 50%; left: 0px; transform: translateY(-50%); height: 6px; width: 50%; background: linear-gradient(to right, #10b981, #00d4ff); border-radius: 9999px; transition: width 0.5s ease-out;"
+              />
+              <ol
+                role="list"
+                style="position: relative; display: flex; align-items: center; justify-content: space-between; list-style: none; margin: 0px; padding: 0px;"
+              >
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  Welcome
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    completed
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        text-[var(--orion-bg-primary)]
-                        
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    <svg
-                      aria-hidden="true"
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    Welcome
+                  </span>
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
+                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(16, 185, 129); background-color: rgb(16, 185, 129); box-shadow: 0 0 16px -4px rgba(16,185,129,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
                     >
-                      <path
-                        d="M5 13l4 4L19 7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      text-[var(--orion-emerald)]
-                      
-                    "
-                >
-                  P6
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    completed
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  aria-current="step"
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    active
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                      <svg
+                        aria-hidden="true"
+                        fill="none"
+                        height="20"
+                        stroke="currentColor"
+                        style="width: 20px; height: 20px; flex-shrink: 0;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                      >
+                        <path
+                          d="M5 13l4 4L19 7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        text-[var(--orion-bg-primary)]
-                        
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(16, 185, 129); transition: color 0.2s;"
                   >
-                    3
+                    P6
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      text-[var(--orion-cyan)]
-                      
-                      
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  SAP
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                flex-1
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    aria-current="step"
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgb(0, 212, 255); background-color: rgb(0, 212, 255); box-shadow: 0 0 20px -4px rgba(0,212,255,0.4); transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: absolute; inset: 0; border-radius: 50%; background-color: rgb(0, 212, 255); opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"
+                    />
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(10, 15, 26);"
+                    >
+                      3
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(0, 212, 255); transition: color 0.2s;"
                   >
-                    4
+                    SAP
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Projects
-                </span>
-              </div>
-              <div
-                aria-hidden="true"
-                class="
-                    progress-line
-                    flex-1 mx-2 sm:mx-4
-                    
-                    h-1
-                  "
-              />
-            </li>
-            <li
-              class="
-                flex items-center
-                
-              "
-            >
-              <div
-                class="relative flex items-center"
-              >
-                <div
-                  class="
-                    progress-dot
-                    flex items-center justify-center
-                    w-8 h-8 sm:w-10 sm:h-10
-                    
-                    
-                    transition-all duration-300 ease-orion-out
-                  "
-                >
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      4
+                    </span>
+                  </div>
                   <span
-                    class="
-                        font-mono text-sm font-semibold
-                        
-                        
-                        text-[var(--orion-text-muted)]
-                      "
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
                   >
-                    5
+                    Projects
                   </span>
-                </div>
-                <span
-                  class="
-                      absolute -bottom-6 left-1/2 -translate-x-1/2
-                      whitespace-nowrap text-xs font-medium
-                      
-                      
-                      text-[var(--orion-text-muted)]
-                    "
+                </li>
+                <li
+                  style="position: relative; display: flex; flex-direction: column; align-items: center;"
                 >
-                  Complete
-                </span>
-              </div>
-            </li>
-          </ol>
+                  <div
+                    style="position: relative; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; border: 2px solid; border-color: rgba(148, 163, 184, 0.15); background-color: rgb(17, 24, 39); box-shadow: none; transition: all 0.3s ease-out;"
+                  >
+                    <span
+                      style="position: relative; z-index: 10; font-family: var(--font-mono), monospace; font-weight: 700; font-size: 1rem; color: rgb(100, 116, 139);"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    style="position: absolute; top: 100%; margin-top: 0.75rem; white-space: nowrap; font-size: 0.875rem; font-weight: 500; font-family: var(--font-outfit), system-ui, sans-serif; color: rgb(100, 116, 139); transition: color 0.2s;"
+                  >
+                    Complete
+                  </span>
+                </li>
+              </ol>
+            </div>
+            <div
+              style="height: 2.5rem;"
+            />
+          </div>
           <p
-            class="sr-only"
+            style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"
           >
             Step 
             3
@@ -1792,10 +1470,10 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
         </nav>
       </div>
       <div
-        class="text-center mb-8 animate-slide-up"
+        class="text-center mb-8 sm:mb-10 animate-slide-up"
       >
         <div
-          class="inline-flex items-center gap-2 mb-4"
+          class="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5"
         >
           <span
             class="
@@ -1825,7 +1503,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
           </span>
         </div>
         <h1
-          class="orion-h1 text-[var(--orion-text-primary)] mb-3"
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4"
         >
           Connect to 
           <span
@@ -1835,7 +1513,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
           </span>
         </h1>
         <p
-          class="text-[var(--orion-text-secondary)] max-w-lg mx-auto"
+          class="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed"
         >
           Enter your SAP HANA or RFC credentials to sync financial data including budgets, actuals, and commitments.
         </p>
@@ -1849,6 +1527,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
         transition-all duration-200 ease-orion-out
         p-6 sm:p-8 border-l-4 border-l-[var(--orion-emerald)] animate-scale-in delay-200
       "
+        style="max-width: 100%; overflow: hidden;"
       >
         <div
           class="flex items-center gap-3 mb-6 pb-6 border-b border-[var(--orion-border)]"
@@ -1898,15 +1577,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
               aria-invalid="false"
               class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
               id="_r_60_-host-url"
               placeholder="https://hana.company.com:30015"
               required=""
+              style="width: 100%; max-width: 100%; box-sizing: border-box;"
               type="url"
               value=""
             />
@@ -1940,15 +1621,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_60_-system-id"
                 placeholder="PRD"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -1979,15 +1662,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
                 aria-invalid="false"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_60_-client"
                 placeholder="100"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -2022,15 +1707,17 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
                 autocomplete="username"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_60_-username"
                 placeholder="sapuser"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="text"
                 value=""
               />
@@ -2055,14 +1742,16 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
                 autocomplete="current-password"
                 class="
           input-field
-          px-4 py-2.5 text-base min-h-[44px]
+          px-4 py-3 text-base min-h-[48px]
           
           
           
+          w-full rounded-xl
           
         "
                 id="_r_60_-password"
                 required=""
+                style="width: 100%; max-width: 100%; box-sizing: border-box;"
                 type="password"
                 value=""
               />
@@ -2095,7 +1784,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
         </form>
       </div>
       <div
-        class="mt-8 flex gap-4 animate-slide-up delay-400"
+        class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up delay-400"
       >
         <button
           aria-busy="false"
@@ -2109,18 +1798,19 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           cursor-pointer
-          flex-1
+          flex-1 order-2 sm:order-1
         "
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="mr-2"
+              class="mr-2 flex-shrink-0"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M11 17l-5-5m0 0l5-5m-5 5h12"
@@ -2144,7 +1834,7 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
           px-6 py-3 text-lg gap-3 min-h-[52px]
           
           opacity-50 cursor-not-allowed pointer-events-none
-          flex-1
+          flex-1 order-1 sm:order-2
         "
           disabled=""
           type="button"
@@ -2153,11 +1843,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
             Continue
             <svg
               aria-hidden="true"
-              class="ml-2 transition-transform group-hover:translate-x-1"
+              class="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
               fill="none"
+              height="20"
               stroke="currentColor"
-              style="width: 20px; height: 20px;"
               viewBox="0 0 24 24"
+              width="20"
             >
               <path
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
@@ -2170,12 +1861,12 @@ exports[`SAPConnectionForm - Snapshot Tests > matches snapshot with validation e
         </button>
       </div>
       <p
-        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono animate-fade-in delay-600"
+        class="text-center text-sm text-[var(--orion-text-muted)] mt-6 sm:mt-8 font-mono animate-fade-in delay-600"
       >
         Need help? Check the
          
         <a
-          class="text-[var(--orion-cyan)] hover:underline"
+          class="text-[var(--orion-cyan)] hover:underline hover:text-[var(--orion-cyan)] transition-colors"
           href="#"
         >
           SAP Integration Guide
