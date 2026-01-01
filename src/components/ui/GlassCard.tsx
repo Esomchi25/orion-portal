@@ -54,6 +54,7 @@ export function GlassCard({
   padding = 'md',
   accentColor,
   hoverable = false,
+  style,
 }: GlassCardProps) {
   const isInteractive = !!onClick || hoverable;
   const Component = onClick ? 'button' : 'div';
@@ -61,6 +62,7 @@ export function GlassCard({
   return (
     <Component
       onClick={onClick}
+      style={style}
       className={`
         ${variantStyles[variant]}
         ${paddingStyles[padding]}

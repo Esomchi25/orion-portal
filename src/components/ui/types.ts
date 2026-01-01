@@ -108,6 +108,8 @@ export interface GlassCardProps {
   accentColor?: OrionColor;
   /** Hover effects enabled */
   hoverable?: boolean;
+  /** Inline styles (for animation delays, etc.) */
+  style?: React.CSSProperties;
 }
 
 // ============================================
