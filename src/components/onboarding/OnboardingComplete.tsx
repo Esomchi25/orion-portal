@@ -1,10 +1,11 @@
 /**
- * OnboardingComplete Component
+ * OnboardingComplete Component - ORION Command Center Design
  * @governance COMPONENT-001, DOC-002
  * @doc-sync PAGE_DATA_API_REFERENCE.md:10.5
  *
  * Step 5 of the Onboarding Wizard.
  * Shows configuration summary and completes onboarding setup.
+ * Features premium success celebration animation.
  *
  * @coverage
  * - Unit: 90%+ (render, summary, completion)
@@ -16,68 +17,87 @@
 
 'use client';
 
-import { useState, useCallback, memo } from 'react';
+import { useState, useCallback, memo, useEffect } from 'react';
+import {
+  Button,
+  GlassCard,
+  LoadingSpinner,
+  ProgressIndicator,
+  Badge,
+} from '@/components/ui';
 import type { OnboardingCompleteProps } from './types';
+
+// Step labels for progress indicator
+const STEP_LABELS = ['Welcome', 'P6', 'SAP', 'Projects', 'Complete'];
 
 type CompletionState = 'idle' | 'syncing' | 'complete' | 'error';
 
 /**
- * Loading Spinner component
+ * Success Animation component with premium styling
  */
-const LoadingSpinner = memo(function LoadingSpinner() {
+const SuccessAnimation = memo(function SuccessAnimation() {
   return (
-    <div
-      data-testid="loading-spinner"
-      className="animate-spin w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full"
-      aria-hidden="true"
-    />
-  );
-});
+    <div className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-6">
+      {/* Outer glow ring */}
+      <div className="absolute -inset-4 rounded-full bg-[var(--orion-emerald)]/20 blur-xl animate-pulse" />
 
-/**
- * Success Icon component
- */
-const SuccessIcon = memo(function SuccessIcon() {
-  return (
-    <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto mb-4">
-      <svg
-        className="w-8 h-8 text-green-600 dark:text-green-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 13l4 4L19 7"
-        />
-      </svg>
+      {/* Pulsing rings */}
+      <div className="absolute inset-0 rounded-full border-2 border-[var(--orion-emerald)]/30 animate-ping" style={{ animationDuration: '2s' }} />
+      <div className="absolute inset-2 rounded-full border border-[var(--orion-emerald)]/20 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }} />
+
+      {/* Main circle */}
+      <div className="relative w-full h-full rounded-full bg-gradient-to-br from-[var(--orion-emerald)] to-[#059669] flex items-center justify-center shadow-[0_0_40px_-10px_var(--orion-emerald-glow)] animate-scale-in">
+        <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
     </div>
   );
 });
 
 /**
- * Configuration Summary Card
+ * Configuration Summary Card with ORION styling
  */
 const SummaryCard = memo(function SummaryCard({
   title,
   icon,
+  accentColor,
   children,
 }: {
   title: string;
   icon: React.ReactNode;
+  accentColor: 'amber' | 'emerald' | 'violet';
   children: React.ReactNode;
 }) {
+  const colorStyles = {
+    amber: {
+      bg: 'bg-[var(--orion-amber)]/10',
+      border: 'border-l-[var(--orion-amber)]',
+      icon: 'text-[var(--orion-amber)]',
+    },
+    emerald: {
+      bg: 'bg-[var(--orion-emerald)]/10',
+      border: 'border-l-[var(--orion-emerald)]',
+      icon: 'text-[var(--orion-emerald)]',
+    },
+    violet: {
+      bg: 'bg-[var(--orion-violet)]/10',
+      border: 'border-l-[var(--orion-violet)]',
+      icon: 'text-[var(--orion-violet)]',
+    },
+  };
+
+  const styles = colorStyles[accentColor];
+
   return (
-    <div className="p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+    <div className={`p-4 sm:p-5 rounded-xl border border-[var(--orion-border)] border-l-4 ${styles.border} bg-[var(--orion-bg-glass)] backdrop-blur-sm`}>
       <div className="flex items-center gap-3 mb-3">
-        <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+        <div className={`p-2.5 rounded-lg ${styles.bg} ${styles.icon}`}>
           {icon}
         </div>
-        <p className="font-semibold text-slate-900 dark:text-white">{title}</p>
+        <p className="font-semibold text-[var(--orion-text-primary)] font-display">{title}</p>
       </div>
-      <div className="text-sm text-slate-600 dark:text-slate-400">{children}</div>
+      <div className="text-sm text-[var(--orion-text-secondary)] space-y-1.5 pl-12">{children}</div>
     </div>
   );
 });
@@ -96,9 +116,6 @@ function extractHost(url: string): string {
 
 /**
  * OnboardingComplete - Step 5 of the Onboarding Wizard
- *
- * @param props - OnboardingCompleteProps
- * @returns JSX.Element
  */
 export const OnboardingComplete = memo(function OnboardingComplete({
   selectedProjects,
@@ -107,8 +124,13 @@ export const OnboardingComplete = memo(function OnboardingComplete({
   onComplete,
   onBack,
 }: OnboardingCompleteProps) {
+  const [mounted, setMounted] = useState(false);
   const [state, setState] = useState<CompletionState>('idle');
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Handle Complete Setup
   const handleCompleteSetup = useCallback(async () => {
@@ -151,31 +173,69 @@ export const OnboardingComplete = memo(function OnboardingComplete({
       <main
         role="main"
         aria-label="Onboarding Complete"
-        className="min-h-screen bg-white dark:bg-slate-900 flex flex-col items-center justify-center p-8"
+        className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
       >
-        <div className="max-w-lg w-full text-center">
-          <SuccessIcon />
-          <div role="alert">
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
-              Setup Complete!
+        {/* Animated background elements */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-[var(--orion-emerald)]/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="relative w-full max-w-lg text-center">
+          <div className="animate-scale-in">
+            <SuccessAnimation />
+          </div>
+
+          <div role="alert" className="animate-slide-up" style={{ animationDelay: '200ms' }}>
+            <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+              Setup <span className="text-gradient-emerald">Complete!</span>
             </h1>
-            <p className="text-slate-600 dark:text-slate-400 mb-8">
-              Your ORION portal is ready. {selectedProjects.length} projects are now
-              connected and syncing.
+            <p className="text-[var(--orion-text-secondary)] text-lg mb-8 max-w-md mx-auto">
+              Your ORION portal is ready. <span className="text-[var(--orion-cyan)] font-semibold">{selectedProjects.length} projects</span> are now connected and syncing.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={onComplete}
-            className="
-              w-full px-8 py-4 rounded-lg font-semibold text-lg
-              bg-blue-600 hover:bg-blue-700 text-white
-              focus:outline-none focus:ring-4 focus:ring-blue-200
-              transition-all duration-200
-            "
-          >
-            Go to Dashboard
-          </button>
+
+          <div className="animate-slide-up" style={{ animationDelay: '400ms' }}>
+            <Button
+              type="button"
+              variant="primary"
+              size="lg"
+              onClick={onComplete}
+              className="w-full sm:w-auto min-w-[240px]"
+            >
+              Go to Dashboard
+              <svg
+                width="20"
+                height="20"
+                className="ml-2 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Button>
+          </div>
+
+          {/* Confetti-like particles */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute w-2 h-2 rounded-full ${
+                  i % 3 === 0 ? 'bg-[var(--orion-cyan)]' : i % 3 === 1 ? 'bg-[var(--orion-emerald)]' : 'bg-[var(--orion-violet)]'
+                }`}
+                style={{
+                  left: `${10 + (i * 7)}%`,
+                  top: `${20 + (i % 4) * 15}%`,
+                  animation: `float ${3 + (i % 3)}s ease-in-out infinite`,
+                  animationDelay: `${i * 0.2}s`,
+                  opacity: 0.5,
+                }}
+              />
+            ))}
+          </div>
         </div>
       </main>
     );
@@ -185,111 +245,106 @@ export const OnboardingComplete = memo(function OnboardingComplete({
     <main
       role="main"
       aria-label="Complete Onboarding"
-      className="min-h-screen bg-white dark:bg-slate-900 flex flex-col p-8"
+      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
     >
-      <div className="max-w-2xl w-full mx-auto">
-        {/* Step Indicator */}
-        <div className="mb-8 text-center">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            <span>Step 5</span> <span>of 5</span>
-          </p>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mt-2">
-            Review & Complete
+      <div className="w-full max-w-2xl">
+        {/* Progress Indicator */}
+        <div className={`mb-8 sm:mb-12 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
+          <ProgressIndicator
+            currentStep={5}
+            totalSteps={5}
+            labels={STEP_LABELS}
+          />
+        </div>
+
+        {/* Header */}
+        <div className={`text-center mb-8 sm:mb-10 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <div className="inline-flex items-center gap-2 mb-4">
+            <Badge variant="emerald">FINAL STEP</Badge>
+            <Badge variant="cyan">STEP 5 OF 5</Badge>
+          </div>
+          <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+            Review & <span className="text-gradient-cyan">Complete</span>
           </h1>
-          <p className="mt-2 text-slate-600 dark:text-slate-400">
-            Review your configuration and complete the setup
+          <p className="text-[var(--orion-text-secondary)] max-w-lg mx-auto">
+            Verify your configuration and complete the setup
           </p>
         </div>
 
         {/* Configuration Summary */}
-        <div className="space-y-4 mb-8">
+        <div className={`space-y-4 mb-8 ${mounted ? 'animate-scale-in delay-200' : 'opacity-0'}`}>
           {/* P6 Connection */}
           <SummaryCard
             title="P6 Connection"
+            accentColor="amber"
             icon={
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             }
           >
-            <p className="mb-1">
-              <span className="text-slate-500">Server: </span>
-              <span className="font-medium text-slate-900 dark:text-white">
-                {extractHost(p6Config.wsdlBaseUrl)}
-              </span>
+            <p className="flex items-center gap-2">
+              <span className="text-[var(--orion-text-muted)]">Server:</span>
+              <span className="font-mono text-[var(--orion-text-primary)]">{extractHost(p6Config.wsdlBaseUrl)}</span>
             </p>
-            <p>
-              <span className="text-slate-500">Database: </span>
-              <span className="font-medium text-slate-900 dark:text-white">
-                {p6Config.databaseInstance}
-              </span>
+            <p className="flex items-center gap-2">
+              <span className="text-[var(--orion-text-muted)]">Database:</span>
+              <span className="font-mono text-[var(--orion-text-primary)]">{p6Config.databaseInstance}</span>
             </p>
           </SummaryCard>
 
           {/* SAP Connection */}
           <SummaryCard
             title="SAP Connection"
+            accentColor="emerald"
             icon={
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                />
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             }
           >
             {sapConfig ? (
               <>
-                <p className="mb-1">
-                  <span className="text-slate-500">Server: </span>
-                  <span className="font-medium text-slate-900 dark:text-white">
-                    {extractHost(sapConfig.hostUrl)}
-                  </span>
+                <p className="flex items-center gap-2">
+                  <span className="text-[var(--orion-text-muted)]">Server:</span>
+                  <span className="font-mono text-[var(--orion-text-primary)]">{extractHost(sapConfig.hostUrl)}</span>
                 </p>
-                <p>
-                  <span className="text-slate-500">System: </span>
-                  <span className="font-medium text-slate-900 dark:text-white">
-                    {sapConfig.systemId} / Client {sapConfig.client}
-                  </span>
+                <p className="flex items-center gap-2">
+                  <span className="text-[var(--orion-text-muted)]">System:</span>
+                  <span className="font-mono text-[var(--orion-text-primary)]">{sapConfig.systemId} / Client {sapConfig.client}</span>
                 </p>
               </>
             ) : (
-              <p className="text-slate-500 italic">Skipped - P6 data only</p>
+              <p className="text-[var(--orion-text-muted)] italic">Skipped — P6 data only</p>
             )}
           </SummaryCard>
 
           {/* Selected Projects */}
           <SummaryCard
             title="Selected Projects"
+            accentColor="violet"
             icon={
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                />
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             }
           >
-            <p className="mb-2 font-medium text-slate-900 dark:text-white">
+            <p className="font-semibold text-[var(--orion-cyan)] mb-2">
               {selectedProjects.length} projects selected
             </p>
-            <ul className="space-y-1">
-              {selectedProjects.map((project) => (
+            <ul className="space-y-1.5">
+              {selectedProjects.slice(0, 5).map((project) => (
                 <li key={project.id} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                  <span>{project.name}</span>
-                  <span className="text-slate-400">({project.code})</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--orion-cyan)] flex-shrink-0" />
+                  <span className="text-[var(--orion-text-primary)] truncate">{project.name}</span>
+                  <span className="text-[var(--orion-text-muted)] font-mono text-xs">({project.code})</span>
                 </li>
               ))}
+              {selectedProjects.length > 5 && (
+                <li className="text-[var(--orion-text-muted)] italic">
+                  +{selectedProjects.length - 5} more projects
+                </li>
+              )}
             </ul>
           </SummaryCard>
         </div>
@@ -298,100 +353,101 @@ export const OnboardingComplete = memo(function OnboardingComplete({
         {state === 'error' && error && (
           <div
             role="alert"
-            className="mb-6 p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800"
+            className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 animate-scale-in"
           >
-            <p className="text-red-800 dark:text-red-200">{error}</p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-red-400">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <p className="text-red-400">{error}</p>
+            </div>
           </div>
         )}
 
         {/* Syncing Status */}
         {state === 'syncing' && (
-          <div role="status" className="mb-6 text-center">
-            <LoadingSpinner />
-            <p className="mt-2 text-slate-600 dark:text-slate-400">
+          <div role="status" className="mb-6 text-center py-4">
+            <LoadingSpinner size="lg" />
+            <p className="mt-4 text-[var(--orion-text-secondary)] font-mono">
               Setting up your projects...
             </p>
           </div>
         )}
 
         {/* Navigation Buttons */}
-        <div className="mt-8 flex gap-4">
+        <div className={`mt-8 flex flex-col sm:flex-row gap-4 ${mounted ? 'animate-slide-up delay-400' : 'opacity-0'}`}>
           {state === 'error' ? (
             <>
-              <button
+              <Button
                 type="button"
+                variant="secondary"
+                size="lg"
                 onClick={onBack}
-                className="
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  bg-white dark:bg-slate-800
-                  text-slate-700 dark:text-slate-300
-                  border border-slate-300 dark:border-slate-600
-                  hover:bg-slate-50 dark:hover:bg-slate-700
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  transition-all duration-200
-                "
+                className="flex-1"
               >
+                <svg width="20" height="20" className="mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>
                 Back
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
+                variant="primary"
+                size="lg"
                 onClick={handleRetry}
-                className="
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  bg-blue-600 hover:bg-blue-700 text-white
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  transition-all duration-200
-                "
+                className="flex-1"
               >
+                <svg width="20" height="20" className="mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
                 Retry
-              </button>
+              </Button>
             </>
           ) : (
             <>
-              <button
+              <Button
                 type="button"
+                variant="secondary"
+                size="lg"
                 onClick={onBack}
                 disabled={state === 'syncing'}
-                className={`
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  transition-all duration-200
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  ${
-                    state === 'syncing'
-                      ? 'bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed'
-                      : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700'
-                  }
-                `}
+                className="flex-1"
               >
+                <svg width="20" height="20" className="mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                </svg>
                 Back
-              </button>
+              </Button>
 
-              <button
+              <Button
                 type="button"
+                variant="primary"
+                size="lg"
                 onClick={handleCompleteSetup}
                 disabled={state === 'syncing'}
-                className={`
-                  flex-1 px-6 py-3 rounded-lg font-medium
-                  inline-flex items-center justify-center gap-2
-                  transition-all duration-200
-                  focus:outline-none focus:ring-2 focus:ring-blue-200
-                  ${
-                    state === 'syncing'
-                      ? 'bg-blue-400 text-white cursor-not-allowed'
-                      : 'bg-blue-600 hover:bg-blue-700 text-white'
-                  }
-                `}
+                loading={state === 'syncing'}
+                className="flex-1"
               >
-                {state === 'syncing' && <LoadingSpinner />}
-                Complete Setup
-              </button>
+                {state === 'syncing' ? 'Completing Setup...' : 'Complete Setup'}
+                {state !== 'syncing' && (
+                  <svg width="20" height="20" className="ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </Button>
             </>
           )}
         </div>
+
+        {/* Help Text */}
+        <p className={`text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono ${mounted ? 'animate-fade-in delay-600' : 'opacity-0'}`}>
+          This will create the sync configuration and start initial synchronization
+        </p>
       </div>
     </main>
   );
 });
 
-// Default export for dynamic imports
 export default OnboardingComplete;
