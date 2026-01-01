@@ -15,6 +15,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -102,6 +103,10 @@ export async function GET(request: NextRequest) {
     const tenantId = searchParams.get('tenant');
     const limit = parseInt(searchParams.get('limit') || '6', 10);
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const projectsTable = getMappedTable(dataMode, 'projects');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -116,16 +121,17 @@ export async function GET(request: NextRequest) {
       console.warn('[PROJECTS API] Supabase not configured, returning mock data');
       return NextResponse.json({
         projects: MOCK_PROJECTS.slice(0, limit),
+      }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
       });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Query orion_core.projects for tenant
-    // SQL: SELECT * FROM orion_core.projects WHERE tenant_id = $1 ORDER BY spi ASC LIMIT $2
+    // Query projects for tenant based on data mode
     const { data: projects, error } = await supabase
-      .from('orion_core.projects')
+      .from(projectsTable)
       .select('project_id, project_name, percent_complete, spi, cpi, planned_finish_date, data_date')
       .eq('tenant_id', tenantId)
       .order('spi', { ascending: true })
@@ -136,6 +142,8 @@ export async function GET(request: NextRequest) {
       // Fallback to mock data
       return NextResponse.json({
         projects: MOCK_PROJECTS.slice(0, limit),
+      }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
       });
     }
 
@@ -156,7 +164,8 @@ export async function GET(request: NextRequest) {
       { projects: healthProjects },
       {
         headers: {
-          'X-Data-Source': 'supabase:orion_core.projects',
+          'X-Data-Source': `supabase:${projectsTable}`,
+          'X-Data-Mode': dataMode,
           'X-Tenant-Id': tenantId,
           'X-Verified-At': new Date().toISOString(),
         },

@@ -81,3 +81,6 @@ export { StatusDot } from './StatusDot';
 
 // Display
 export { Avatar } from './Avatar';
+
+// Data Mode
+export { DataModeToggle } from './DataModeToggle';

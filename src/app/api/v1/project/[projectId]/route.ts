@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -60,6 +61,10 @@ export async function GET(
     const tenantId = searchParams.get('tenant');
     const { projectId } = params;
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const projectsTable = getMappedTable(dataMode, 'projects');
+
     if (!tenantId) {
       return NextResponse.json(
         { error: 'Missing tenant parameter' },
@@ -69,13 +74,15 @@ export async function GET(
 
     if (!supabaseAnonKey) {
       console.warn('[PROJECT API] Supabase not configured, returning mock data');
-      return NextResponse.json(MOCK_PROJECT);
+      return NextResponse.json(MOCK_PROJECT, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     const { data: project, error } = await supabase
-      .from('orion_core.projects')
+      .from(projectsTable)
       .select(`
         project_id,
         project_name,
@@ -95,7 +102,9 @@ export async function GET(
 
     if (error || !project) {
       console.warn('[PROJECT API] Project not found, returning mock');
-      return NextResponse.json(MOCK_PROJECT);
+      return NextResponse.json(MOCK_PROJECT, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     const header: ProjectHeader = {
@@ -113,7 +122,8 @@ export async function GET(
 
     return NextResponse.json(header, {
       headers: {
-        'X-Data-Source': 'supabase:orion_core.projects',
+        'X-Data-Source': `supabase:${projectsTable}`,
+        'X-Data-Mode': dataMode,
         'X-Tenant-Id': tenantId,
         'X-Project-Id': projectId,
         'X-Verified-At': new Date().toISOString(),

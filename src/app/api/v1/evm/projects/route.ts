@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
@@ -47,6 +48,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const snapshotsTable = getMappedTable(dataMode, 'project_snapshots');
+
     if (!tenantId) {
       return NextResponse.json(
         { error: 'Missing tenant parameter' },
@@ -56,14 +61,16 @@ export async function GET(request: NextRequest) {
 
     if (!supabaseAnonKey) {
       console.warn('[EVM API] Supabase not configured, returning mock data');
-      return NextResponse.json({ projects: MOCK_PROJECTS });
+      return NextResponse.json({ projects: MOCK_PROJECTS }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Get latest snapshot per project
+    // Get latest snapshot per project based on data mode
     const { data: snapshots, error } = await supabase
-      .from('orion_evm.project_snapshots')
+      .from(snapshotsTable)
       .select(`
         project_id,
         project_name,
@@ -81,7 +88,9 @@ export async function GET(request: NextRequest) {
 
     if (error || !snapshots || snapshots.length === 0) {
       console.warn('[EVM API] Snapshots not found, returning mock');
-      return NextResponse.json({ projects: MOCK_PROJECTS });
+      return NextResponse.json({ projects: MOCK_PROJECTS }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Get latest per project
@@ -128,7 +137,8 @@ export async function GET(request: NextRequest) {
       { projects },
       {
         headers: {
-          'X-Data-Source': 'supabase:orion_evm.project_snapshots',
+          'X-Data-Source': `supabase:${snapshotsTable}`,
+          'X-Data-Mode': dataMode,
           'X-Tenant-Id': tenantId,
           'X-Verified-At': new Date().toISOString(),
         },

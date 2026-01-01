@@ -9,7 +9,7 @@
 
 'use client';
 
-import { useState, useEffect, memo, useId } from 'react';
+import { useState, useEffect, useCallback, memo, useId } from 'react';
 import { GlassCard, Badge } from '@/components/ui';
 import type {
   ProjectDashboardProps,
@@ -529,40 +529,154 @@ export const ProjectDashboard = memo(function ProjectDashboard({
     setMounted(true);
   }, []);
 
-  // Fetch all data
-  useEffect(() => {
-    const fetchData = async () => {
-      // Simulate API call - in production these would be real API calls
-      await new Promise((resolve) => setTimeout(resolve, 600));
+  // Fetch project header
+  const fetchHeader = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, header: true },
+      errors: { ...prev.errors, header: null },
+    }));
 
-      setState({
-        header: MOCK_HEADER,
-        performance: MOCK_PERFORMANCE,
-        domains: MOCK_DOMAINS,
-        budget: MOCK_BUDGET,
-        schedule: MOCK_SCHEDULE,
-        scurve: [],
-        isLoading: {
-          header: false,
-          performance: false,
-          domains: false,
-          budget: false,
-          schedule: false,
-          scurve: false,
-        },
-        errors: {
-          header: null,
-          performance: null,
-          domains: null,
-          budget: null,
-          schedule: null,
-          scurve: null,
-        },
+    try {
+      const response = await fetch(`/api/v1/project/${projectId}?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       });
-    };
-
-    fetchData();
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        header: data,
+        isLoading: { ...prev.isLoading, header: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, header: false },
+        errors: { ...prev.errors, header: 'Failed to load project header' },
+      }));
+    }
   }, [projectId, tenantId]);
+
+  // Fetch performance metrics
+  const fetchPerformance = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, performance: true },
+      errors: { ...prev.errors, performance: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/project/${projectId}/performance?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        performance: data,
+        isLoading: { ...prev.isLoading, performance: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, performance: false },
+        errors: { ...prev.errors, performance: 'Failed to load performance' },
+      }));
+    }
+  }, [projectId, tenantId]);
+
+  // Fetch domain progress
+  const fetchDomains = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, domains: true },
+      errors: { ...prev.errors, domains: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/project/${projectId}/domains?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        domains: data.domains || [],
+        isLoading: { ...prev.isLoading, domains: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, domains: false },
+        errors: { ...prev.errors, domains: 'Failed to load domains' },
+      }));
+    }
+  }, [projectId, tenantId]);
+
+  // Fetch budget analytics
+  const fetchBudget = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, budget: true },
+      errors: { ...prev.errors, budget: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/project/${projectId}/budget?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        budget: data,
+        isLoading: { ...prev.isLoading, budget: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, budget: false },
+        errors: { ...prev.errors, budget: 'Failed to load budget' },
+      }));
+    }
+  }, [projectId, tenantId]);
+
+  // Fetch schedule intelligence
+  const fetchSchedule = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, schedule: true },
+      errors: { ...prev.errors, schedule: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/project/${projectId}/schedule?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        schedule: data,
+        isLoading: { ...prev.isLoading, schedule: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, schedule: false },
+        errors: { ...prev.errors, schedule: 'Failed to load schedule' },
+      }));
+    }
+  }, [projectId, tenantId]);
+
+  // Fetch all data on mount
+  useEffect(() => {
+    fetchHeader();
+    fetchPerformance();
+    fetchDomains();
+    fetchBudget();
+    fetchSchedule();
+  }, [fetchHeader, fetchPerformance, fetchDomains, fetchBudget, fetchSchedule]);
 
   return (
     <main

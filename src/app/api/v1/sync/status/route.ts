@@ -17,6 +17,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -56,6 +57,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const syncStatusTable = getMappedTable(dataMode, 'sync_status');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -68,27 +73,33 @@ export async function GET(request: NextRequest) {
     if (!supabaseAnonKey) {
       // Return mock data for development/testing
       console.warn('[SYNC API] Supabase not configured, returning mock data');
-      return NextResponse.json(MOCK_SYNC_STATUS);
+      return NextResponse.json(MOCK_SYNC_STATUS, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     // Query client config for connection status
+    // Note: client_config is always from orion_xconf (not mock schema)
+    const configTable = dataMode === 'mock' ? 'client_demo.client_config' : 'orion_xconf.client_config';
     const { data: config, error: configError } = await supabase
-      .from('orion_xconf.client_config')
+      .from(configTable)
       .select('p6_wsdl_url, sap_host, sync_schedule_cron')
       .eq('tenant_id', tenantId)
       .single();
 
     if (configError) {
       console.warn('[SYNC API] Config error, using mock:', configError);
-      return NextResponse.json(MOCK_SYNC_STATUS);
+      return NextResponse.json(MOCK_SYNC_STATUS, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
-    // Query last sync batches
+    // Query last sync batches based on data mode
     const { data: p6Batch } = await supabase
-      .from('orion_sync.batches')
+      .from(syncStatusTable)
       .select('completed_at, status')
       .eq('tenant_id', tenantId)
       .eq('source', 'p6')
@@ -97,7 +108,7 @@ export async function GET(request: NextRequest) {
       .single();
 
     const { data: sapBatch } = await supabase
-      .from('orion_sync.batches')
+      .from(syncStatusTable)
       .select('completed_at, status')
       .eq('tenant_id', tenantId)
       .eq('source', 'sap')
@@ -123,7 +134,8 @@ export async function GET(request: NextRequest) {
     // Return with VERIFY-001 headers
     return NextResponse.json(syncStatus, {
       headers: {
-        'X-Data-Source': 'supabase:orion_sync.batches,orion_xconf.client_config',
+        'X-Data-Source': `supabase:${syncStatusTable},${configTable}`,
+        'X-Data-Mode': dataMode,
         'X-Tenant-Id': tenantId,
         'X-Verified-At': new Date().toISOString(),
       },

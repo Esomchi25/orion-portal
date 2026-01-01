@@ -1,12 +1,13 @@
 /**
  * Root Layout
- * @governance COMPONENT-001
+ * @governance COMPONENT-001, DOC-002
  * @design-system ORION Command Center (Outfit + JetBrains Mono)
  */
 
 import type { Metadata } from 'next';
 import { Outfit, JetBrains_Mono } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { DataModeProvider } from '@/contexts/DataModeContext';
 import './globals.css';
 
 // Display font for headings and UI text
@@ -42,7 +43,9 @@ export default function RootLayout({
         <body
           className={`${outfit.variable} ${jetbrainsMono.variable} font-display antialiased`}
         >
-          {children}
+          <DataModeProvider tenantId="oilserv-nigeria">
+            {children}
+          </DataModeProvider>
         </body>
       </html>
     </ClerkProvider>

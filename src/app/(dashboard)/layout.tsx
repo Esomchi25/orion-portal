@@ -11,6 +11,7 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { DataModeToggle } from '@/components/ui';
 
 // Navigation items for the sidebar
 const navigationItems = [
@@ -180,6 +181,11 @@ export default function DashboardLayout({
               </div>
             ))}
           </nav>
+
+          {/* Data Mode Toggle (Admin Only) */}
+          <div className="px-4 pt-4">
+            <DataModeToggle compact className="w-full justify-center" />
+          </div>
 
           {/* Footer */}
           <div className="p-4 border-t border-[var(--orion-border)]">

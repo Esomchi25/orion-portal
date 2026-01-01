@@ -9,7 +9,7 @@
 
 'use client';
 
-import { useState, useEffect, memo, useId } from 'react';
+import { useState, useEffect, useCallback, memo, useId } from 'react';
 import { GlassCard, Badge } from '@/components/ui';
 import type {
   EVMModuleProps,
@@ -330,29 +330,51 @@ export const EVMModule = memo(function EVMModule({
     setMounted(true);
   }, []);
 
-  // Fetch all data
+  // Load EVM definitions (static PMI standard definitions)
   useEffect(() => {
-    const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 400));
+    // EVM definitions are static standards - no API needed
+    setState((prev) => ({
+      ...prev,
+      definitions: EVM_DEFINITIONS,
+      isLoading: { ...prev.isLoading, definitions: false },
+    }));
+  }, []);
 
-      setState({
-        definitions: EVM_DEFINITIONS,
-        projects: projectId
-          ? MOCK_PROJECTS.filter((p) => p.projectId === projectId)
-          : MOCK_PROJECTS,
-        isLoading: {
-          definitions: false,
-          projects: false,
-        },
-        errors: {
-          definitions: null,
-          projects: null,
-        },
+  // Fetch EVM project data
+  const fetchProjects = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, projects: true },
+      errors: { ...prev.errors, projects: null },
+    }));
+
+    try {
+      const url = projectId
+        ? `/api/v1/evm/projects?tenant=${tenantId}&projectId=${projectId}`
+        : `/api/v1/evm/projects?tenant=${tenantId}`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       });
-    };
-
-    fetchData();
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        projects: data.projects || [],
+        isLoading: { ...prev.isLoading, projects: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, projects: false },
+        errors: { ...prev.errors, projects: 'Failed to load EVM data' },
+      }));
+    }
   }, [tenantId, projectId]);
+
+  // Fetch project data on mount
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
 
   return (
     <main

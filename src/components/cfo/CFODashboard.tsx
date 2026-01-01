@@ -445,34 +445,96 @@ export const CFODashboard = memo(function CFODashboard({
     setMounted(true);
   }, []);
 
-  // Fetch all data
-  useEffect(() => {
-    const fetchData = async () => {
-      // Simulate API call - in production, these would be real API calls
-      await new Promise((resolve) => setTimeout(resolve, 500));
+  // Fetch portfolio health
+  const fetchHealth = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, health: true },
+      errors: { ...prev.errors, health: null },
+    }));
 
-      setState({
-        health: MOCK_HEALTH,
-        financials: MOCK_FINANCIALS,
-        budgets: [],
-        comparison: MOCK_COMPARISON,
-        isLoading: {
-          health: false,
-          financials: false,
-          budgets: false,
-          comparison: false,
-        },
-        errors: {
-          health: null,
-          financials: null,
-          budgets: null,
-          comparison: null,
-        },
+    try {
+      const response = await fetch(`/api/v1/cfo/health?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
       });
-    };
-
-    fetchData();
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        health: data,
+        isLoading: { ...prev.isLoading, health: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, health: false },
+        errors: { ...prev.errors, health: 'Failed to load portfolio health' },
+      }));
+    }
   }, [tenantId]);
+
+  // Fetch portfolio financials
+  const fetchFinancials = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, financials: true },
+      errors: { ...prev.errors, financials: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/cfo/financials?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        financials: data,
+        isLoading: { ...prev.isLoading, financials: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, financials: false },
+        errors: { ...prev.errors, financials: 'Failed to load financials' },
+      }));
+    }
+  }, [tenantId]);
+
+  // Fetch project comparison
+  const fetchComparison = useCallback(async () => {
+    setState((prev) => ({
+      ...prev,
+      isLoading: { ...prev.isLoading, comparison: true },
+      errors: { ...prev.errors, comparison: null },
+    }));
+
+    try {
+      const response = await fetch(`/api/v1/cfo/comparison?tenant=${tenantId}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await response.json();
+      setState((prev) => ({
+        ...prev,
+        comparison: data.projects || [],
+        isLoading: { ...prev.isLoading, comparison: false },
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        isLoading: { ...prev.isLoading, comparison: false },
+        errors: { ...prev.errors, comparison: 'Failed to load comparison' },
+      }));
+    }
+  }, [tenantId]);
+
+  // Fetch all data on mount
+  useEffect(() => {
+    fetchHealth();
+    fetchFinancials();
+    fetchComparison();
+  }, [fetchHealth, fetchFinancials, fetchComparison]);
 
   return (
     <main

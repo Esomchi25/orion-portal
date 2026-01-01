@@ -3,9 +3,9 @@
  * @governance DOC-002, VERIFY-001
  * @doc-sync PAGE_DATA_API_REFERENCE.md:1.1
  *
- * Returns aggregated portfolio metrics from orion_core.projects
+ * Returns aggregated portfolio metrics from orion_core.projects (live) or client_demo.projects (mock)
  *
- * GET /api/v1/portfolio/summary?tenant={tenantId}
+ * GET /api/v1/portfolio/summary?tenant={tenantId}&dataMode={mock|live}
  *
  * Response:
  * {
@@ -18,6 +18,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client - use env vars in production
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -47,6 +48,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const projectsTable = getMappedTable(dataMode, 'projects');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -65,17 +70,19 @@ export async function GET(request: NextRequest) {
         atRisk: 2,
         critical: 1,
       };
-      return NextResponse.json(mockData);
+      return NextResponse.json(mockData, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Query orion_core.projects for tenant
-    // SQL: SELECT project_id, spi, cpi FROM orion_core.projects WHERE tenant_id = $1
+    // Query projects table based on data mode
+    // Mock: client_demo.projects | Live: orion_core.projects
     const { data: projects, error } = await supabase
-      .from('orion_core.projects')
-      .select('project_id, spi, cpi')
+      .from(projectsTable)
+      .select('project_id, health_status')
       .eq('tenant_id', tenantId);
 
     if (error) {
@@ -87,10 +94,12 @@ export async function GET(request: NextRequest) {
         atRisk: 2,
         critical: 1,
       };
-      return NextResponse.json(mockData);
+      return NextResponse.json(mockData, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
-    // Calculate portfolio summary
+    // Calculate portfolio summary from health_status field
     const summary: PortfolioSummary = {
       totalProjects: projects?.length || 0,
       onTrack: 0,
@@ -100,17 +109,18 @@ export async function GET(request: NextRequest) {
 
     if (projects) {
       for (const project of projects) {
-        const status = getHealthStatus(project.spi || 1, project.cpi || 1);
+        const status = project.health_status || 'on_track';
         if (status === 'on_track') summary.onTrack++;
         else if (status === 'at_risk') summary.atRisk++;
-        else summary.critical++;
+        else if (status === 'critical') summary.critical++;
       }
     }
 
     // Return with VERIFY-001 headers
     return NextResponse.json(summary, {
       headers: {
-        'X-Data-Source': 'supabase:orion_core.projects',
+        'X-Data-Source': `supabase:${projectsTable}`,
+        'X-Data-Mode': dataMode,
         'X-Tenant-Id': tenantId,
         'X-Verified-At': new Date().toISOString(),
       },

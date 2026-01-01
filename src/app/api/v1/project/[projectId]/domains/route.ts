@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
@@ -54,6 +55,10 @@ export async function GET(
     const tenantId = searchParams.get('tenant');
     const { projectId } = params;
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const metricsTable = getMappedTable(dataMode, 'domain_metrics');
+
     if (!tenantId) {
       return NextResponse.json(
         { error: 'Missing tenant parameter' },
@@ -63,20 +68,24 @@ export async function GET(
 
     if (!supabaseAnonKey) {
       console.warn('[DOMAINS API] Supabase not configured, returning mock data');
-      return NextResponse.json({ domains: MOCK_DOMAINS });
+      return NextResponse.json({ domains: MOCK_DOMAINS }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     const { data: wbsMetrics, error } = await supabase
-      .from('orion_evm.wbs_metrics')
+      .from(metricsTable)
       .select('epc_code, pv, ev, ac')
       .eq('tenant_id', tenantId)
       .eq('project_id', projectId);
 
     if (error || !wbsMetrics || wbsMetrics.length === 0) {
       console.warn('[DOMAINS API] Metrics not found, returning mock');
-      return NextResponse.json({ domains: MOCK_DOMAINS });
+      return NextResponse.json({ domains: MOCK_DOMAINS }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     const domainMap = new Map<DomainType, { pv: number; ev: number; ac: number }>();
@@ -129,7 +138,8 @@ export async function GET(
       { domains },
       {
         headers: {
-          'X-Data-Source': 'supabase:orion_evm.wbs_metrics',
+          'X-Data-Source': `supabase:${metricsTable}`,
+          'X-Data-Mode': dataMode,
           'X-Tenant-Id': tenantId,
           'X-Project-Id': projectId,
           'X-Verified-At': new Date().toISOString(),

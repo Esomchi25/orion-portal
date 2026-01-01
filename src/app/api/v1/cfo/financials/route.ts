@@ -20,6 +20,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -49,6 +50,11 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const snapshotsTable = getMappedTable(dataMode, 'project_snapshots');
+    const financialsTable = getMappedTable(dataMode, 'portfolio_financials');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -60,27 +66,31 @@ export async function GET(request: NextRequest) {
     // Check if Supabase is configured
     if (!supabaseAnonKey) {
       console.warn('[CFO FINANCIALS API] Supabase not configured, returning mock data');
-      return NextResponse.json(MOCK_FINANCIALS);
+      return NextResponse.json(MOCK_FINANCIALS, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Query orion_evm.project_snapshots for BAC, EV, AC
+    // Query snapshots for BAC, EV, AC based on data mode
     const { data: snapshots, error: snapshotError } = await supabase
-      .from('orion_evm.project_snapshots')
+      .from(snapshotsTable)
       .select('bac, ac, ev')
       .eq('tenant_id', tenantId)
       .order('snapshot_date', { ascending: false });
 
     if (snapshotError) {
       console.error('[CFO FINANCIALS API] Snapshot error:', snapshotError);
-      return NextResponse.json(MOCK_FINANCIALS);
+      return NextResponse.json(MOCK_FINANCIALS, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
-    // Query sap_raw.bpge for commitments (open POs)
+    // Query financials for commitments based on data mode
     const { data: commitments, error: commitmentError } = await supabase
-      .from('sap_raw.bpge')
+      .from(financialsTable)
       .select('wtges')
       .eq('tenant_id', tenantId);
 
@@ -120,13 +130,16 @@ export async function GET(request: NextRequest) {
 
     // If no real data, return mock
     if (totalBAC === 0) {
-      return NextResponse.json(MOCK_FINANCIALS);
+      return NextResponse.json(MOCK_FINANCIALS, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Return with VERIFY-001 headers
     return NextResponse.json(financials, {
       headers: {
-        'X-Data-Source': 'supabase:orion_evm.project_snapshots,sap_raw.bpge',
+        'X-Data-Source': `supabase:${snapshotsTable},${financialsTable}`,
+        'X-Data-Mode': dataMode,
         'X-Tenant-Id': tenantId,
         'X-Verified-At': new Date().toISOString(),
       },

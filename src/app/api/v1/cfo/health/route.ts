@@ -21,6 +21,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -78,6 +79,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const projectsTable = getMappedTable(dataMode, 'projects');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -89,21 +94,25 @@ export async function GET(request: NextRequest) {
     // Check if Supabase is configured
     if (!supabaseAnonKey) {
       console.warn('[CFO HEALTH API] Supabase not configured, returning mock data');
-      return NextResponse.json(MOCK_HEALTH);
+      return NextResponse.json(MOCK_HEALTH, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Query orion_core.projects for tenant
+    // Query projects based on data mode
     const { data: projects, error } = await supabase
-      .from('orion_core.projects')
+      .from(projectsTable)
       .select('project_id, spi, cpi')
       .eq('tenant_id', tenantId);
 
     if (error) {
       console.error('[CFO HEALTH API] Supabase error:', error);
-      return NextResponse.json(MOCK_HEALTH);
+      return NextResponse.json(MOCK_HEALTH, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Calculate aggregates
@@ -143,7 +152,8 @@ export async function GET(request: NextRequest) {
     // Return with VERIFY-001 headers
     return NextResponse.json(health, {
       headers: {
-        'X-Data-Source': 'supabase:orion_core.projects',
+        'X-Data-Source': `supabase:${projectsTable}`,
+        'X-Data-Mode': dataMode,
         'X-Tenant-Id': tenantId,
         'X-Verified-At': new Date().toISOString(),
       },

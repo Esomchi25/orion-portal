@@ -15,6 +15,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getDataModeFromRequest, getMappedTable } from '@/lib/dataMode';
 
 // Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jqsdctrwmbkwysyxpmql.supabase.co';
@@ -134,6 +135,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const tenantId = searchParams.get('tenant');
 
+    // Get data mode from request
+    const dataMode = getDataModeFromRequest(request);
+    const snapshotsTable = getMappedTable(dataMode, 'project_snapshots');
+
     // Validate tenant parameter
     if (!tenantId) {
       return NextResponse.json(
@@ -145,15 +150,17 @@ export async function GET(request: NextRequest) {
     // Check if Supabase is configured
     if (!supabaseAnonKey) {
       console.warn('[CFO COMPARISON API] Supabase not configured, returning mock data');
-      return NextResponse.json({ projects: MOCK_COMPARISON });
+      return NextResponse.json({ projects: MOCK_COMPARISON }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Initialize Supabase client
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Query orion_evm.project_snapshots for latest EVM data
+    // Query snapshots for latest EVM data based on data mode
     const { data: snapshots, error } = await supabase
-      .from('orion_evm.project_snapshots')
+      .from(snapshotsTable)
       .select(`
         project_id,
         project_name,
@@ -169,7 +176,9 @@ export async function GET(request: NextRequest) {
 
     if (error) {
       console.error('[CFO COMPARISON API] Supabase error:', error);
-      return NextResponse.json({ projects: MOCK_COMPARISON });
+      return NextResponse.json({ projects: MOCK_COMPARISON }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Group by project and get latest snapshot
@@ -204,7 +213,9 @@ export async function GET(request: NextRequest) {
 
     // If no real data, return mock
     if (projects.length === 0) {
-      return NextResponse.json({ projects: MOCK_COMPARISON });
+      return NextResponse.json({ projects: MOCK_COMPARISON }, {
+        headers: { 'X-Data-Source': 'mock', 'X-Data-Mode': dataMode },
+      });
     }
 
     // Return with VERIFY-001 headers
@@ -212,7 +223,8 @@ export async function GET(request: NextRequest) {
       { projects },
       {
         headers: {
-          'X-Data-Source': 'supabase:orion_evm.project_snapshots',
+          'X-Data-Source': `supabase:${snapshotsTable}`,
+          'X-Data-Mode': dataMode,
           'X-Tenant-Id': tenantId,
           'X-Verified-At': new Date().toISOString(),
         },
