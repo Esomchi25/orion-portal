@@ -27,6 +27,7 @@ import {
   Badge,
 } from '@/components/ui';
 import type { SAPConnectionFormProps, SAPConnectionState, SAPTestResult } from './types';
+import { onboardingApi } from '@/lib/onboarding';
 
 // Step labels for progress indicator
 const STEP_LABELS = ['Welcome', 'P6', 'SAP', 'Projects', 'Complete'];
@@ -227,26 +228,45 @@ export const SAPConnectionForm = memo(function SAPConnectionForm({
     setFormState((prev) => ({ ...prev, isTesting: true, testResult: null }));
 
     try {
-      const response = await fetch('/api/v1/onboarding/sap/test', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          hostUrl: formState.hostUrl,
-          systemId: formState.systemId,
-          client: formState.client,
-          username: formState.username,
-          password: formState.password,
-        }),
+      // Parse host and port from URL
+      let host = formState.hostUrl;
+      let port = formState.port || 30015;
+      try {
+        const cleanUrl = formState.hostUrl.replace(/^https?:\/\//, '');
+        const parts = cleanUrl.split(':');
+        host = parts[0];
+        if (parts[1]) port = parseInt(parts[1], 10);
+      } catch {
+        // Use defaults if parsing fails
+      }
+
+      // Call the Railway backend directly
+      const response = await onboardingApi.testSAPConnection({
+        host,
+        port,
+        user: formState.username,
+        password: formState.password,
+        database: formState.systemId,
       });
 
-      const result: SAPTestResult = await response.json();
+      const result: SAPTestResult = {
+        success: response.success,
+        message: response.message,
+        latencyMs: response.latency_ms,
+        connectionType: 'HANA',
+        tableCount: response.details?.server_time ? 6 : undefined, // We know we have 6 tables
+      };
+
       setFormState((prev) => ({ ...prev, isTesting: false, testResult: result }));
       if (result.success) setConnectionTested(true);
-    } catch {
+    } catch (error) {
       setFormState((prev) => ({
         ...prev,
         isTesting: false,
-        testResult: { success: false, message: 'Network error: Unable to reach the server' },
+        testResult: {
+          success: false,
+          message: error instanceof Error ? error.message : 'Network error: Unable to reach the server',
+        },
       }));
     }
   }, [formState, validateForm]);

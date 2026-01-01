@@ -190,7 +190,7 @@ export const projectsApi = {
    * GET /api/v1/projects/{projectId}/wbs
    * Returns WBS elements
    */
-  getWbs: (projectId: number, hierarchical = false): Promise<WBSHierarchy | { wbs: any[]; total: number }> => {
+  getWbs: (projectId: number, hierarchical = false): Promise<WBSHierarchy | { wbs: unknown[]; total: number }> => {
     const params = hierarchical ? '?hierarchical=true' : '';
     return apiFetch(`/api/v1/projects/${projectId}/wbs${params}`);
   },
@@ -206,7 +206,7 @@ export const projectsApi = {
       criticalOnly?: boolean;
       limit?: number;
     }
-  ): Promise<{ activities: any[]; total: number; returned: number }> => {
+  ): Promise<{ activities: unknown[]; total: number; returned: number }> => {
     const params = new URLSearchParams();
     if (options?.status) params.set('status', options.status);
     if (options?.criticalOnly) params.set('critical_only', 'true');

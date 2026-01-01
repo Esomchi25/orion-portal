@@ -287,8 +287,9 @@ export function useSyncJobStatus(jobId: string, enabled = true) {
     queryKey: queryKeys.syncJobStatus(jobId),
     queryFn: () => api.sync.getJobStatus(jobId),
     enabled: enabled && !!jobId,
-    refetchInterval: (data) => {
+    refetchInterval: (query) => {
       // Stop polling when job is completed or failed
+      const data = query.state.data;
       if (data?.status === 'completed' || data?.status === 'failed') {
         return false;
       }

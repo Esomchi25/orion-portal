@@ -64,3 +64,22 @@ export {
   TABLE_MAP,
   getMappedTable,
 } from './dataMode';
+
+// Onboarding API
+export {
+  onboardingApi,
+  testP6Connection,
+  testSAPConnection,
+  listP6Projects,
+  completeOnboarding,
+  getSyncStatus,
+  checkHealth,
+} from './onboarding';
+export type {
+  P6TestRequest,
+  SAPTestRequest,
+  ConnectionTestResponse,
+  ProjectListItem,
+  OnboardingCompleteRequest,
+  OnboardingCompleteResponse,
+} from './onboarding';

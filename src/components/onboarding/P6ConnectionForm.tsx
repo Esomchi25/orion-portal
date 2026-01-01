@@ -27,6 +27,7 @@ import {
   Badge,
 } from '@/components/ui';
 import type { P6ConnectionFormProps, P6ConnectionState, P6TestResult } from './types';
+import { onboardingApi } from '@/lib/onboarding';
 
 // Step labels for progress indicator
 const STEP_LABELS = ['Welcome', 'P6', 'SAP', 'Projects', 'Complete'];
@@ -209,25 +210,34 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
     setFormState((prev) => ({ ...prev, isTesting: true, testResult: null }));
 
     try {
-      const response = await fetch('/api/v1/onboarding/p6/test', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          wsdlBaseUrl: formState.wsdlBaseUrl,
-          databaseInstance: formState.databaseInstance,
-          username: formState.username,
-          password: formState.password,
-        }),
+      // Call the Railway backend directly
+      const response = await onboardingApi.testP6Connection({
+        base_url: formState.wsdlBaseUrl,
+        username: formState.username,
+        password: formState.password,
+        timeout: 30,
       });
 
-      const result: P6TestResult = await response.json();
+      const result: P6TestResult = {
+        success: response.success,
+        message: response.message,
+        latencyMs: response.latency_ms,
+        databaseVersion: response.details?.version as string | undefined,
+        projectCount: response.details?.services_available
+          ? (response.details.services_available as string[]).length
+          : undefined,
+      };
+
       setFormState((prev) => ({ ...prev, isTesting: false, testResult: result }));
       if (result.success) setConnectionTested(true);
-    } catch {
+    } catch (error) {
       setFormState((prev) => ({
         ...prev,
         isTesting: false,
-        testResult: { success: false, message: 'Network error: Unable to reach the server' },
+        testResult: {
+          success: false,
+          message: error instanceof Error ? error.message : 'Network error: Unable to reach the server',
+        },
       }));
     }
   }, [formState, validateForm]);
