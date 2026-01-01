@@ -330,7 +330,7 @@ export const ProjectSelection = memo(function ProjectSelection({
       <main
         role="main"
         aria-label="Project Selection"
-        className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+        className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
       >
         <div className="text-center">
           <LoadingSpinner size="lg" />
@@ -348,9 +348,9 @@ export const ProjectSelection = memo(function ProjectSelection({
       <main
         role="main"
         aria-label="Project Selection"
-        className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+        className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
       >
-        <div className="text-center max-w-md">
+        <div className="text-center max-w-md mx-auto">
           <div className="w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center mx-auto mb-4">
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-red-400">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -369,11 +369,12 @@ export const ProjectSelection = memo(function ProjectSelection({
     <main
       role="main"
       aria-label="Project Selection"
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     >
-      <div className="w-full max-w-4xl">
+      {/* Centered container with wider max-width for project grid */}
+      <div className="w-full max-w-5xl mx-auto">
         {/* Progress Indicator */}
-        <div className={`mb-8 sm:mb-12 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className={`mb-6 sm:mb-8 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
           <ProgressIndicator
             currentStep={4}
             totalSteps={5}
@@ -381,16 +382,16 @@ export const ProjectSelection = memo(function ProjectSelection({
           />
         </div>
 
-        {/* Header */}
-        <div className={`text-center mb-8 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center gap-2 mb-4">
+        {/* Header - Better responsive sizing */}
+        <div className={`text-center mb-8 sm:mb-10 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <Badge variant="violet">PROJECTS</Badge>
             <Badge variant="cyan">STEP 4 OF 5</Badge>
           </div>
-          <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4">
             Select <span className="text-gradient-cyan">Projects</span> to Sync
           </h1>
-          <p className="text-[var(--orion-text-secondary)] max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed">
             Choose which P6 projects to integrate with SAP for unified visibility
           </p>
         </div>

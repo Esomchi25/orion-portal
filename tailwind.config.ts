@@ -16,6 +16,51 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  // Safelist critical layout classes for JIT compilation
+  // Include base utilities that may not be scanned from component files
+  safelist: [
+    // Base flex utilities
+    'flex',
+    'flex-col',
+    'flex-row',
+    'flex-1',
+    'flex-shrink-0',
+    'items-center',
+    'items-start',
+    'justify-center',
+    'gap-2',
+    'gap-4',
+    'gap-6',
+    // Responsive flex
+    'lg:flex-row',
+    'lg:gap-0',
+    'lg:items-start',
+    // Width utilities
+    'w-full',
+    'lg:w-64',
+    // Spacing
+    'p-4',
+    'p-8',
+    'lg:pr-8',
+    'lg:pl-8',
+    // Text alignment
+    'text-center',
+    'lg:text-left',
+    // Borders
+    'lg:border-r',
+    // Margins
+    'lg:mt-8',
+    'mx-auto',
+    // Border radius
+    'rounded-2xl',
+    'lg:rounded-3xl',
+    // Max width
+    'max-w-5xl',
+    // Position
+    'relative',
+    // Min height
+    'min-h-screen',
+  ],
   theme: {
     extend: {
       colors: {

@@ -1,0 +1,198 @@
+# UX Quality Gate Workflow
+# @governance UX-001
+#
+# Enforces UX quality standards on every PR:
+# - Tier 1: Chromatic visual regression, accessibility, performance
+# - Blocks merges if thresholds not met
+
+name: UX Quality Gate
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ===== TIER 1: AUTOMATED GATES =====
+
+  # VIS-001: Visual Regression Testing
+  chromatic:
+    name: 'VIS-001: Chromatic Visual Regression'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for proper baseline comparison
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: projects/orion-sync-engine/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm ci
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: projects/orion-sync-engine/frontend
+          exitZeroOnChanges: false  # BLOCKER: Fail on visual changes
+          exitOnceUploaded: true
+          onlyChanged: true
+
+  # A11Y-001: Accessibility Testing
+  accessibility:
+    name: 'A11Y-001: Accessibility Testing'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: projects/orion-sync-engine/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm ci
+
+      - name: Install Playwright
+        working-directory: projects/orion-sync-engine/frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Build application
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run build
+
+      - name: Run accessibility tests
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run test:e2e -- --grep @a11y
+
+  # PERF-001: Performance Testing
+  lighthouse:
+    name: 'PERF-001: Lighthouse Performance'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: projects/orion-sync-engine/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm ci
+
+      - name: Build application
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run build
+
+      - name: Start server
+        working-directory: projects/orion-sync-engine/frontend
+        run: |
+          npm run start &
+          sleep 10
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: projects/orion-sync-engine/frontend/lighthouserc.js
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+  # INT-001: Unit Tests (Testing Library)
+  unit-tests:
+    name: 'INT-001: Unit Tests'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: projects/orion-sync-engine/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm ci
+
+      - name: Run unit tests with coverage
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run test -- --coverage --passWithNoTests
+
+      - name: Check coverage threshold
+        working-directory: projects/orion-sync-engine/frontend
+        run: |
+          COVERAGE=$(cat coverage/coverage-summary.json | jq '.total.lines.pct')
+          if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+            echo "Coverage ${COVERAGE}% is below 80% threshold"
+            exit 1
+          fi
+          echo "Coverage: ${COVERAGE}%"
+
+  # E2E-001: End-to-End Tests
+  e2e-tests:
+    name: 'E2E-001: Playwright E2E Tests'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: projects/orion-sync-engine/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm ci
+
+      - name: Install Playwright
+        working-directory: projects/orion-sync-engine/frontend
+        run: npx playwright install --with-deps
+
+      - name: Build application
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run build
+
+      - name: Run E2E tests
+        working-directory: projects/orion-sync-engine/frontend
+        run: npm run test:e2e
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: projects/orion-sync-engine/frontend/playwright-report/
+          retention-days: 30
+
+  # ===== QUALITY GATE =====
+  quality-gate:
+    name: 'UX-001: Quality Gate'
+    runs-on: ubuntu-latest
+    needs: [chromatic, accessibility, lighthouse, unit-tests, e2e-tests]
+    steps:
+      - name: Quality Gate Passed
+        run: |
+          echo "✅ UX-001 Quality Gate PASSED"
+          echo ""
+          echo "All Tier 1 gates passed:"
+          echo "  ✓ VIS-001: Visual regression (Chromatic)"
+          echo "  ✓ A11Y-001: Accessibility testing"
+          echo "  ✓ PERF-001: Performance (Lighthouse)"
+          echo "  ✓ INT-001: Unit tests (Testing Library)"
+          echo "  ✓ E2E-001: End-to-end tests (Playwright)"

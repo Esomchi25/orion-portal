@@ -247,11 +247,12 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
     <main
       role="main"
       aria-label="P6 Connection Setup"
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     >
-      <div className="w-full max-w-2xl">
-        {/* Progress Indicator */}
-        <div className={`mb-8 sm:mb-12 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
+      {/* Centered container with optimal width for form readability */}
+      <div className="w-full max-w-3xl mx-auto">
+        {/* Progress Indicator - Now spans wider with glassmorphism */}
+        <div className={`mb-6 sm:mb-8 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
           <ProgressIndicator
             currentStep={2}
             totalSteps={5}
@@ -259,16 +260,16 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
           />
         </div>
 
-        {/* Header */}
-        <div className={`text-center mb-8 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center gap-2 mb-4">
+        {/* Header - Centered with better responsive sizing */}
+        <div className={`text-center mb-8 sm:mb-10 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <Badge variant="amber">SCHEDULE</Badge>
             <Badge variant="cyan">STEP 2 OF 5</Badge>
           </div>
-          <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4">
             Connect to <span className="text-gradient-amber">Primavera P6</span>
           </h1>
-          <p className="text-[var(--orion-text-secondary)] max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed">
             Enter your P6 SOAP API credentials to sync schedule data including
             projects, WBS, activities, and resources.
           </p>
@@ -383,18 +384,19 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
           )}
         </GlassCard>
 
-        {/* Navigation Buttons */}
-        <div className={`mt-8 flex gap-4 ${mounted ? 'animate-slide-up delay-400' : 'opacity-0'}`}>
+        {/* Navigation Buttons - Responsive sizing */}
+        <div className={`mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 ${mounted ? 'animate-slide-up delay-400' : 'opacity-0'}`}>
           <Button
             type="button"
             variant="secondary"
             size="lg"
             onClick={onBack}
-            className="flex-1"
+            className="flex-1 order-2 sm:order-1"
           >
             <svg
-              style={{ width: '20px', height: '20px' }}
-              className="mr-2"
+              width="20"
+              height="20"
+              className="mr-2 flex-shrink-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -411,12 +413,13 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
             size="lg"
             onClick={handleContinue}
             disabled={!connectionTested}
-            className="flex-1"
+            className="flex-1 order-1 sm:order-2"
           >
             Continue
             <svg
-              style={{ width: '20px', height: '20px' }}
-              className="ml-2 transition-transform group-hover:translate-x-1"
+              width="20"
+              height="20"
+              className="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -427,10 +430,10 @@ export const P6ConnectionForm = memo(function P6ConnectionForm({
           </Button>
         </div>
 
-        {/* Help Text */}
-        <p className={`text-center text-sm text-[var(--orion-text-muted)] mt-6 font-mono ${mounted ? 'animate-fade-in delay-600' : 'opacity-0'}`}>
+        {/* Help Text - Centered with better styling */}
+        <p className={`text-center text-sm text-[var(--orion-text-muted)] mt-6 sm:mt-8 font-mono ${mounted ? 'animate-fade-in delay-600' : 'opacity-0'}`}>
           Need help? Check the{' '}
-          <a href="#" className="text-[var(--orion-cyan)] hover:underline">
+          <a href="#" className="text-[var(--orion-cyan)] hover:underline hover:text-[var(--orion-cyan)] transition-colors">
             P6 Integration Guide
           </a>
         </p>

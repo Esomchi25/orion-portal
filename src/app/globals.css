@@ -285,7 +285,7 @@ body::after {
 }
 
 /* ============================================
-   Input System
+   Input System - Premium Edition
    ============================================ */
 
 .input-field {
@@ -300,18 +300,29 @@ body::after {
   transition: all 0.3s var(--orion-ease-out);
 }
 
-.input-field::placeholder {
-  color: var(--orion-text-muted);
+/* Responsive input sizing */
+@media (min-width: 640px) {
+  .input-field {
+    padding: 1rem 1.25rem;
+    font-size: 0.9375rem;
+  }
 }
 
-.input-field:hover {
-  border-color: rgba(148, 163, 184, 0.2);
+.input-field::placeholder {
+  color: var(--orion-text-muted);
+  opacity: 0.8;
+}
+
+.input-field:hover:not(:disabled) {
+  border-color: rgba(148, 163, 184, 0.25);
+  background: rgba(17, 24, 39, 0.9);
 }
 
 .input-field:focus {
   outline: none;
   border-color: var(--orion-cyan);
   box-shadow: 0 0 0 4px var(--orion-cyan-glow);
+  background: var(--orion-bg-secondary);
 }
 
 .input-field.error {
@@ -319,9 +330,20 @@ body::after {
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
 }
 
+.input-field.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.25);
+}
+
 .input-field.success {
   border-color: var(--orion-emerald);
   box-shadow: 0 0 0 4px var(--orion-emerald-glow);
+}
+
+.input-field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(17, 24, 39, 0.5);
 }
 
 /* ============================================

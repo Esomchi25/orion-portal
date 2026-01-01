@@ -173,7 +173,7 @@ export const OnboardingComplete = memo(function OnboardingComplete({
       <main
         role="main"
         aria-label="Onboarding Complete"
-        className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+        className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
       >
         {/* Animated background elements */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -181,16 +181,16 @@ export const OnboardingComplete = memo(function OnboardingComplete({
           <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-[var(--orion-cyan)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
-        <div className="relative w-full max-w-lg text-center">
+        <div className="relative w-full max-w-xl mx-auto text-center">
           <div className="animate-scale-in">
             <SuccessAnimation />
           </div>
 
           <div role="alert" className="animate-slide-up" style={{ animationDelay: '200ms' }}>
-            <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4">
               Setup <span className="text-gradient-emerald">Complete!</span>
             </h1>
-            <p className="text-[var(--orion-text-secondary)] text-lg mb-8 max-w-md mx-auto">
+            <p className="text-base sm:text-lg text-[var(--orion-text-secondary)] mb-8 sm:mb-10 max-w-md mx-auto leading-relaxed">
               Your ORION portal is ready. <span className="text-[var(--orion-cyan)] font-semibold">{selectedProjects.length} projects</span> are now connected and syncing.
             </p>
           </div>
@@ -207,7 +207,7 @@ export const OnboardingComplete = memo(function OnboardingComplete({
               <svg
                 width="20"
                 height="20"
-                className="ml-2 transition-transform group-hover:translate-x-1"
+                className="ml-2 flex-shrink-0 transition-transform group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -245,11 +245,12 @@ export const OnboardingComplete = memo(function OnboardingComplete({
     <main
       role="main"
       aria-label="Complete Onboarding"
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12"
     >
-      <div className="w-full max-w-2xl">
+      {/* Centered container with optimal width */}
+      <div className="w-full max-w-3xl mx-auto">
         {/* Progress Indicator */}
-        <div className={`mb-8 sm:mb-12 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className={`mb-6 sm:mb-8 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
           <ProgressIndicator
             currentStep={5}
             totalSteps={5}
@@ -257,16 +258,16 @@ export const OnboardingComplete = memo(function OnboardingComplete({
           />
         </div>
 
-        {/* Header */}
+        {/* Header - Better responsive sizing */}
         <div className={`text-center mb-8 sm:mb-10 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-          <div className="inline-flex items-center gap-2 mb-4">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
             <Badge variant="emerald">FINAL STEP</Badge>
             <Badge variant="cyan">STEP 5 OF 5</Badge>
           </div>
-          <h1 className="orion-h1 text-[var(--orion-text-primary)] mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-[var(--orion-text-primary)] mb-3 sm:mb-4">
             Review & <span className="text-gradient-cyan">Complete</span>
           </h1>
-          <p className="text-[var(--orion-text-secondary)] max-w-lg mx-auto">
+          <p className="text-base sm:text-lg text-[var(--orion-text-secondary)] max-w-xl mx-auto leading-relaxed">
             Verify your configuration and complete the setup
           </p>
         </div>
