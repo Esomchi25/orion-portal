@@ -348,7 +348,10 @@ describe('P6ConnectionForm - Accessibility Tests', () => {
 
     await user.click(screen.getByRole('button', { name: /test connection/i }));
 
-    expect(screen.getByRole('status')).toHaveTextContent(/testing/i);
+    // Look for the specific loading status message
+    const statusElements = screen.getAllByRole('status');
+    const loadingStatus = statusElements.find(el => el.textContent?.toLowerCase().includes('testing'));
+    expect(loadingStatus).toBeInTheDocument();
   });
 });
 
